@@ -212,18 +212,3 @@ world.plot_matrix(
     filter_Region_to=['EU27+UK'], # filter importing regions
     filter_Commodity_from=['Chemicals','Non-ferrous metal ores','Electricity','Natural gas'], # filter consumed commodities 
 )
-
-world.plot_matrix(
-    matrix = 'E', # plotting the use transaction matrix,
-    item = 'Activity',  # it is necessary to specify the row items for the selected matrix
-    facet_col='Region_to', # arrange the subplots: importing regions on the rows of the grid
-    # facet_row='Region_from', # arrange the subplots: exporting regions on the columns of the grid
-    x = 'Activity_to', # putting the activities on the x-axis 
-    color='Region_from', # putting the commodities on the legend
-    path='Plots\plot_E.html', # providing a path where to save the file
-    base_scenario = "baseline", # indicate the results must be shown as a difference with respect to the baseline scenario
-    # filter_Activity_to= ['Manufacture of batteries'], # filter activities
-    # filter_Region_from=['China','EU27+UK','RoW'], # filter exporting regions
-    # filter_Region_to=['EU27+UK'], # filter importing regions
-    # filter_Commodity_from=['Chemicals','Non-ferrous metal ores','Electricity','Natural gas'], # filter consumed commodities 
-)
