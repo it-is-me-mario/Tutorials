@@ -15,8 +15,6 @@ on:
         description: Source commit requesting a refresh
         required: false
         type: string
-  schedule:
-    - cron: '17 * * * *'
 
 permissions:
   contents: read
@@ -29,8 +27,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    outputs:
-      publish: ${{ steps.decision.outputs.publish }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -50,38 +46,21 @@ jobs:
         run: |
           address=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .html_url)
           echo "url=$address" >> "$GITHUB_OUTPUT"
-      - name: Check external source revisions
-        id: sources
-        if: github.event_name == 'schedule'
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: python site/build.py --check-updates --base-url '${{ steps.address.outputs.url }}'
-      - name: Select publication
-        id: decision
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          SOURCES_CHANGED: ${{ steps.sources.outputs.changed }}
-        run: |
-          if [ "$EVENT_NAME" != schedule ] || [ "$SOURCES_CHANGED" = true ]; then
-            echo 'publish=true' >> "$GITHUB_OUTPUT"
-          fi
       - name: Check publisher regressions
-        if: steps.decision.outputs.publish == 'true'
         run: python -m unittest discover -s site/tests -v
       - name: Build and verify tutorials
-        if: steps.decision.outputs.publish == 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python site/build.py --base-url '${{ steps.address.outputs.url }}'
       - uses: actions/configure-pages@v5
-        if: steps.decision.outputs.publish == 'true' && github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v4
-        if: steps.decision.outputs.publish == 'true' && github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         with:
           path: _site
 
   deploy:
-    if: needs.build.outputs.publish == 'true' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-24.04
     permissions:

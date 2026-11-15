@@ -17,6 +17,11 @@ SPEC.loader.exec_module(publisher)
 
 
 class PublisherTests(unittest.TestCase):
+    def test_periodic_refresh_has_its_own_workflow(self):
+        workflows = Path(__file__).parents[2] / ".github/workflows"
+        self.assertNotIn("  schedule:", (workflows / "pages.yml").read_text())
+        self.assertIn("  schedule:", (workflows / "refresh.yml").read_text())
+
     def test_clean_notebook_preserves_source_and_is_reproducible(self):
         payload = json.dumps({
             "nbformat": 4, "nbformat_minor": 2, "metadata": {}, "cells": [{

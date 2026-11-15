@@ -58,12 +58,13 @@ additional repository permission is Actions read/write. Its default Metadata
 read permission supplies repository identity. Keep that credential in the source
 repository's Actions secret store.
 
-The hourly revision check also detects changes in registered external refs and
-publishes only when the deployed manifest differs. GitHub can delay scheduled
-runs and disables schedules on inactive public repositories. Check the Actions
-history when auditing refreshes; use the manual publication action for an
-immediate rebuild. A frozen workshop edition can select a tag or full commit in
-the catalogue.
+The separate ``.github/workflows/refresh.yml`` hourly check also detects changes
+in registered external refs and requests publication when the deployed manifest
+differs. GitHub can delay scheduled runs and disables schedules on inactive public
+repositories. Keep the publisher in its separate push/dispatch workflow so an
+inactive schedule cannot disable ordinary publication. Check the Actions history
+when auditing refreshes; use the manual publication action for an immediate
+rebuild. A frozen workshop edition can select a tag or full commit in the catalogue.
 
 Before merging, inspect the branch rules, PR checks and reviews. After publication,
 check the deployed manifest against the intended commits, open representative
