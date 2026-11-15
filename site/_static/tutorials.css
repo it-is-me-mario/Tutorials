@@ -1,0 +1,19 @@
+.mario-body .nbinput .input_area,
+.mario-body .nboutput .output_area {
+  min-width: 0;
+  overflow-x: auto;
+}
+.mario-body .nbinput .input_area pre { white-space: pre; }
+.mario-body .nbinput .input_prompt,
+.mario-body .nboutput .output_prompt { min-width: 0; }
+.mario-body .nbinput .input_area,
+.mario-body .nboutput .output_area { background: var(--surface-2); }
+.mario-body .nblast { margin-bottom: 1.5rem; }
+.mario-body img { max-width: 100%; height: auto; }
+@media (max-width: 650px) {
+  .mario-body .nbinput,
+  .mario-body .nboutput { display: block; }
+  .mario-body .nbinput .prompt,
+  .mario-body .nboutput .prompt { display: none; }
+}
+

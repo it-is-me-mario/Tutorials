@@ -1,0 +1,76 @@
+name: Publish Tutorials
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      source_repository:
+        description: Repository requesting a refresh
+        required: false
+        type: string
+      source_sha:
+        description: Source commit requesting a refresh
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: tutorials-pages-${{ github.event_name == 'pull_request' && github.ref || 'publish' }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: site/requirements.txt
+      - name: Install documentation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install -r site/requirements.txt
+      - name: Read public site address
+        id: address
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          address=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .html_url)
+          echo "url=$address" >> "$GITHUB_OUTPUT"
+      - name: Check publisher regressions
+        run: python -m unittest discover -s site/tests -v
+      - name: Build and verify tutorials
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python site/build.py --base-url '${{ steps.address.outputs.url }}'
+      - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name != 'pull_request'
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - name: Publish site
+        id: publish
+        uses: actions/deploy-pages@v4
+

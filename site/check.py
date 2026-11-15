@@ -1,0 +1,53 @@
+"""Check generated pages, source provenance and downloadable companions."""
+
+import hashlib
+import json
+from pathlib import Path
+import sys
+from urllib.parse import unquote, urlsplit
+
+from bs4 import BeautifulSoup
+import nbformat
+
+
+def check(output):
+    output = output.resolve()
+    manifest = json.loads((output / "source-manifest.json").read_text())
+    downloads = {}
+    count = 0
+    for path in output.rglob("*.html"):
+        soup = BeautifulSoup(path.read_text(), "html.parser")
+        if path.name not in {"search.html", "genindex.html"}:
+            assert len(soup.select("h1")) == 1, f"Expected one page heading in {path}"
+        for element in soup.select("a[href], script[src], img[src], link[href]"):
+            address = element.get("href", element.get("src", ""))
+            parsed = urlsplit(address)
+            if parsed.scheme or parsed.netloc or not parsed.path:
+                continue
+            target = (path.parent / unquote(parsed.path)).resolve()
+            if not target.is_relative_to(output):
+                raise AssertionError(f"Link leaves the site {path}: {address}")
+            if target.is_dir():
+                target = target / "index.html"
+            assert target.is_file(), f"Missing target {path}: {address}"
+            if "_downloads" in target.parts:
+                downloads.setdefault(path.parent.name, {})[target.name] = target
+            count += 1
+    for slug, source in manifest["tutorials"].items():
+        assert (output / slug / "index.html").is_file()
+        assert (output / slug / "notebook.html").is_file()
+        for filename, record in source["files"].items():
+            path = downloads[slug][Path(filename).name]
+            assert hashlib.sha256(path.read_bytes()).hexdigest() == record["download_sha256"]
+            if path.suffix == ".ipynb":
+                notebook = nbformat.read(path, as_version=4)
+                assert notebook.metadata["mario_tutorial_source"]["commit"] == source["commit"]
+                for cell in notebook.cells:
+                    if cell.cell_type == "code":
+                        assert not cell.outputs and cell.execution_count is None
+    print(f"PASS {len(manifest['tutorials'])} tutorials, {count} local links and all downloads")
+
+
+if __name__ == "__main__":
+    check(Path(sys.argv[1]))
+
