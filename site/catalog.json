@@ -11,6 +11,7 @@
       "repository": "it-is-me-mario/Tutorials",
       "notebook": "Economy-wide impact assessment/economy_wide_impact_assessment.ipynb",
       "guide": "Economy-wide impact assessment/overview.rst",
+      "guide_includes_downloads": true,
       "materials": [
         "Economy-wide impact assessment/scenario_summary.csv"
       ]
