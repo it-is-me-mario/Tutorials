@@ -10,12 +10,14 @@ from bs4 import BeautifulSoup
 import nbformat
 
 
-def check(output):
+def check_channel(output, *, skip=()):
     output = output.resolve()
     manifest = json.loads((output / "source-manifest.json").read_text())
     downloads = {}
     count = 0
     for path in output.rglob("*.html"):
+        if path.relative_to(output).parts[0] in skip:
+            continue
         soup = BeautifulSoup(path.read_text(), "html.parser")
         if path.name not in {"search.html", "genindex.html"}:
             assert len(soup.select("h1")) == 1, f"Expected one page heading in {path}"
@@ -46,6 +48,14 @@ def check(output):
                     if cell.cell_type == "code":
                         assert not cell.outputs and cell.execution_count is None
     print(f"PASS {len(manifest['tutorials'])} tutorials, {count} local links and all downloads")
+
+
+def check(output):
+    if (output / "versions-manifest.json").is_file():
+        check_channel(output, skip=("dev",))
+        check_channel(output / "dev")
+    else:
+        check_channel(output)
 
 
 if __name__ == "__main__":
