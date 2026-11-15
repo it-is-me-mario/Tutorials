@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 from html import escape
 import json
 import os
@@ -275,8 +276,8 @@ def updates_needed(revisions, base_url, manifest="source-manifest.json"):
 
 def resolve_channels(latest_ref=None):
     definitions = json.loads((SITE / "versions.json").read_text())
-    if set(definitions) != {"latest", "dev"}:
-        raise ValueError("Configure the Latest and Dev source refs")
+    if set(definitions) != {"latest", "dev", "preview"}:
+        raise ValueError("Configure the Latest, Dev and Preview source refs")
     publisher = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     theme = load_catalog()["theme"]
     plan = {"publisher_commit": publisher, "theme": theme, "versions": {}}
@@ -287,9 +288,25 @@ def resolve_channels(latest_ref=None):
             f"repos/{REPOSITORY}/commits/{quote(ref, safe='')}"
         )["sha"]
         catalog = load_catalog(revision)
-        catalog["theme"] = theme
+        if channel != "preview":
+            catalog["theme"] = theme
         plan["versions"][channel] = {**resolve_sources(catalog, revision, cache), "ref": ref, "channel": channel}
     return plan
+
+
+def preview_renderer(revision):
+    """Read the proposed presentation from the same immutable source as its content."""
+    destination = ROOT / "_build/presentation" / revision
+    for name in ("site/build.py", "site/conf.py", "site/_static/tutorials.css",
+                 "site/_templates/partials/footer.html"):
+        path = destination / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(repository_source(REPOSITORY, revision, name))
+    spec = importlib.util.spec_from_file_location("preview_presentation", destination / "site/build.py")
+    renderer = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(renderer)
+    renderer.ROOT, renderer.CACHE = ROOT, CACHE
+    return renderer
 
 
 def build_channel(catalog, revisions, output, base_url, root_url):
@@ -297,7 +314,8 @@ def build_channel(catalog, revisions, output, base_url, root_url):
     work = ROOT / "_build/source" / channel
     if work.exists():
         shutil.rmtree(work)
-    manifest = prepare(catalog, revisions, work)
+    prepare_source = preview_renderer(revisions["site_commit"]).prepare if channel == "preview" else prepare
+    manifest = prepare_source(catalog, revisions, work)
     env = {
         **os.environ, "TUTORIALS_BASE_URL": base_url,
         "TUTORIALS_CHANNEL": channel, "TUTORIALS_SOURCE_COMMIT": revisions["site_commit"],
@@ -334,14 +352,14 @@ def main():
     root_url = args.base_url.rstrip("/") + "/"
     versions = {"versions": {}}
     for channel, revisions in plan["versions"].items():
-        destination = output if channel == "latest" else output / "dev"
-        url = root_url if channel == "latest" else root_url + "dev/"
+        destination = output if channel == "latest" else output / channel
+        url = root_url if channel == "latest" else root_url + channel + "/"
         catalog = load_catalog(revisions["site_commit"])
-        catalog["theme"] = plan["theme"]
+        catalog["theme"] = revisions["theme"]
         build_channel(catalog, revisions, destination, url, root_url)
         documents = {}
         for page in sorted(destination.rglob("*.html")):
-            if channel == "latest" and page.relative_to(destination).parts[0] == "dev":
+            if channel == "latest" and page.relative_to(destination).parts[0] in {"dev", "preview"}:
                 continue
             soup = BeautifulSoup(page.read_text(), "html.parser")
             documents[page.relative_to(destination).with_suffix("").as_posix()] = [
@@ -350,13 +368,13 @@ def main():
         versions["versions"][channel] = {"url": url, "commit": revisions["site_commit"], "documents": documents}
     payload = json.dumps(versions, separators=(",", ":")) + "\n"
     for channel in plan["versions"]:
-        destination = output if channel == "latest" else output / "dev"
+        destination = output if channel == "latest" else output / channel
         (destination / "_static/docs-versions.json").write_text(payload)
     (output / "docs-versions.json").write_text(payload)
     (output / "versions-manifest.json").write_text(json.dumps(plan, indent=2) + "\n")
     (output / ".nojekyll").touch()
     subprocess.run([sys.executable, str(SITE / "check.py"), str(output)], check=True)
-    print(f"Built Latest and Dev tutorials at {output}")
+    print(f"Built Latest, Dev and Preview tutorials at {output}")
 
 
 if __name__ == "__main__":

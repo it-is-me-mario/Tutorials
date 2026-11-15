@@ -82,6 +82,7 @@ def page_context(app, pagename, templatename, context, doctree):
         "choices": [
             {"key": "latest", "label": "Latest", "url": site_root},
             {"key": "dev", "label": "Dev", "url": site_root + "dev/"},
+            {"key": "preview", "label": "Preview", "url": site_root + "preview/"},
         ],
     }
     body = re.sub(r"<h1>.*?</h1>\s*", "", context.get("body", ""), count=1, flags=re.S)

@@ -4,16 +4,19 @@ Tutorial site maintenance
 Sources and ownership
 ---------------------
 
-``versions.json`` selects the content refs for Latest and Dev. Latest uses the
-existing root routes, and Dev is published under ``/dev/``. The publisher reads
+``versions.json`` selects the content refs for Latest, Dev and Preview. Latest uses the
+existing root routes; Dev and Preview use ``/dev/`` and ``/preview/``. The publisher reads
 each catalogue, notebook, guide and material at the selected commit. Source
 notebooks remain in their canonical repositories. The shared frontend is pinned
-by the publisher's catalogue and used for both channels.
+by the publisher's catalogue for Latest and Dev. Preview uses the theme and
+presentation files from its own recorded source commit, so a design experiment
+does not alter the other channels. ``preview_renderer`` materializes the committed
+builder, Sphinx configuration, stylesheet and footer in the ignored build cache.
 
 ``versions-manifest.json`` records the publisher and both sets of resolved source
 commits. Each channel also retains its own ``source-manifest.json`` and downloads.
 ``docs-versions.json`` records available HTML pages and anchors for the common
-Latest/Dev selector. Its native links open each channel home when scripts are
+Latest/Dev/Preview selector. Its native links open each channel home when scripts are
 unavailable. A missing counterpart page falls back to that home.
 The shared theme's ``partials/versions.html`` supplies a floating bottom-right
 control outside the header, with the choices opening upward. Check its fixed
@@ -70,6 +73,9 @@ Check that links among the main documentation, Tutorials and Database Explorer
 use the current tab when updating the shared theme.
 
 Review both channel homes, a shared tutorial page and a Dev-only exercise.
+Include Preview's catalogue and every tutorial/download pair. Confirm its theme
+pin differs from the unchanged Latest/Dev pin and its header stays in Preview
+when opening MARIO or Explorer.
 Check the selector, same-page/anchor switching, fallback, download hashes and
 navigation to the corresponding MARIO and Explorer channel. Run the source
 calculations separately when changing a notebook. The website build renders
