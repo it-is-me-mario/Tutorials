@@ -4,18 +4,27 @@ Tutorial site maintenance
 Sources and ownership
 ---------------------
 
+``versions.json`` selects the content refs for Latest and Dev. Latest uses the
+existing root routes, and Dev is published under ``/dev/``. The publisher reads
+each catalogue, notebook, guide and material at the selected commit. Source
+notebooks remain in their canonical repositories. The shared frontend is pinned
+by the publisher's catalogue and used for both channels.
+
+``versions-manifest.json`` records the publisher and both sets of resolved source
+commits. Each channel also retains its own ``source-manifest.json`` and downloads.
+``docs-versions.json`` records available HTML pages and anchors for the common
+Latest/Dev selector. Its native links open each channel home when scripts are
+unavailable. A missing counterpart page falls back to that home.
+
 ``catalog.json`` owns the tutorial routes, summaries, source repositories and
 material lists. Edit each notebook in its listed source repository. The build
 creates temporary render and download copies under ``_build``; these copies are
 excluded from Git. The source repository's history and original URLs remain the
 permanent record.
 
-An optional ``guide`` selects an RST explanation from the same repository and
-resolved revision as the notebook. Write it without a page title, which the
-catalogue supplies. The builder includes a temporary ``.rst.inc`` copy in the
-tutorial landing page and records its source hash separately from downloads.
-Keep prerequisites, data scope, selected results and the next stage in this
-guide; keep the full calculation in the companion notebook.
+An optional ``guide`` names an RST explanation from the notebook's source and
+revision. The publisher includes a generated ``.rst.inc`` copy in the landing
+page and records its hash. Keep the full calculation in the notebook companion.
 
 The shared MARIO theme is imported at the full commit recorded in the catalogue.
 Review its templates, CSS, scripts and logo assets together when updating that
@@ -49,20 +58,14 @@ links, desktop/mobile navigation and dark/light themes. Compare code cells in
 published companions with their canonical source. Report notebook calculations
 separately from rendering and publication checks.
 
-Check navigation among the main documentation, Tutorials and Database Explorer
-in the current tab. Update the shared-theme pin in both consumer repositories
-when changing the canonical script in MARIO. For tutorials sharing data, verify the
-counterpart's classification and units against its documented model and its
-downloadable settings, then execute the MARIO preparation independently of the
-receiving model. Record the development revision when the exercise
-depends on an API awaiting release.
+Check that links among the main documentation, Tutorials and Database Explorer
+use the current tab when updating the shared theme.
 
-For Economy-wide impact assessment, the prepared reference is shared with CVXLab
-and the MARIO path continues through scenario results. Execute that complete path
-and reconcile the selected summary CSV with the notebook. Report the optional
-CVXLab export/model path separately, including receiving settings and coordinate
-requirements. Review recipes for technologies activated from zero production
-before interpreting a scenario, alongside the numerical equation checks.
+Review both channel homes, a shared tutorial page and a Dev-only exercise.
+Check the selector, same-page/anchor switching, fallback, download hashes and
+navigation to the corresponding MARIO and Explorer channel. Run the source
+calculations separately when changing a notebook. The website build renders
+and cleans notebooks without executing their calculations.
 
 Publication and external refreshes
 ---------------------------------
@@ -72,6 +75,13 @@ tests, the strict Sphinx build and local-link/download checks. Pull requests bui
 and verify the site. GitHub Pages must be enabled using the Actions build mode.
 The workflow reads the site's current address from GitHub Pages settings, so
 switching between the project URL and its custom domain uses the same build.
+
+Successful verification of the selected development branch also requests the
+main-branch publisher through ``workflow_run``. Verification has a separate
+workflow name to avoid GitHub's self-listener restriction. The hourly refresh
+compares both channels' source refs and external revisions. Review the source
+refs and workflow branch filters together when changing the development branch.
+Public deployment runs on main and publishes both channels in one artifact.
 
 MRIO disaggregation's notification workflow invokes this publication through
 ``workflow_dispatch``. Configure its ``TUTORIALS_PUBLISH_TOKEN`` repository secret

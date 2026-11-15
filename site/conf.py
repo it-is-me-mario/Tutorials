@@ -25,14 +25,16 @@ templates_path = ["_templates"]
 html_static_path = ["_static"]
 html_title = "MARIO Tutorials"
 html_favicon = "_static/images/mario-favicon.ico"
-html_css_files = ["tutorials.css"]
-html_js_files = ["external-links.js"]
+html_css_files = ["tutorials.css", "docs-versions.css"]
+html_js_files = ["external-links.js", ("docs-versions.js", {"defer": "defer"})]
 html_baseurl = os.environ.get("TUTORIALS_BASE_URL", "https://it-is-me-mario.github.io/Tutorials/")
 html_show_sourcelink = False
 html_copy_source = False
 html_permalinks_icon = "#"
 html_sidebars = {"**": []}
-MASTER = "https://www.marioproject.com/en/latest/"
+CHANNEL = os.environ.get("TUTORIALS_CHANNEL", "latest")
+MASTER = f"https://www.marioproject.com/en/{CHANNEL}/"
+EXPLORER = "https://explorer.marioproject.com/" + ("dev/" if CHANNEL == "dev" else "")
 
 
 def page_context(app, pagename, templatename, context, doctree):
@@ -48,10 +50,10 @@ def page_context(app, pagename, templatename, context, doctree):
             {"label": "Inspecting and exporting", "url": MASTER + "user_guide/inspection/index.html"},
             {"label": "Transformations", "url": MASTER + "user_guide/transformations/index.html"},
         ]},
-        {"key": "explorer", "label": "Database explorer", "url": "https://explorer.marioproject.com/", "children": [
-            {"label": "Classifications", "url": "https://explorer.marioproject.com/resources/data-explorer/scope.html"},
-            {"label": "Compare databases", "url": "https://explorer.marioproject.com/resources/data-explorer/compare.html"},
-            {"label": "Analyses", "url": "https://explorer.marioproject.com/resources/data-explorer/analyses.html"},
+        {"key": "explorer", "label": "Database explorer", "url": EXPLORER, "children": [
+            {"label": "Classifications", "url": EXPLORER + "resources/data-explorer/scope.html"},
+            {"label": "Compare databases", "url": EXPLORER + "resources/data-explorer/compare.html"},
+            {"label": "Analyses", "url": EXPLORER + "resources/data-explorer/analyses.html"},
         ]},
         {"key": "resources", "label": "Resources", "url": root, "active": True, "children": [
             {"label": "Tutorials", "url": root, "active": True},
@@ -68,6 +70,19 @@ def page_context(app, pagename, templatename, context, doctree):
         "github": "https://github.com/it-is-me-mario/Tutorials", "pypi": "", "install": "",
         "ai_notice": "", "closing": None, "topic_navigation": False,
         "changelog_url": MASTER + "changelog.html",
+    }
+    site_root = os.environ.get("TUTORIALS_SITE_ROOT", html_baseurl).rstrip("/") + "/"
+    revision = os.environ.get("TUTORIALS_SOURCE_COMMIT", "")
+    context["mario_versions"] = {
+        "current": CHANNEL, "label": "Dev" if CHANNEL == "dev" else "Latest",
+        "document": pagename,
+        "catalogue": root.removesuffix("index.html") + "_static/docs-versions.json",
+        "revision": revision[:7],
+        "source_url": "https://github.com/it-is-me-mario/Tutorials/tree/" + revision,
+        "choices": [
+            {"key": "latest", "label": "Latest", "url": site_root},
+            {"key": "dev", "label": "Dev", "url": site_root + "dev/"},
+        ],
     }
     body = re.sub(r"<h1>.*?</h1>\s*", "", context.get("body", ""), count=1, flags=re.S)
     context["body"] = body.replace("<h1>", "<h2>").replace("</h1>", "</h2>")

@@ -1,0 +1,30 @@
+name: Verify tutorial development
+
+on:
+  push:
+    branches: [codex/economy-wide-tutorial]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/codex/economy-wide-tutorial' || github.head_ref == 'codex/economy-wide-tutorial'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install -r site/requirements.txt
+      - run: python -m unittest discover -s site/tests -v
+      - run: python site/build.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

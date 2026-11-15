@@ -93,6 +93,20 @@ class PublisherTests(unittest.TestCase):
             with self.subTest(name=name), self.assertRaises(ValueError):
                 publisher.source_path(name)
 
+    def test_local_snapshot_reads_committed_content(self):
+        with patch.object(publisher.subprocess, "check_output", return_value=b"committed") as git:
+            self.assertEqual(publisher.repository_source(publisher.REPOSITORY, "a" * 40, "run.ipynb"), b"committed")
+            self.assertEqual(git.call_args.args[0], ["git", "show", "a" * 40 + ":run.ipynb"])
+
+    def test_channels_share_one_resolution_of_an_external_ref(self):
+        catalog = {"theme": {}, "tutorials": [{"repository": "owner/source", "ref": "main"}]}
+        cache = {}
+        with patch.object(publisher, "github_json", return_value={"sha": "b" * 40}) as github:
+            first = publisher.resolve_sources(catalog, "a" * 40, cache)
+            second = publisher.resolve_sources(catalog, "c" * 40, cache)
+            self.assertEqual(first["external_sources"], second["external_sources"])
+            self.assertEqual(github.call_count, 1)
+
 
 if __name__ == "__main__":
     unittest.main()
