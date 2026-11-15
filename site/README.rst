@@ -15,6 +15,9 @@ commits. Each channel also retains its own ``source-manifest.json`` and download
 ``docs-versions.json`` records available HTML pages and anchors for the common
 Latest/Dev selector. Its native links open each channel home when scripts are
 unavailable. A missing counterpart page falls back to that home.
+The shared theme's ``partials/versions.html`` supplies a floating bottom-right
+control outside the header, with the choices opening upward. Check its fixed
+position while scrolling and its keyboard behaviour at narrow widths.
 
 ``catalog.json`` owns the tutorial routes, summaries, source repositories and
 material lists. Edit each notebook in its listed source repository. The build
