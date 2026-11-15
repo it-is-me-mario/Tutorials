@@ -32,6 +32,8 @@ THEME_ASSETS = (
     "doc/source/_static/images/heatmap-background.png",
     "doc/source/_static/images/heatmap-background-dark.png",
     "doc/source/_static/external-links.js",
+    "doc/source/_static/docs-versions.js",
+    "doc/source/_static/docs-versions.css",
 )
 
 
@@ -56,8 +58,23 @@ def source_path(value):
     return path
 
 
-def load_catalog():
-    catalog = json.loads((SITE / "catalog.json").read_text())
+def repository_source(repository, revision, filename):
+    """Read committed local objects when available, then the immutable public source."""
+    source_path(filename)
+    if repository == REPOSITORY:
+        try:
+            return subprocess.check_output(
+                ["git", "show", f"{revision}:{filename}"], cwd=ROOT, stderr=subprocess.DEVNULL,
+            )
+        except subprocess.CalledProcessError:
+            pass
+    return cached_source(repository, revision, filename)
+
+
+def load_catalog(revision=None):
+    payload = repository_source(REPOSITORY, revision, "site/catalog.json") if revision else \
+        (SITE / "catalog.json").read_bytes()
+    catalog = json.loads(payload)
     slugs = set()
     for tutorial in catalog["tutorials"]:
         slug = tutorial["slug"]
@@ -66,6 +83,8 @@ def load_catalog():
         slugs.add(slug)
         for name in [tutorial["notebook"], *tutorial.get("materials", ())]:
             source_path(name)
+        if tutorial.get("guide"):
+            source_path(tutorial["guide"])
         basenames = [source_path(name).name for name in [tutorial["notebook"], *tutorial.get("materials", ())]]
         if len(basenames) != len(set(basenames)) or "notebook.ipynb" in basenames:
             raise ValueError(f"Tutorial {slug!r} has conflicting download names")
@@ -76,11 +95,12 @@ def load_catalog():
     return catalog
 
 
-def resolve_sources(catalog):
-    revision = subprocess.check_output(
+def resolve_sources(catalog, revision=None, external_cache=None):
+    revision = revision or subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
     ).strip()
     revisions = {}
+    cache = {} if external_cache is None else external_cache
     for tutorial in catalog["tutorials"]:
         repository = tutorial["repository"]
         if repository == REPOSITORY:
@@ -88,7 +108,9 @@ def resolve_sources(catalog):
         key = f"{repository}@{tutorial['ref']}"
         if key not in revisions:
             ref = quote(tutorial["ref"], safe="")
-            revisions[key] = github_json(f"repos/{repository}/commits/{ref}")["sha"]
+            if key not in cache:
+                cache[key] = github_json(f"repos/{repository}/commits/{ref}")["sha"]
+            revisions[key] = cache[key]
     return {
         "site_commit": revision,
         "theme": catalog["theme"],
@@ -156,8 +178,7 @@ def prepare_tutorial(tutorial, revisions, destination):
     provenance = {"repository": repository, "commit": revision, "path": tutorial["notebook"]}
     names = [tutorial["notebook"], *tutorial.get("materials", ())]
     for name in names:
-        payload = (ROOT / source_path(name)).read_bytes() if repository == REPOSITORY else \
-            cached_source(repository, revision, name)
+        payload = repository_source(repository, revision, name)
         files[name] = {"sha256": hashlib.sha256(payload).hexdigest()}
         target = folder / source_path(name).name
         target.write_bytes(clean_notebook(payload, provenance) if name == tutorial["notebook"] else payload)
@@ -169,6 +190,15 @@ def prepare_tutorial(tutorial, revisions, destination):
     lines = [
         ":page-type: Tutorial", f":summary: {tutorial['summary']}", "",
         tutorial["title"], "=" * len(tutorial["title"]), "",
+    ]
+    guide_record = {}
+    if tutorial.get("guide"):
+        name = tutorial["guide"]
+        payload = repository_source(repository, revision, name)
+        (folder / "overview.rst.inc").write_bytes(payload)
+        lines.extend([".. include:: overview.rst.inc", ""])
+        guide_record = {"guide": {"path": name, "sha256": hashlib.sha256(payload).hexdigest()}}
+    lines.extend([
         f"Read the `source repository <https://github.com/{repository}>`_ and the",
         f"`version used for this page <{source_url}>`_.", "",
         "Run the tutorial", "----------------", "",
@@ -176,7 +206,7 @@ def prepare_tutorial(tutorial, revisions, destination):
         "Follow the notebook's environment and source-data instructions before running it.",
         "",
         f"* :download:`Notebook <{notebook_name}>`",
-    ]
+    ])
     for name in tutorial.get("materials", ()):
         basename = source_path(name).name
         lines.append(f"* :download:`{basename} <{basename}>`")
@@ -186,7 +216,7 @@ def prepare_tutorial(tutorial, revisions, destination):
         lines.extend(["", f"`Repository instructions <{instructions}>`_ supply the original setup notes."])
     lines.extend(["", ".. toctree::", "   :maxdepth: 2", "", "   Notebook <notebook>", ""])
     (folder / "index.rst").write_text("\n".join(lines))
-    return {**provenance, "files": files}
+    return {**provenance, "files": files, **guide_record}
 
 
 def prepare(catalog, revisions, destination):
@@ -218,21 +248,58 @@ def prepare(catalog, revisions, destination):
     lines.extend(['   </div>', "", ".. toctree::", "   :hidden:", ""])
     for tutorial in catalog["tutorials"]:
         lines.append(f"   {tutorial['title']} <{tutorial['slug']}/index>")
+    channel = revisions.get("channel", "latest")
     lines.extend(["", "The tutorials cover real databases and complete exercises. For individual operations,",
-                  "use the `MARIO documentation <https://www.marioproject.com/en/latest/user_guide/index.html>`_.", ""])
+                  f"use the `MARIO documentation <https://www.marioproject.com/en/{channel}/user_guide/index.html>`_.", ""])
     (destination / "index.rst").write_text("\n".join(lines))
     (destination / "site-catalog.json").write_text(json.dumps(catalog))
     return manifest
 
 
-def updates_needed(revisions, base_url):
+def updates_needed(revisions, base_url, manifest="source-manifest.json"):
     try:
-        published = json.loads(request_bytes(base_url.rstrip("/") + "/source-manifest.json"))
+        published = json.loads(request_bytes(base_url.rstrip("/") + "/" + manifest))
     except HTTPError as error:
         if error.code == 404:
             return True
         raise
     return any(published.get(key) != value for key, value in revisions.items())
+
+
+def resolve_channels(latest_ref=None):
+    definitions = json.loads((SITE / "versions.json").read_text())
+    if set(definitions) != {"latest", "dev"}:
+        raise ValueError("Configure the Latest and Dev source refs")
+    publisher = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    theme = load_catalog()["theme"]
+    plan = {"publisher_commit": publisher, "theme": theme, "versions": {}}
+    cache = {}
+    for channel, definition in definitions.items():
+        ref = latest_ref if channel == "latest" and latest_ref else definition["ref"]
+        revision = publisher if ref == "HEAD" else github_json(
+            f"repos/{REPOSITORY}/commits/{quote(ref, safe='')}"
+        )["sha"]
+        catalog = load_catalog(revision)
+        catalog["theme"] = theme
+        plan["versions"][channel] = {**resolve_sources(catalog, revision, cache), "ref": ref, "channel": channel}
+    return plan
+
+
+def build_channel(catalog, revisions, output, base_url, root_url):
+    channel = revisions["channel"]
+    work = ROOT / "_build/source" / channel
+    if work.exists():
+        shutil.rmtree(work)
+    manifest = prepare(catalog, revisions, work)
+    env = {
+        **os.environ, "TUTORIALS_BASE_URL": base_url,
+        "TUTORIALS_CHANNEL": channel, "TUTORIALS_SOURCE_COMMIT": revisions["site_commit"],
+        "TUTORIALS_SITE_ROOT": root_url,
+    }
+    subprocess.run([sys.executable, "-m", "sphinx", "-b", "html", "-W", "--keep-going",
+                    str(work), str(output)], check=True, cwd=ROOT, env=env)
+    (output / "source-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    return manifest
 
 
 def main():
@@ -241,32 +308,48 @@ def main():
     parser.add_argument("--base-url", default=os.environ.get("TUTORIALS_BASE_URL", DEFAULT_URL))
     parser.add_argument("--check-updates", action="store_true")
     parser.add_argument("--resolved-sources", type=Path)
+    parser.add_argument("--latest-ref")
     args = parser.parse_args()
-    catalog = load_catalog()
-    revisions = json.loads(args.resolved_sources.read_text()) if args.resolved_sources else resolve_sources(catalog)
+    plan = json.loads(args.resolved_sources.read_text()) if args.resolved_sources else resolve_channels(args.latest_ref)
     if args.check_updates:
-        changed = updates_needed(revisions, args.base_url)
+        changed = updates_needed(plan, args.base_url, "versions-manifest.json")
         print(f"changed={str(changed).lower()}")
         if os.environ.get("GITHUB_OUTPUT"):
             with Path(os.environ["GITHUB_OUTPUT"]).open("a") as output:
                 output.write(f"changed={str(changed).lower()}\n")
         return
-    work = ROOT / "_build/source"
-    if work.exists():
-        shutil.rmtree(work)
-    manifest = prepare(catalog, revisions, work)
     output = args.output.resolve()
     if ROOT.is_relative_to(output) or output in (SITE, CACHE) or (output / ".git").exists():
         raise ValueError("The HTML output must be a dedicated build directory")
     if output.exists():
         shutil.rmtree(output)
-    env = {**os.environ, "TUTORIALS_BASE_URL": args.base_url}
-    subprocess.run([sys.executable, "-m", "sphinx", "-b", "html", "-W", "--keep-going",
-                    str(work), str(args.output)], check=True, cwd=ROOT, env=env)
-    (args.output / "source-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    (args.output / ".nojekyll").touch()
-    subprocess.run([sys.executable, str(SITE / "check.py"), str(args.output)], check=True)
-    print(f"Built {len(catalog['tutorials'])} tutorials at {args.output}")
+    from bs4 import BeautifulSoup
+    root_url = args.base_url.rstrip("/") + "/"
+    versions = {"versions": {}}
+    for channel, revisions in plan["versions"].items():
+        destination = output if channel == "latest" else output / "dev"
+        url = root_url if channel == "latest" else root_url + "dev/"
+        catalog = load_catalog(revisions["site_commit"])
+        catalog["theme"] = plan["theme"]
+        build_channel(catalog, revisions, destination, url, root_url)
+        documents = {}
+        for page in sorted(destination.rglob("*.html")):
+            if channel == "latest" and page.relative_to(destination).parts[0] == "dev":
+                continue
+            soup = BeautifulSoup(page.read_text(), "html.parser")
+            documents[page.relative_to(destination).with_suffix("").as_posix()] = [
+                element["id"] for element in soup.select("[id]")
+            ]
+        versions["versions"][channel] = {"url": url, "commit": revisions["site_commit"], "documents": documents}
+    payload = json.dumps(versions, separators=(",", ":")) + "\n"
+    for channel in plan["versions"]:
+        destination = output if channel == "latest" else output / "dev"
+        (destination / "_static/docs-versions.json").write_text(payload)
+    (output / "docs-versions.json").write_text(payload)
+    (output / "versions-manifest.json").write_text(json.dumps(plan, indent=2) + "\n")
+    (output / ".nojekyll").touch()
+    subprocess.run([sys.executable, str(SITE / "check.py"), str(output)], check=True)
+    print(f"Built Latest and Dev tutorials at {output}")
 
 
 if __name__ == "__main__":
