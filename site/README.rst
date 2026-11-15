@@ -42,6 +42,9 @@ links, desktop/mobile navigation and dark/light themes. Compare code cells in
 published companions with their canonical source. Report notebook calculations
 separately from rendering and publication checks.
 
+Check that links among the main documentation, Tutorials and Database Explorer
+use the current tab when updating the shared theme.
+
 Publication and external refreshes
 ---------------------------------
 
