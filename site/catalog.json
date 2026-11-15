@@ -1,12 +1,14 @@
 {
   "theme": {
     "repository": "it-is-me-mario/MARIO",
-    "revision": "aab33317d3d8e828608c96c8734bdd5f3716b4c5"
+    "revision": "d55270991387a0e93e7088b7af71da3fe2b35114"
   },
   "tutorials": [
     {
       "slug": "economy-wide-impact-assessment",
       "title": "Economy-wide impact assessment",
+      "category": "Scenarios & impacts",
+      "question": "What changes when the electricity mix changes?",
       "summary": "Prepare Italy's 2022 supply-use system, compare electricity scenarios in MARIO and export the shared inputs to CVXLab.",
       "repository": "it-is-me-mario/Tutorials",
       "notebook": "Economy-wide impact assessment/economy_wide_impact_assessment.ipynb",
@@ -19,6 +21,8 @@
     {
       "slug": "mrio-disaggregation",
       "title": "MRIO disaggregation",
+      "category": "Model construction",
+      "question": "How can a broad sector become a detailed model?",
       "summary": "Disaggregate cement from a two-region GTAP 12 table using MARIO, an Excel inventory and CVXLab.",
       "repository": "it-is-me-mario/MRIO-disaggregation-model",
       "ref": "main",
@@ -29,6 +33,8 @@
     {
       "slug": "bonsai-ghg",
       "title": "BONSAI GHG footprints",
+      "category": "Environmental footprints",
+      "question": "Where do consumption emissions originate?",
       "summary": "Calculate hybrid input-output GHG footprints with MARIO and compare them with BONSAI's exported GWP100 results.",
       "repository": "it-is-me-mario/Tutorials",
       "notebook": "BONSAI/BONSAI_HIOT_GHG.ipynb",

@@ -40,6 +40,12 @@ commit. ``conf.py`` supplies this site's navigation and search index. The footer
 override supplies links to the main MARIO site. ``_static/tutorials.css`` owns
 notebook layout adaptations.
 
+The catalogue's optional ``category`` and ``question`` fields supply the tutorial
+index's subject labels and question headings; title and summary remain the
+canonical exercise descriptions. ``build.py`` generates the cards, while
+``conf.py`` supplies overview/notebook navigation. Keep each card a single native
+link and retain all source-revision and companion links when changing its layout.
+
 ``build.py`` resolves each external ref once per build. All files belonging to
 that source use that same commit. ``source-manifest.json`` records the publisher,
 theme, source commits and source/download hashes. Notebook cleaning preserves

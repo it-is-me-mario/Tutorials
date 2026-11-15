@@ -34,7 +34,7 @@ html_permalinks_icon = "#"
 html_sidebars = {"**": []}
 CHANNEL = os.environ.get("TUTORIALS_CHANNEL", "latest")
 MASTER = f"https://www.marioproject.com/en/{CHANNEL}/"
-EXPLORER = "https://explorer.marioproject.com/" + ("dev/" if CHANNEL == "dev" else "")
+EXPLORER = "https://explorer.marioproject.com/" + (CHANNEL + "/" if CHANNEL != "latest" else "")
 
 
 def page_context(app, pagename, templatename, context, doctree):
@@ -50,9 +50,9 @@ def page_context(app, pagename, templatename, context, doctree):
             {"label": "Inspecting and exporting", "url": MASTER + "user_guide/inspection/index.html"},
             {"label": "Transformations", "url": MASTER + "user_guide/transformations/index.html"},
         ]},
-        {"key": "explorer", "label": "Database explorer", "url": EXPLORER, "children": [
+        {"key": "explorer", "label": "Explorer", "url": EXPLORER, "children": [
             {"label": "Classifications", "url": EXPLORER + "resources/data-explorer/scope.html"},
-            {"label": "Compare databases", "url": EXPLORER + "resources/data-explorer/compare.html"},
+            {"label": "Indicators", "url": EXPLORER + "resources/data-explorer/compare.html"},
             {"label": "Analyses", "url": EXPLORER + "resources/data-explorer/analyses.html"},
         ]},
         {"key": "resources", "label": "Resources", "url": root, "active": True, "children": [
@@ -71,10 +71,25 @@ def page_context(app, pagename, templatename, context, doctree):
         "ai_notice": "", "closing": None, "topic_navigation": False,
         "changelog_url": MASTER + "changelog.html",
     }
+    hero = context["mario_page"]["hero"]
+    if pagename == "index":
+        hero.update(title="Learn through a complete analysis.",
+                    eyebrow="MARIO Tutorials",
+                    text="Start with a research question. Follow the reasoning, inspect the assumptions and run the notebook with its supporting materials.")
+    else:
+        tutorial = next((item for item in catalog["tutorials"]
+                         if pagename.startswith(item["slug"] + "/")), None)
+        if tutorial:
+            hero["eyebrow"] = tutorial.get("category", "Worked tutorial")
+            hero["breadcrumb"] = {"label": "All tutorials", "url": root}
+            if pagename.endswith("/index"):
+                hero["actions"] = [{"label": "Open the notebook", "url": "notebook.html"}]
+            else:
+                hero["actions"] = [{"label": "Tutorial overview", "url": "index.html"}]
     site_root = os.environ.get("TUTORIALS_SITE_ROOT", html_baseurl).rstrip("/") + "/"
     revision = os.environ.get("TUTORIALS_SOURCE_COMMIT", "")
     context["mario_versions"] = {
-        "current": CHANNEL, "label": "Dev" if CHANNEL == "dev" else "Latest",
+        "current": CHANNEL, "label": {"latest": "Latest", "dev": "Dev", "preview": "Preview"}[CHANNEL],
         "document": pagename,
         "catalogue": root.removesuffix("index.html") + "_static/docs-versions.json",
         "revision": revision[:7],
@@ -82,6 +97,7 @@ def page_context(app, pagename, templatename, context, doctree):
         "choices": [
             {"key": "latest", "label": "Latest", "url": site_root},
             {"key": "dev", "label": "Dev", "url": site_root + "dev/"},
+            {"key": "preview", "label": "Preview", "url": site_root + "preview/"},
         ],
     }
     body = re.sub(r"<h1>.*?</h1>\s*", "", context.get("body", ""), count=1, flags=re.S)

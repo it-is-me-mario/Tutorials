@@ -237,20 +237,25 @@ def prepare(catalog, revisions, destination):
     prepare_theme(catalog, destination)
     manifest = {**revisions, "tutorials": {}}
     lines = [
-        ":summary: Follow MARIO tutorials and download the materials from their source repositories.",
+        ":summary: Complete analyses with a research question, transparent assumptions and downloadable materials.",
         "", "Tutorials", "=========", "",
-        "Follow complete exercises with MARIO, source data and model inputs.",
-        "Each tutorial provides a readable notebook, downloadable materials and its source revision.", "",
-        ".. raw:: html", "", '   <div class="mario-cards mario-cards--2 mario-cards--links">',
+        ".. raw:: html", "",
+        '   <section class="tutorial-start" aria-label="Before you start"><div><span class="mario-eyebrow">New to MARIO?</span><h2>Prepare your first analysis.</h2></div>',
+        '   <p>Install MARIO and learn how input-output tables, supply-use tables and scenarios fit together.</p>',
+        f'   <a href="https://www.marioproject.com/en/{revisions.get("channel", "latest")}/get_started/index.html">Start with the essentials →</a></section>',
+        '   <div class="tutorial-collection">',
     ]
     for tutorial in catalog["tutorials"]:
         slug = tutorial["slug"]
         manifest["tutorials"][slug] = prepare_tutorial(tutorial, revisions, destination)
         lines.extend([
-            '   <section class="mario-card">',
-            f'   <h2 class="mario-card__title"><a href="{slug}/index.html">{escape(tutorial["title"])}</a></h2>',
-            f'   <div class="mario-card__body"><p>{escape(tutorial["summary"])}</p></div>',
-            '   </section>',
+            f'   <a class="tutorial-entry" href="{slug}/index.html">',
+            f'   <div class="tutorial-entry__label"><span class="mario-eyebrow">{escape(tutorial.get("category", "Worked tutorial"))}</span><span class="tutorial-entry__number">{len(manifest["tutorials"]):02d}</span></div>',
+            f'   <h2>{escape(tutorial.get("question", tutorial["title"]))}</h2>',
+            f'   <p class="tutorial-entry__title">{escape(tutorial["title"])}</p>',
+            f'   <p>{escape(tutorial["summary"])}</p>',
+            f'   <div class="tutorial-entry__foot"><span>Notebook + supporting materials</span><span>Open tutorial ↗</span></div>',
+            '   </a>',
         ])
     lines.extend(['   </div>', "", ".. toctree::", "   :hidden:", ""])
     for tutorial in catalog["tutorials"]:
