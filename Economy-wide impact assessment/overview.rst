@@ -221,15 +221,17 @@ separate contribution of secondary electricity production.
 .. _choose-the-calculation-path:
 
 Continue in MARIO or CVXLab
---------------------------
+---------------------------
 
-* `Continue in MARIO <#scenario-analysis-in-mario>`_ to calculate the scenarios
+* :ref:`Continue in MARIO <impact-scenario-analysis>` to calculate the scenarios
   and compare their accounting results with the methods in the notebook.
-* `Continue in CVXLab <#continue-in-cvxlab>`_ to export this common reference and
+* :ref:`Continue in CVXLab <impact-continue-in-cvxlab>` to export this common reference and
   build the model described in the companion tutorial.
 
+.. _impact-continue-in-cvxlab:
+
 Continue in CVXLab
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Obtain the receiving ``model_settings.xlsx`` from the CVXLab materials, then
 export the prepared reference with ``db.to_cvxlab()``. The complete mapping in
@@ -271,8 +273,10 @@ by 1,000,000. Align the receiving model's presentation units with its inputs.
 The CVXLab page explains its model definition, file setup and solution steps.
 `Continue with the CVXLab tutorial <https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_.
 
+.. _impact-scenario-analysis:
+
 Scenario analysis in MARIO
--------------------------
+--------------------------
 
 High_RES
 ~~~~~~~~
@@ -342,7 +346,7 @@ and the changes from the reference. The CVXLab equations were checked against
 the same fixed-coefficient assumptions independently of its supplied workbooks.
 
 Export the matrices and matching sets
-------------------------------------
+-------------------------------------
 
 The MARIO path writes twelve labelled CSV matrices for all three scenarios,
 ``sets.xlsx`` and ``scenario_summary.csv`` under ``results``.
