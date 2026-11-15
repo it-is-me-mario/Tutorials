@@ -76,8 +76,9 @@ calculations separately when changing a notebook. The website build renders
 and cleans notebooks without executing their calculations.
 For paired tutorials, compare the introductory structure, problem statement,
 materials and scenario assumptions with the identified counterpart revision.
-Verify reference shares against the full source supply column, including
-secondary production, and keep the guide and notebook's preparation order aligned.
+Verify reference-share denominators against the model's activity filters and
+account for secondary production explicitly. Keep preparation order aligned
+between the guide and notebook.
 
 Publication and external refreshes
 ---------------------------------

@@ -33,7 +33,7 @@ and `CVXLab installation <https://cvxlab.readthedocs.io/en/dev/installation.html
    Compare the **Reference** system with the two scenarios used by the CVXLab
    exercise.
 
-   * **High_RES** assigns the High RES domestic electricity-supply shares below.
+   * **High_RES** assigns the High RES electricity-generation shares below.
    * **High_RES_domestic** adds domestic substitution of imported electricity
      to that mix. Imported electricity for production and final consumption is
      redirected to the domestic electricity product.
@@ -45,25 +45,26 @@ and `CVXLab installation <https://cvxlab.readthedocs.io/en/dev/installation.html
    .. math::
 
       \begin{array}{lrr}
-      \text{Electricity supplied by...} & \text{Reference (2022)} & \text{High RES} \\
+      \text{Electricity generation by...} & \text{Reference (2022)} & \text{High RES} \\
       \hline
-      \text{Coal} & 10.79\% & 0.0\% \\
-      \text{Gas} & 61.47\% & 0.0\% \\
+      \text{Coal} & 11.04\% & 0.0\% \\
+      \text{Gas} & 62.94\% & 0.0\% \\
       \text{Nuclear} & 0.00\% & 15.0\% \\
-      \text{Hydro} & 9.81\% & 9.0\% \\
-      \text{Wind} & 1.34\% & 38.0\% \\
-      \text{Petroleum} & 8.91\% & 0.0\% \\
-      \text{Biomass and waste} & 1.87\% & 5.0\% \\
+      \text{Hydro} & 10.04\% & 9.0\% \\
+      \text{Wind} & 1.38\% & 38.0\% \\
+      \text{Petroleum} & 9.12\% & 0.0\% \\
+      \text{Biomass and waste} & 1.92\% & 5.0\% \\
       \text{Solar photovoltaic} & 0.06\% & 31.0\% \\
       \text{Tide, wave, ocean} & 0.00\% & 0.5\% \\
-      \text{Geothermal} & 1.56\% & 1.5\% \\
-      \text{Others} & 4.19\% & 0.0\% \\
+      \text{Geothermal} & 1.60\% & 1.5\% \\
+      \text{Others} & 1.91\% & 0.0\% \\
       \end{array}
 
-   These are shares of monetary domestic electricity supply. Reference shares
-   are calculated from the Italian EXIOBASE SUT used in the notebook. Others
-   includes the remaining electricity activities and secondary production by
-   other industries. High RES shares specify the common teaching scenario.
+   These are monetary production shares within the electricity-generation
+   activities. Reference values come from the Italian EXIOBASE SUT used in the
+   notebook. Others combines solar thermal and the remaining electricity
+   activity. Secondary electricity production by other industries retains its
+   reference market share. High RES shares specify the common teaching scenario.
 
    Calculate each scenario's percentage change in value added, imports and GHG
    emissions relative to Reference, then compare the two High RES outcomes.
@@ -208,7 +209,8 @@ The same commodity mapping also aggregates the import accounts.
 The prepared reference has **189 products, 163 activities, 9 final-demand
 categories, 12 factors of production and one GHG indicator**. The notebook checks
 these dimensions and verifies ``IMP_a = imp_a × Xa`` column by column. It also
-shows the reference electricity shares used in the problem statement.
+shows the generation-activity shares used in the problem statement and the
+separate contribution of secondary electricity production.
 
 Continue in MARIO or CVXLab
 --------------------------
