@@ -17,6 +17,8 @@ def check(output):
     count = 0
     for path in output.rglob("*.html"):
         soup = BeautifulSoup(path.read_text(), "html.parser")
+        if path.name not in {"search.html", "genindex.html"}:
+            assert len(soup.select("h1")) == 1, f"Expected one page heading in {path}"
         for element in soup.select("a[href], script[src], img[src], link[href]"):
             address = element.get("href", element.get("src", ""))
             parsed = urlsplit(address)

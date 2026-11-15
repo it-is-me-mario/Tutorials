@@ -69,7 +69,8 @@ def page_context(app, pagename, templatename, context, doctree):
         "ai_notice": "", "closing": None, "topic_navigation": False,
         "changelog_url": MASTER + "changelog.html",
     }
-    context["body"] = re.sub(r"<h1>.*?</h1>\s*", "", context.get("body", ""), count=1, flags=re.S)
+    body = re.sub(r"<h1>.*?</h1>\s*", "", context.get("body", ""), count=1, flags=re.S)
+    context["body"] = body.replace("<h1>", "<h2>").replace("</h1>", "</h2>")
 
 
 def search_index(app, exception):

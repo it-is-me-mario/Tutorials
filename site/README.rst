@@ -34,6 +34,9 @@ repository root::
    python site/check.py _site
    python -m http.server 8767 --directory _site
 
+Keep the clean CI build passing with these requirements alone. IPython supplies
+the notebook's ``ipython3`` syntax lexer, including cells containing magics.
+
 Review the index, each notebook, all companion downloads, the source-revision
 links, desktop/mobile navigation and dark/light themes. Compare code cells in
 published companions with their canonical source. Report notebook calculations
