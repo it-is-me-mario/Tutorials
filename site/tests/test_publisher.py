@@ -77,7 +77,7 @@ class PublisherTests(unittest.TestCase):
         guide = b"Reference system\n----------------\n\nA worked explanation.\n"
         tutorial = {"slug": "example", "title": "Example", "summary": "An example.",
                     "repository": "owner/source", "ref": "main", "notebook": "run.ipynb",
-                    "guide": "overview.rst"}
+                    "guide": "overview.rst", "guide_includes_downloads": True}
         revisions = {"site_commit": "a" * 40, "external_sources": {"owner/source@main": "b" * 40}}
         with TemporaryDirectory() as folder, patch.object(publisher, "cached_source") as fetch:
             fetch.side_effect = [notebook, guide]
@@ -87,6 +87,8 @@ class PublisherTests(unittest.TestCase):
             page = Path(folder) / "example"
             self.assertEqual((page / "overview.rst.inc").read_bytes(), guide)
             self.assertIn(".. include:: overview.rst.inc", (page / "index.rst").read_text())
+            self.assertNotIn("Run the tutorial", (page / "index.rst").read_text())
+            self.assertIn("   :hidden:", (page / "index.rst").read_text())
 
     def test_source_paths_stay_inside_the_snapshot(self):
         for name in ("../other", "/absolute", "."):
