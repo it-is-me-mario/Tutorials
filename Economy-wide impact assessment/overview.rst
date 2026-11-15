@@ -60,8 +60,8 @@ The key configuration is::
        trade_resolution="aggregate",
    )
 
-Matrices for CVXLab
--------------------
+Prepared matrices
+-----------------
 
 .. list-table:: Exported MARIO matrices
    :header-rows: 1
