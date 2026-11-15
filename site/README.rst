@@ -57,6 +57,13 @@ downloadable settings, then execute the MARIO preparation independently of the
 receiving optimisation model. Record the development revision when the exercise
 depends on an API awaiting release.
 
+For Economy-wide impact assessment, the prepared reference is shared with CVXLab
+and the MARIO path continues through scenario results. Execute that complete path
+and reconcile the selected summary CSV with the notebook. Report the optional
+CVXLab export/model path separately, including receiving settings and coordinate
+requirements. Review recipes for technologies activated from zero production
+before interpreting a scenario, alongside the numerical equation checks.
+
 Publication and external refreshes
 ---------------------------------
 

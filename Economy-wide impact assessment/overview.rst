@@ -1,7 +1,9 @@
 Prepare Italy's 2022 reference supply-use system with separate import accounts,
-then continue with the electricity-generation scenarios in CVXLab. This is the
-MARIO half of `Economy-wide impact assessment
-<https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_.
+then compare electricity-generation scenarios entirely in MARIO. At the end of
+data preparation, you can also export the shared reference and follow
+`Economy-wide impact assessment in CVXLab
+<https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_,
+which demonstrates its own model construction and scenario calculations.
 
 Reference system
 ----------------
@@ -12,7 +14,8 @@ categories, 12 factors of production and one GHG indicator**. Electricity
 commodities are combined into one product, while generation technologies retain
 their individual activities.
 
-The notebook produces twelve labelled CSV matrices and ``sets.xlsx``. Imports
+The notebook produces twelve labelled CSV matrices for three scenarios,
+``sets.xlsx`` and a summary. Imports
 have their own matrices, with one row per imported commodity. The value-added
 matrix retains the domestic factors of production.
 
@@ -45,8 +48,8 @@ Prepare the reference system
    foreign origins and export destinations.
 3. Characterise GHG emissions using IPCC AR6 GWP100 and combine electricity
    commodities into one product.
-4. Check the dimensions and import coefficients, then export the matrices
-   and the matching sets.
+4. Check the dimensions and import coefficients, then choose the MARIO or
+   CVXLab path from this common reference.
 
 The key configuration is::
 
@@ -94,13 +97,46 @@ monetary flows in EUR and GHG flows in kg CO2-equivalent. CVXLab's tutorial
 presents M EUR and kt CO2-equivalent, obtained by dividing these flow values
 by 1,000,000. Use a consistent scale in the receiving model.
 
-The receiving CVXLab settings must match the full classification, separate
-matrices and units. Continue with the `CVXLab tutorial
-<https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_
-to formulate and solve the generation scenarios.
+Choose the calculation path
+---------------------------
+
+**Continue in MARIO.** The remaining notebook cells build ``High_RES`` and
+``High_RES_domestic`` from the reference. The first changes the electricity
+generation mix. The second also transfers imported electricity to domestic
+intermediate and final demand. MARIO solves the quantity model and reconstructs
+output, supply, use, imports, factors and GHG flows for all three scenarios.
+
+**Continue in CVXLab.** Use ``db.to_cvxlab()`` with the receiving
+``model_settings.xlsx`` and an explicit set/table mapping. The notebook shows
+the export, the ``cvxlab.Model`` constructor, environment initialisation and
+the sequential solution calls. Its optional export is disabled during the
+MARIO-only calculation. The receiving settings must match the full classification
+and units. Review the export report and complete the coordinate attributes and
+scenario shocks described by the `CVXLab tutorial
+<https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_.
+
+The current CVXLab materials combine intermediate and final accounts in shared
+tables. The notebook mapping follows those declared table names. Table names
+and separation for the workshop will be agreed before publication.
+
+Interpret the comparison
+------------------------
+
+The exercise prescribes the mix and holds reference technology coefficients
+fixed. Italy has zero reference production for nuclear and tide/wave generation
+in this source, while the illustrative High RES mix assigns both a positive
+share. The replicated calculation keeps their stored empty recipes, so these
+activities contribute no intermediate inputs or direct emissions. Suitable
+technology recipes are needed before interpreting their activation as a
+realistic transition scenario.
+
+The downloadable ``scenario_summary.csv`` records the executed MARIO results
+in M EUR and kt CO2-equivalent. The complete notebook shows their calculation
+and the changes from the reference. The CVXLab equations were checked against
+the same fixed-coefficient assumptions independently of its supplied workbooks.
 
 See MARIO's `single-region API
-<https://www.marioproject.com/en/latest/api_document/mario.Database.to_single_region.html>`_
+<https://www.marioproject.com/en/dev/api_document/mario.Database.to_single_region.html>`_
 and `export API
-<https://www.marioproject.com/en/latest/api_document/mario.Database.export.html>`_
+<https://www.marioproject.com/en/dev/api_document/mario.Database.export.html>`_
 for the operations demonstrated by the notebook.
