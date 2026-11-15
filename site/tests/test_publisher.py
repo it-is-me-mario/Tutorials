@@ -1,6 +1,7 @@
 """Regressions for canonical source handling and external-source publication."""
 
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -70,6 +71,22 @@ class PublisherTests(unittest.TestCase):
         with patch.object(publisher, "request_bytes", side_effect=HTTPError("url", 503, "unavailable", {}, None)):
             with self.assertRaises(HTTPError):
                 publisher.updates_needed({}, "https://tutorials.example")
+
+    def test_guide_comes_from_the_notebook_source_revision(self):
+        notebook = nbformat.writes(nbformat.v4.new_notebook()).encode()
+        guide = b"Reference system\n----------------\n\nA worked explanation.\n"
+        tutorial = {"slug": "example", "title": "Example", "summary": "An example.",
+                    "repository": "owner/source", "ref": "main", "notebook": "run.ipynb",
+                    "guide": "overview.rst"}
+        revisions = {"site_commit": "a" * 40, "external_sources": {"owner/source@main": "b" * 40}}
+        with TemporaryDirectory() as folder, patch.object(publisher, "cached_source") as fetch:
+            fetch.side_effect = [notebook, guide]
+            manifest = publisher.prepare_tutorial(tutorial, revisions, Path(folder))
+            self.assertEqual([call.args[1] for call in fetch.call_args_list], ["b" * 40] * 2)
+            self.assertEqual(manifest["guide"], {"path": "overview.rst", "sha256": hashlib.sha256(guide).hexdigest()})
+            page = Path(folder) / "example"
+            self.assertEqual((page / "overview.rst.inc").read_bytes(), guide)
+            self.assertIn(".. include:: overview.rst.inc", (page / "index.rst").read_text())
 
     def test_source_paths_stay_inside_the_snapshot(self):
         for name in ("../other", "/absolute", "."):

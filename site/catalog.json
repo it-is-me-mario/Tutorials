@@ -1,9 +1,17 @@
 {
   "theme": {
     "repository": "it-is-me-mario/MARIO",
-    "revision": "8d5f6e7c669ab156f912c40ca649948e22bb0164"
+    "revision": "b5a48c869c40dd251e5a8224291cab57e148db94"
   },
   "tutorials": [
+    {
+      "slug": "economy-wide-impact-assessment",
+      "title": "Economy-wide impact assessment",
+      "summary": "Prepare Italy's full 2022 supply-use system and separate imports for the twin electricity-scenario tutorial in CVXLab.",
+      "repository": "it-is-me-mario/Tutorials",
+      "notebook": "Economy-wide impact assessment/economy_wide_impact_assessment.ipynb",
+      "guide": "Economy-wide impact assessment/overview.rst"
+    },
     {
       "slug": "mrio-disaggregation",
       "title": "MRIO disaggregation",

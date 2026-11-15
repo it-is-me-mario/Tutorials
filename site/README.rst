@@ -10,6 +10,13 @@ creates temporary render and download copies under ``_build``; these copies are
 excluded from Git. The source repository's history and original URLs remain the
 permanent record.
 
+An optional ``guide`` selects an RST explanation from the same repository and
+resolved revision as the notebook. Write it without a page title, which the
+catalogue supplies. The builder includes a temporary ``.rst.inc`` copy in the
+tutorial landing page and records its source hash separately from downloads.
+Keep prerequisites, data scope, selected results and the next stage in this
+guide; keep the full calculation in the companion notebook.
+
 The shared MARIO theme is imported at the full commit recorded in the catalogue.
 Review its templates, CSS, scripts and logo assets together when updating that
 commit. ``conf.py`` supplies this site's navigation and search index. The footer
@@ -41,6 +48,14 @@ Review the index, each notebook, all companion downloads, the source-revision
 links, desktop/mobile navigation and dark/light themes. Compare code cells in
 published companions with their canonical source. Report notebook calculations
 separately from rendering and publication checks.
+
+Check navigation among the main documentation, Tutorials and Database Explorer
+in the current tab. Update the shared-theme pin in both consumer repositories
+when changing the canonical script in MARIO. For a twin tutorial, verify the
+counterpart's classification and units against its documented model and its
+downloadable settings, then execute the MARIO preparation independently of the
+receiving optimisation model. Record the development revision when the exercise
+depends on an API awaiting release.
 
 Publication and external refreshes
 ---------------------------------
