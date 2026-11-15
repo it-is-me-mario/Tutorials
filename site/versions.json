@@ -1,4 +1,5 @@
 {
   "latest": {"ref": "main"},
-  "dev": {"ref": "codex/economy-wide-tutorial"}
+  "dev": {"ref": "codex/economy-wide-tutorial"},
+  "preview": {"ref": "codex/visual-refresh"}
 }
