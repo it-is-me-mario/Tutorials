@@ -6,3 +6,9 @@
 - When adapting an existing notebook without changing its code, compare its code cells with the source. Allow only the agreed path substitutions; put explanations in Markdown cells.
 - Clear saved outputs and execution counts when preparing an unexecuted, portable copy. Validate notebook structure and code syntax, and state whether the full calculation was rerun.
 - Before committing, inspect repository status and include only the intended tutorial files. Preserve unrelated local changes.
+
+## Published tutorial site
+
+- Register tutorials and their canonical source files in `site/catalog.json`.
+- Maintain notebooks in the registered source repository. The site generates its render and download copies during the build.
+- Follow `site/README.rst` for source refreshes, verification, theme updates and publication.

@@ -1,0 +1,26 @@
+{
+  "theme": {
+    "repository": "it-is-me-mario/MARIO",
+    "revision": "e10ad6dcff5910ae42214c3011177dfa233a3f56"
+  },
+  "tutorials": [
+    {
+      "slug": "mrio-disaggregation",
+      "title": "MRIO disaggregation",
+      "summary": "Disaggregate cement from a two-region GTAP 12 table using MARIO, an Excel inventory and CVXLab.",
+      "repository": "it-is-me-mario/MRIO-disaggregation-model",
+      "ref": "main",
+      "notebook": "Run_example_disaggregation.ipynb",
+      "materials": ["GTAP12_example_db.xlsx", "Inventory_example.xlsx"],
+      "instructions": "README.md"
+    },
+    {
+      "slug": "bonsai-ghg",
+      "title": "BONSAI GHG footprints",
+      "summary": "Calculate hybrid input-output GHG footprints with MARIO and compare them with BONSAI's exported GWP100 results.",
+      "repository": "it-is-me-mario/Tutorials",
+      "notebook": "BONSAI/BONSAI_HIOT_GHG.ipynb",
+      "materials": ["BONSAI/footprint_ghg_comparison.csv"]
+    }
+  ]
+}
