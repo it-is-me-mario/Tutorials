@@ -130,6 +130,26 @@ activities contribute no intermediate inputs or direct emissions. Suitable
 technology recipes are needed before interpreting their activation as a
 realistic transition scenario.
 
+.. list-table:: Executed MARIO comparison
+   :header-rows: 1
+
+   * - Scenario
+     - Factors of production (M EUR)
+     - Imports (M EUR)
+     - GHG (kt CO2-equivalent)
+   * - Reference
+     - 1,825,700.67
+     - 503,721.04
+     - 327,854.04
+   * - High_RES
+     - 1,825,129.20
+     - 497,532.19
+     - 292,781.21
+   * - High_RES_domestic
+     - 1,828,088.25
+     - 493,913.29
+     - 295,718.81
+
 The downloadable ``scenario_summary.csv`` records the executed MARIO results
 in M EUR and kt CO2-equivalent. The complete notebook shows their calculation
 and the changes from the reference. The CVXLab equations were checked against
