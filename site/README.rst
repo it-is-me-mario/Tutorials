@@ -51,10 +51,10 @@ separately from rendering and publication checks.
 
 Check navigation among the main documentation, Tutorials and Database Explorer
 in the current tab. Update the shared-theme pin in both consumer repositories
-when changing the canonical script in MARIO. For a twin tutorial, verify the
+when changing the canonical script in MARIO. For tutorials sharing data, verify the
 counterpart's classification and units against its documented model and its
 downloadable settings, then execute the MARIO preparation independently of the
-receiving optimisation model. Record the development revision when the exercise
+receiving model. Record the development revision when the exercise
 depends on an API awaiting release.
 
 For Economy-wide impact assessment, the prepared reference is shared with CVXLab
