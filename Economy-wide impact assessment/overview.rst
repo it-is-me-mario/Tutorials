@@ -69,6 +69,8 @@ and `CVXLab installation <https://cvxlab.readthedocs.io/en/dev/installation.html
    Calculate each scenario's percentage change in value added, imports and GHG
    emissions relative to Reference, then compare the two High RES outcomes.
 
+.. _environment-and-inputs:
+.. _run-the-tutorial:
 .. _tutorial-materials:
 
 .. rubric:: Tutorial materials
@@ -89,6 +91,8 @@ available as :doc:`Notebook <notebook>`.
 
 The source archives are obtained in Database download. The notebook writes the
 scenario matrices, ``sets.xlsx`` and an updated summary under ``results``.
+
+.. _prepare-the-reference-system:
 
 Database download
 -----------------
@@ -183,6 +187,8 @@ emissions are represented in ``EY``.
    db.calc_ghg(profile="exiobase_monetary", label=ghg_label)
    db.keep_extensions([ghg_label])
 
+.. _reference-system:
+
 Aggregation
 -----------
 
@@ -211,6 +217,8 @@ categories, 12 factors of production and one GHG indicator**. The notebook check
 these dimensions and verifies ``IMP_a = imp_a × Xa`` column by column. It also
 shows the generation-activity shares used in the problem statement and the
 separate contribution of secondary electricity production.
+
+.. _choose-the-calculation-path:
 
 Continue in MARIO or CVXLab
 --------------------------
@@ -298,6 +306,8 @@ row. Intermediate transfers update ``u`` and ``imp_a``. Final-demand transfers
 update ``Yc`` and ``IMP_Y``. The notebook rebuilds the flows and checks that both
 intermediate and direct final-demand electricity imports are zero.
 
+.. _interpret-the-comparison:
+
 Compare and interpret the results
 ---------------------------------
 
@@ -336,6 +346,8 @@ Export the matrices and matching sets
 
 The MARIO path writes twelve labelled CSV matrices for all three scenarios,
 ``sets.xlsx`` and ``scenario_summary.csv`` under ``results``.
+
+.. _prepared-matrices:
 
 .. list-table:: Exported MARIO matrices
    :header-rows: 1
