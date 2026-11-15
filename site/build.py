@@ -85,6 +85,8 @@ def load_catalog(revision=None):
             source_path(name)
         if tutorial.get("guide"):
             source_path(tutorial["guide"])
+        if tutorial.get("guide_includes_downloads") and not tutorial.get("guide"):
+            raise ValueError("A guide with download links requires a guide source")
         basenames = [source_path(name).name for name in [tutorial["notebook"], *tutorial.get("materials", ())]]
         if len(basenames) != len(set(basenames)) or "notebook.ipynb" in basenames:
             raise ValueError(f"Tutorial {slug!r} has conflicting download names")
@@ -201,20 +203,25 @@ def prepare_tutorial(tutorial, revisions, destination):
     lines.extend([
         f"Read the `source repository <https://github.com/{repository}>`_ and the",
         f"`version used for this page <{source_url}>`_.", "",
-        "Run the tutorial", "----------------", "",
-        "Download the notebook and its supporting files into one working folder.",
-        "Follow the notebook's environment and source-data instructions before running it.",
-        "",
-        f"* :download:`Notebook <{notebook_name}>`",
     ])
-    for name in tutorial.get("materials", ()):
-        basename = source_path(name).name
-        lines.append(f"* :download:`{basename} <{basename}>`")
+    if not tutorial.get("guide_includes_downloads"):
+        lines.extend([
+            "Run the tutorial", "----------------", "",
+            "Download the notebook and its supporting files into one working folder.",
+            "Follow the notebook's environment and source-data instructions before running it.",
+            "", f"* :download:`Notebook <{notebook_name}>`",
+        ])
+        for name in tutorial.get("materials", ()):
+            basename = source_path(name).name
+            lines.append(f"* :download:`{basename} <{basename}>`")
     if tutorial.get("instructions"):
         path = quote(tutorial["instructions"])
         instructions = f"https://github.com/{repository}/blob/{revision}/{path}"
         lines.extend(["", f"`Repository instructions <{instructions}>`_ supply the original setup notes."])
-    lines.extend(["", ".. toctree::", "   :maxdepth: 2", "", "   Notebook <notebook>", ""])
+    lines.extend(["", ".. toctree::", "   :maxdepth: 2"])
+    if tutorial.get("guide_includes_downloads"):
+        lines.append("   :hidden:")
+    lines.extend(["", "   Notebook <notebook>", ""])
     (folder / "index.rst").write_text("\n".join(lines))
     return {**provenance, "files": files, **guide_record}
 

@@ -28,6 +28,11 @@ permanent record.
 An optional ``guide`` names an RST explanation from the notebook's source and
 revision. The publisher includes a generated ``.rst.inc`` copy in the landing
 page and records its hash. Keep the full calculation in the notebook companion.
+Set ``guide_includes_downloads`` when the guide places its own Tutorial materials
+section. Include ``:download:`` links using the notebook and material basenames,
+and a ``:doc:`` link to ``notebook`` for the readable companion. The publisher
+then keeps the notebook toctree hidden. The link/download checker verifies the
+guide's links and every material hash alongside the rendered notebook.
 
 The shared MARIO theme is imported at the full commit recorded in the catalogue.
 Review its templates, CSS, scripts and logo assets together when updating that
