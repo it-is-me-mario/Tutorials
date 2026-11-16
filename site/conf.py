@@ -101,7 +101,7 @@ def page_context(app, pagename, templatename, context, doctree):
     site_root = os.environ.get("TUTORIALS_SITE_ROOT", html_baseurl).rstrip("/") + "/"
     revision = os.environ.get("TUTORIALS_SOURCE_COMMIT", "")
     context["mario_versions"] = {
-        "current": CHANNEL, "label": {"latest": "Latest", "dev": "Dev", "preview": "Preview"}[CHANNEL],
+        "current": CHANNEL, "label": {"latest": "Latest", "dev": "Dev"}[CHANNEL],
         "document": pagename,
         "catalogue": root.removesuffix("index.html") + "_static/docs-versions.json",
         "revision": revision[:7],
@@ -109,7 +109,6 @@ def page_context(app, pagename, templatename, context, doctree):
         "choices": [
             {"key": "latest", "label": "Latest", "url": site_root},
             {"key": "dev", "label": "Dev", "url": site_root + "dev/"},
-            {"key": "preview", "label": "Preview", "url": site_root + "preview/"},
         ],
     }
     body = re.sub(r"<h1>.*?</h1>\s*", "", context.get("body", ""), count=1, flags=re.S)

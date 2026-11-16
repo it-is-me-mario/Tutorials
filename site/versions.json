@@ -4,8 +4,5 @@
   },
   "dev": {
     "ref": "main"
-  },
-  "preview": {
-    "ref": "main"
   }
 }

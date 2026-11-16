@@ -4,23 +4,21 @@ Tutorial site maintenance
 Sources and ownership
 ---------------------
 
-``versions.json`` selects the content refs for Latest, Dev and Preview. Latest uses the
-existing root routes; Dev and Preview use ``/dev/`` and ``/preview/``. The publisher reads
-each catalogue, notebook, guide and material at the selected commit. Source
-notebooks remain in their canonical repositories. The shared frontend is pinned
-by the publisher's catalogue for Latest and Dev. Preview uses the theme and
-presentation files from its own recorded source commit, so a design experiment
-does not alter the other channels. ``preview_renderer`` materializes the committed
-builder, Sphinx configuration, stylesheet and footer in the ignored build cache.
+``versions.json`` selects content refs for Latest at the root and Dev under
+``/dev/``. The publisher reads each catalogue, notebook, guide and material at
+the selected commit. Source notebooks remain in their canonical repositories.
+Both channels use the publisher's presentation and pinned shared theme.
 
-``versions-manifest.json`` records the publisher and each channel's resolved source
-commits. Each channel also retains its own ``source-manifest.json`` and downloads.
-``docs-versions.json`` records available HTML pages and anchors for the common
-Latest/Dev/Preview selector. Its native links open each channel home when scripts are
-unavailable. A missing counterpart page falls back to that home.
-The shared theme's ``partials/versions.html`` supplies a floating bottom-right
-control outside the header, with the choices opening upward. Check its fixed
-position while scrolling and its keyboard behaviour at narrow widths.
+``versions-manifest.json`` records the publisher and resolved source commits.
+Each channel retains its own ``source-manifest.json`` and downloads.
+``docs-versions.json`` records HTML pages and anchors for the Latest/Dev selector.
+Its native links open each channel home without scripts; a missing counterpart
+falls back to that home. The floating control opens upward above the footer.
+
+Preview is retired. Its old HTML routes redirect to their matching Latest page
+(or Dev for a Dev-only page), preserving the query string and fragment. These
+small redirect pages have no duplicate data or downloads and are excluded from
+the channel inventories. Check old links to merged tutorials as well.
 
 ``catalog.json`` owns the tutorial routes, summaries, source repositories and
 material lists. Edit each notebook in its listed source repository. The build
@@ -74,12 +72,6 @@ steps and disclosure directives, without installing the main site's navigation.
 Keep the original documentation addresses working when adding a guide to this
 catalogue, and route the Examples index to the corresponding tutorial pages.
 
-Preview is built by the current main-branch publisher, which loads its selected source's
-committed ``build.py`` and ``conf.py`` presentation and its independent theme pin.
-Use that publisher for the complete Latest/Dev/Preview verification and deployment.
-Check the catalogue's tutorial overviews, rendered notebooks, figures and companion
-downloads together, including the joint logos on light/dark and narrow layouts.
-
 ``build.py`` resolves each external ref once per build. All files belonging to
 that source use that same commit. ``source-manifest.json`` records the publisher,
 theme, source commits and source/download hashes. Notebook cleaning preserves
@@ -113,8 +105,6 @@ restored when returning through browser history or to an already open page.
 The shared theme owns this preference; do not add a separate site default.
 
 Review all channel homes, a shared tutorial page and any channel-specific exercise.
-Include Preview's catalogue and every tutorial/download pair. Check its selected
-theme pin and confirm its header stays in Preview when opening MARIO or Explorer.
 Check the selector, same-page/anchor switching, fallback, download hashes and
 navigation to the corresponding MARIO and Explorer channel. Run the source
 calculations separately when changing a notebook. The website build renders

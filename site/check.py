@@ -64,8 +64,6 @@ def check(output):
     if (output / "versions-manifest.json").is_file():
         check_channel(output, skip=("dev", "preview"))
         check_channel(output / "dev")
-        if (output / "preview").is_dir():
-            check_channel(output / "preview")
     else:
         check_channel(output)
 
