@@ -4,4 +4,4 @@ _site/
 __pycache__/
 
 Economy-wide impact assessment/source_data/
-Economy-wide impact assessment/cvxlab_model/
+Economy-wide impact assessment/cvxlab_model/database.db*
