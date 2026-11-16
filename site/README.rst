@@ -96,6 +96,9 @@ separately from rendering and publication checks.
 
 Check that links among the main documentation, Tutorials and Database Explorer
 use the current tab when updating the shared theme.
+Check that the last explicit light/dark choice follows those links and is
+restored when returning through browser history or to an already open page.
+The shared theme owns this preference; do not add a separate site default.
 
 Review all channel homes, a shared tutorial page and any channel-specific exercise.
 Include Preview's catalogue and every tutorial/download pair. Check its selected
