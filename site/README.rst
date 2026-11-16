@@ -28,6 +28,18 @@ creates temporary render and download copies under ``_build``; these copies are
 excluded from Git. The source repository's history and original URLs remain the
 permanent record.
 
+``collections`` combines related source entries into one tutorial page and one
+catalogue card. Each part has a heading and stable anchor. Its notebook retains
+its original route, source revision and download hash; former overview routes
+redirect to the corresponding section. Keep the parts' methods and input years
+explicit when they differ. Check the combined explanations, relocated image and
+download links, redirects and search entries together.
+
+Use descriptive titles and concrete summaries. Avoid repeating the summary in
+an introductory slogan or restating setup instructions after every section.
+Keep units, data requirements, attribution and interpretation limits visible.
+All channels use the three named authors in ``conf.py`` for their copyright.
+
 An optional ``guide`` names an RST explanation from the notebook's source and
 revision. The publisher includes a generated ``.rst.inc`` copy in the landing
 page and records its hash. Keep the full calculation in the notebook companion.

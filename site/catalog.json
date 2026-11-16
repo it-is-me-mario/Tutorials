@@ -8,7 +8,7 @@
       "slug": "economy-wide-impact-assessment",
       "title": "Economy-wide impact assessment",
       "category": "Scenarios & impacts",
-      "summary": "Prepare Italy's Small Scale supply-use system, retain twelve electricity technologies, compare scenarios in MARIO and export to CVXLab.",
+      "summary": "Change Italy’s electricity supply, calculate the effects on value added, imports and GHG emissions, and export the model to CVXLab.",
       "repository": "it-is-me-mario/Tutorials",
       "notebook": "Economy-wide impact assessment/economy_wide_impact_assessment.ipynb",
       "guide": "Economy-wide impact assessment/overview.rst",
@@ -35,18 +35,19 @@
       ],
       "instructions": "README.md",
       "partner": "cvxlab",
-      "intro": "This joint MARIO–CVXLab tutorial uses a small, two-region **toy MRIO** to explain sector disaggregation. Split cement from a broader sector, supply the new sector’s inventory in Excel and reconcile the detailed system with CVXLab. The provided workbook is a teaching example derived from GTAP 12; the workflow does not require the full GTAP database."
+      "intro": "Split cement from a broader sector in a two-region toy MRIO, using an Excel inventory and CVXLab to reconcile the expanded table. The supplied teaching workbook is derived from GTAP 12; the full database is not required."
     },
     {
       "slug": "bonsai-ghg",
-      "title": "Use BONSAI and calculate GHG footprints!",
+      "title": "Use BONSAI and calculate GHG footprints",
       "category": "Environmental footprints",
       "summary": "Calculate hybrid input-output GHG footprints with MARIO and compare them with BONSAI's exported GWP100 results.",
       "repository": "it-is-me-mario/Tutorials",
       "notebook": "BONSAI/BONSAI_HIOT_GHG.ipynb",
       "materials": [
         "BONSAI/footprint_ghg_comparison.csv"
-      ]
+      ],
+      "guide": "BONSAI/overview.rst"
     },
     {
       "slug": "import-inspect-bonsai",
@@ -95,6 +96,46 @@
       "guide": "doc/source/user_guide/advanced/structural_path_analysis.rst",
       "guide_includes_downloads": true,
       "source_format": "mario"
+    }
+  ],
+  "collections": [
+    {
+      "slug": "bonsai-ghg",
+      "title": "Use BONSAI and calculate GHG footprints",
+      "category": "Environmental footprints",
+      "summary": "Import BONSAI, inspect its regional classifications and units, then calculate and compare GHG footprint multipliers.",
+      "intro": "The footprint notebook runs independently. Use the first part to inspect both HSUT and HIOT models; the footprint calculation needs the HIOT files only.",
+      "parts": [
+        {
+          "tutorial": "import-inspect-bonsai",
+          "title": "Import and inspect BONSAI",
+          "anchor": "import-and-inspect"
+        },
+        {
+          "tutorial": "bonsai-ghg",
+          "title": "GHG footprints",
+          "anchor": "ghg-footprints"
+        }
+      ]
+    },
+    {
+      "slug": "trace-supply-chains",
+      "title": "Trace supply chains",
+      "category": "Supply-chain analysis",
+      "summary": "Study nickel trade and regional exposure, then trace the upstream CO₂ paths serving German motor-vehicle demand.",
+      "intro": "The two cases use different methods: trade-content attribution for nickel and structural path analysis for motor vehicles. Each has its own notebook and source years.",
+      "parts": [
+        {
+          "tutorial": "nickel-supply-chain",
+          "title": "Nickel: trade, embodied impacts and exposure",
+          "anchor": "nickel"
+        },
+        {
+          "tutorial": "structural-path-analysis",
+          "title": "Motor vehicles: structural paths",
+          "anchor": "motor-vehicles"
+        }
+      ]
     }
   ]
 }

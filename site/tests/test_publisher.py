@@ -18,6 +18,45 @@ SPEC.loader.exec_module(publisher)
 
 
 class PublisherTests(unittest.TestCase):
+    def test_collection_combines_guides_and_keeps_original_notebooks_and_routes(self):
+        tutorials = [{"slug": slug, "title": title, "summary": "Case study.",
+                      "repository": "owner/source", "ref": "main", "notebook": slug + ".ipynb",
+                      "guide": slug + ".rst", "guide_includes_downloads": True}
+                     for slug, title in [("nickel", "Nickel"), ("vehicles", "Motor vehicles")]]
+        group = {"slug": "supply-chains", "title": "Trace supply chains", "summary": "Two cases.",
+                 "intro": "Trade and structural paths.", "parts": [
+                     {"tutorial": "nickel", "title": "Nickel", "anchor": "nickel"},
+                     {"tutorial": "vehicles", "title": "Motor vehicles", "anchor": "vehicles"}]}
+        catalog = {"tutorials": tutorials, "collections": [group]}
+        book = nbformat.writes(nbformat.v4.new_notebook(cells=[nbformat.v4.new_code_cell("value = 3")])).encode()
+        def source(repo, revision, path):
+            if path.endswith(".ipynb"):
+                return book
+            slug = Path(path).stem
+            return (f"Inputs\n------\n\nUnique {slug} explanation.\n\n"
+                    f":download:`Notebook <{slug}.ipynb>`\n\n"
+                    ".. figure:: assets/result.png\n\n:doc:`Read notebook <notebook>`\n").encode()
+        revisions = {"site_commit": "a" * 40, "external_sources": {"owner/source@main": "b" * 40}}
+        with TemporaryDirectory() as directory, patch.object(publisher, "repository_source", side_effect=source):
+            root = Path(directory)
+            for tutorial in tutorials:
+                publisher.prepare_tutorial(tutorial, revisions, root)
+            before = {slug: (root / slug / (slug + ".ipynb")).read_bytes() for slug in ["nickel", "vehicles"]}
+            publisher.prepare_collection(group, catalog, root)
+            page = (root / "supply-chains/index.rst").read_text()
+            for slug in ["nickel", "vehicles"]:
+                self.assertIn(f"Unique {slug} explanation.", page)
+                self.assertIn(f"<{ '../' + slug }/{slug}.ipynb>", page)
+                self.assertIn(f".. figure:: ../{slug}/assets/result.png", page)
+                self.assertEqual(before[slug], (root / slug / (slug + ".ipynb")).read_bytes())
+                self.assertIn(f"../supply-chains/index.html#{slug}", (root / slug / "index.rst").read_text())
+            self.assertEqual([item["slug"] for item in publisher.catalog_entries(catalog)], ["supply-chains"])
+
+    def test_collection_can_retain_a_members_existing_url(self):
+        catalog = {"tutorials": [{"slug": "bonsai"}, {"slug": "import"}], "collections": [
+            {"slug": "bonsai", "parts": [{"tutorial": "import"}, {"tutorial": "bonsai"}]}]}
+        self.assertEqual([item["slug"] for item in publisher.catalog_entries(catalog)], ["bonsai"])
+
     def test_mario_tutorial_moves_links_and_images_but_preserves_downloaded_cells(self):
         source = "doc/source/user_guide/examples/example"
         markdown = "# Original title\n\n[Guide](../analysis/method.rst#units)\n\n![Result](../../_static/images/result.png)"
