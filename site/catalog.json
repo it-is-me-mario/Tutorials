@@ -104,7 +104,7 @@
       "title": "Use BONSAI and calculate GHG footprints",
       "category": "Environmental footprints",
       "summary": "Import BONSAI, inspect its regional classifications and units, then calculate and compare GHG footprint multipliers.",
-      "intro": "Start by inspecting BONSAI’s hybrid tables, then calculate per-unit GHG footprints from its native HIOT. Each part has a notebook; the footprint notebook also includes the import steps needed to run it independently.",
+      "intro": "The footprint notebook runs independently. Use the first part to inspect both HSUT and HIOT models; the footprint calculation needs the HIOT files only.",
       "parts": [
         {
           "tutorial": "import-inspect-bonsai",
@@ -123,7 +123,7 @@
       "title": "Trace supply chains",
       "category": "Supply-chain analysis",
       "summary": "Study nickel trade and regional exposure, then trace the upstream CO₂ paths serving German motor-vehicle demand.",
-      "intro": "Two EXIOBASE cases examine different aspects of a supply chain: nickel trade shows where embodied impacts originate and how concentrated they are; motor vehicles illustrate individual paths from final demand to upstream emissions. The cases use separate notebooks and source years.",
+      "intro": "The two cases use different methods: trade-content attribution for nickel and structural path analysis for motor vehicles. Each has its own notebook and source years.",
       "parts": [
         {
           "tutorial": "nickel-supply-chain",
