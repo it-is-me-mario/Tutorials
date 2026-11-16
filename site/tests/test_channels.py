@@ -1,4 +1,4 @@
-"""Keep the two channels' same-named downloads independent."""
+"""Keep the three channels' same-named downloads independent."""
 import hashlib
 import importlib.util
 import json
@@ -17,7 +17,8 @@ class ChannelChecks(unittest.TestCase):
     def test_each_channel_checks_its_own_download_hash(self):
         with TemporaryDirectory() as folder:
             root = Path(folder)
-            for output, revision in [(root, "a" * 40), (root / "dev", "b" * 40)]:
+            for output, revision in [(root, "a" * 40), (root / "dev", "b" * 40),
+                                     (root / "preview", "c" * 40)]:
                 (output / "example").mkdir(parents=True)
                 (output / "_downloads").mkdir()
                 book = nbformat.v4.new_notebook(metadata={"mario_tutorial_source": {"commit": revision}})
