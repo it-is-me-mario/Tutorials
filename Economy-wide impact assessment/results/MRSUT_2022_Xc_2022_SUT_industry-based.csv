@@ -1,0 +1,136 @@
+Scenario,Matrix,Region_from,Commodity_from,Unit,Value
+baseline,Xc,IT,Agriculture and forestry,EUR,41528681751.80936
+baseline,Xc,IT,Livestock and fishing,EUR,25068554309.213924
+baseline,Xc,IT,Extraction of coal,EUR,86402882.81748465
+baseline,Xc,IT,Extraction of crude oil,EUR,2581632917.932277
+baseline,Xc,IT,Extraction of natural gas,EUR,669893254.7422214
+baseline,Xc,IT,Extraction of other hydrocarbons,EUR,0.0
+baseline,Xc,IT,Other mining and quarrying,EUR,9117200121.862179
+baseline,Xc,IT,Other manufacturing ,EUR,1024523135634.3859
+baseline,Xc,IT,Manufacture of coke oven products,EUR,287530149.50702333
+baseline,Xc,IT,Petroleum Refinery,EUR,97400147122.40869
+baseline,Xc,IT,"Plastics, basic",EUR,56636407643.188324
+baseline,Xc,IT,Production of fertilizers,EUR,347938863.9854067
+baseline,Xc,IT,Chemicals nec,EUR,23414045891.917503
+baseline,Xc,IT,"Manufacture of cement, lime and plaster",EUR,20279431415.428047
+baseline,Xc,IT,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,EUR,38630075610.2191
+baseline,Xc,IT,Aluminium production,EUR,8923673023.208815
+baseline,Xc,IT,"Water supply; sewerage, waste management and remediation activities",EUR,15516258343.50753
+baseline,Xc,IT,Electricity,EUR,44736480724.814354
+baseline,Xc,IT,Transmission and distribution of electricity,EUR,35628927303.20117
+baseline,Xc,IT,Steam and hot water supply,EUR,801933189.0674467
+baseline,Xc,IT,Construction,EUR,214031608887.38675
+baseline,Xc,IT,Wholesale and retail trade; repair of motor vehicles and motorcycles,EUR,194105705600.86838
+baseline,Xc,IT,Accommodation and food service activities,EUR,152496820790.24387
+baseline,Xc,IT,Transport via railways,EUR,15780311220.29033
+baseline,Xc,IT,Other land transport,EUR,130377898637.83469
+baseline,Xc,IT,Transport via pipelines,EUR,4174685049.31769
+baseline,Xc,IT,Sea and coastal water transport,EUR,9694008000.522942
+baseline,Xc,IT,Inland water transport,EUR,251282666.03336227
+baseline,Xc,IT,Air transport,EUR,13068191027.754051
+baseline,Xc,IT,Transportation and storage,EUR,110458327560.49329
+baseline,Xc,IT,Information and communication,EUR,128320107272.77151
+baseline,Xc,IT,Financial and insurance activities,EUR,147199155414.15674
+baseline,Xc,IT,Real estate activities,EUR,250668292412.9076
+baseline,Xc,IT,Administrative and support service activities,EUR,46493854684.736336
+baseline,Xc,IT,"Professional, scientific and technical activities",EUR,263805883741.37897
+baseline,Xc,IT,Public administration and defence; compulsory social security,EUR,147257079330.0539
+baseline,Xc,IT,Education,EUR,97949622810.3173
+baseline,Xc,IT,Human health and social work activities,EUR,172896393140.81876
+baseline,Xc,IT,Waste incineration,EUR,10208977796.93349
+baseline,Xc,IT,Anaerobic waste treatment,EUR,215132145.72218055
+baseline,Xc,IT,Composting,EUR,2397623569.689264
+baseline,Xc,IT,Waste water treatment,EUR,3916061005.570503
+baseline,Xc,IT,Landfill waste treatment,EUR,9841191643.911234
+baseline,Xc,IT,Other service activities,EUR,60460138364.23334
+baseline,Xc,IT,"Arts, entertainment and recreation",EUR,61948196563.53203
+High_RES,Xc,IT,Agriculture and forestry,EUR,41485187518.06992
+High_RES,Xc,IT,Livestock and fishing,EUR,24985740062.361115
+High_RES,Xc,IT,Extraction of coal,EUR,71856043.21442854
+High_RES,Xc,IT,Extraction of crude oil,EUR,1679117372.7601225
+High_RES,Xc,IT,Extraction of natural gas,EUR,668423667.4310971
+High_RES,Xc,IT,Extraction of other hydrocarbons,EUR,0.0
+High_RES,Xc,IT,Other mining and quarrying,EUR,9068408787.452688
+High_RES,Xc,IT,Other manufacturing ,EUR,1018868066948.0986
+High_RES,Xc,IT,Manufacture of coke oven products,EUR,286726303.2323828
+High_RES,Xc,IT,Petroleum Refinery,EUR,91215496988.57529
+High_RES,Xc,IT,"Plastics, basic",EUR,56446182597.09441
+High_RES,Xc,IT,Production of fertilizers,EUR,341500002.76570404
+High_RES,Xc,IT,Chemicals nec,EUR,23177587373.351364
+High_RES,Xc,IT,"Manufacture of cement, lime and plaster",EUR,20069406293.99666
+High_RES,Xc,IT,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,EUR,38528363867.952255
+High_RES,Xc,IT,Aluminium production,EUR,8896730282.930494
+High_RES,Xc,IT,"Water supply; sewerage, waste management and remediation activities",EUR,15204508558.140438
+High_RES,Xc,IT,Electricity,EUR,44548228231.47054
+High_RES,Xc,IT,Transmission and distribution of electricity,EUR,35498134609.49175
+High_RES,Xc,IT,Steam and hot water supply,EUR,781569807.5816934
+High_RES,Xc,IT,Construction,EUR,213883231028.7437
+High_RES,Xc,IT,Wholesale and retail trade; repair of motor vehicles and motorcycles,EUR,202102231902.51968
+High_RES,Xc,IT,Accommodation and food service activities,EUR,152249554727.58347
+High_RES,Xc,IT,Transport via railways,EUR,15772871964.06193
+High_RES,Xc,IT,Other land transport,EUR,128410994542.34961
+High_RES,Xc,IT,Transport via pipelines,EUR,4094260737.9292383
+High_RES,Xc,IT,Sea and coastal water transport,EUR,7955025563.987101
+High_RES,Xc,IT,Inland water transport,EUR,235417984.1512691
+High_RES,Xc,IT,Air transport,EUR,12947730714.873705
+High_RES,Xc,IT,Transportation and storage,EUR,109439812795.46114
+High_RES,Xc,IT,Information and communication,EUR,127005348201.2197
+High_RES,Xc,IT,Financial and insurance activities,EUR,146445259584.54346
+High_RES,Xc,IT,Real estate activities,EUR,250530247397.69717
+High_RES,Xc,IT,Administrative and support service activities,EUR,45925346319.7211
+High_RES,Xc,IT,"Professional, scientific and technical activities",EUR,262885200518.52582
+High_RES,Xc,IT,Public administration and defence; compulsory social security,EUR,147251731809.3608
+High_RES,Xc,IT,Education,EUR,97939684980.05934
+High_RES,Xc,IT,Human health and social work activities,EUR,172895277991.07718
+High_RES,Xc,IT,Waste incineration,EUR,10080139762.389517
+High_RES,Xc,IT,Anaerobic waste treatment,EUR,212103076.65040848
+High_RES,Xc,IT,Composting,EUR,2360226564.8514476
+High_RES,Xc,IT,Waste water treatment,EUR,3872760928.3715825
+High_RES,Xc,IT,Landfill waste treatment,EUR,9722745094.105104
+High_RES,Xc,IT,Other service activities,EUR,60276682222.513374
+High_RES,Xc,IT,"Arts, entertainment and recreation",EUR,61895071584.21245
+High_RES_domestic,Xc,IT,Agriculture and forestry,EUR,41493702810.11609
+High_RES_domestic,Xc,IT,Livestock and fishing,EUR,24994936969.399612
+High_RES_domestic,Xc,IT,Extraction of coal,EUR,71874402.69247037
+High_RES_domestic,Xc,IT,Extraction of crude oil,EUR,1684303749.0933006
+High_RES_domestic,Xc,IT,Extraction of natural gas,EUR,668580621.9998655
+High_RES_domestic,Xc,IT,Extraction of other hydrocarbons,EUR,0.0
+High_RES_domestic,Xc,IT,Other mining and quarrying,EUR,9075101227.318996
+High_RES_domestic,Xc,IT,Other manufacturing ,EUR,1019237877491.4302
+High_RES_domestic,Xc,IT,Manufacture of coke oven products,EUR,286817892.2169175
+High_RES_domestic,Xc,IT,Petroleum Refinery,EUR,91677483089.4681
+High_RES_domestic,Xc,IT,"Plastics, basic",EUR,56467278106.41149
+High_RES_domestic,Xc,IT,Production of fertilizers,EUR,341824461.5232642
+High_RES_domestic,Xc,IT,Chemicals nec,EUR,23186626746.82489
+High_RES_domestic,Xc,IT,"Manufacture of cement, lime and plaster",EUR,20084324244.828136
+High_RES_domestic,Xc,IT,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,EUR,38539059747.27052
+High_RES_domestic,Xc,IT,Aluminium production,EUR,8899155392.717552
+High_RES_domestic,Xc,IT,"Water supply; sewerage, waste management and remediation activities",EUR,15241964567.096853
+High_RES_domestic,Xc,IT,Electricity,EUR,48899890825.259094
+High_RES_domestic,Xc,IT,Transmission and distribution of electricity,EUR,35525185548.44887
+High_RES_domestic,Xc,IT,Steam and hot water supply,EUR,783209531.2248104
+High_RES_domestic,Xc,IT,Construction,EUR,213962290479.95078
+High_RES_domestic,Xc,IT,Wholesale and retail trade; repair of motor vehicles and motorcycles,EUR,203187608402.88943
+High_RES_domestic,Xc,IT,Accommodation and food service activities,EUR,152283829002.6396
+High_RES_domestic,Xc,IT,Transport via railways,EUR,15794538314.487204
+High_RES_domestic,Xc,IT,Other land transport,EUR,128811220084.29944
+High_RES_domestic,Xc,IT,Transport via pipelines,EUR,4105284474.8821907
+High_RES_domestic,Xc,IT,Sea and coastal water transport,EUR,7963903239.530136
+High_RES_domestic,Xc,IT,Inland water transport,EUR,235655260.83386254
+High_RES_domestic,Xc,IT,Air transport,EUR,12959572204.949156
+High_RES_domestic,Xc,IT,Transportation and storage,EUR,109592142408.43997
+High_RES_domestic,Xc,IT,Information and communication,EUR,127138330072.36859
+High_RES_domestic,Xc,IT,Financial and insurance activities,EUR,146568863993.19833
+High_RES_domestic,Xc,IT,Real estate activities,EUR,250606768282.4872
+High_RES_domestic,Xc,IT,Administrative and support service activities,EUR,45977472277.830376
+High_RES_domestic,Xc,IT,"Professional, scientific and technical activities",EUR,263112779575.93356
+High_RES_domestic,Xc,IT,Public administration and defence; compulsory social security,EUR,147252267972.7612
+High_RES_domestic,Xc,IT,Education,EUR,97942990982.0744
+High_RES_domestic,Xc,IT,Human health and social work activities,EUR,172895409919.83887
+High_RES_domestic,Xc,IT,Waste incineration,EUR,10094270583.408014
+High_RES_domestic,Xc,IT,Anaerobic waste treatment,EUR,212434538.2878699
+High_RES_domestic,Xc,IT,Composting,EUR,2363430473.840704
+High_RES_domestic,Xc,IT,Waste water treatment,EUR,3877808947.3259096
+High_RES_domestic,Xc,IT,Landfill waste treatment,EUR,9735962566.787018
+High_RES_domestic,Xc,IT,Other service activities,EUR,60287372009.42272
+High_RES_domestic,Xc,IT,"Arts, entertainment and recreation",EUR,61906040652.0163

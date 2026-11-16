@@ -1,5 +1,11 @@
 {
-  "latest": {"ref": "main"},
-  "dev": {"ref": "codex/economy-wide-tutorial"},
-  "preview": {"ref": "codex/visual-refresh"}
+  "latest": {
+    "ref": "main"
+  },
+  "dev": {
+    "ref": "main"
+  },
+  "preview": {
+    "ref": "main"
+  }
 }

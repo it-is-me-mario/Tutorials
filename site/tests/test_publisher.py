@@ -18,6 +18,50 @@ SPEC.loader.exec_module(publisher)
 
 
 class PublisherTests(unittest.TestCase):
+    def test_mario_tutorial_moves_links_and_images_but_preserves_downloaded_cells(self):
+        source = "doc/source/user_guide/examples/example"
+        markdown = "# Original title\n\n[Guide](../analysis/method.rst#units)\n\n![Result](../../_static/images/result.png)"
+        notebook = nbformat.writes(nbformat.v4.new_notebook(cells=[
+            nbformat.v4.new_markdown_cell(markdown),
+            nbformat.v4.new_code_cell("result = model.calculate()"),
+        ])).encode()
+        guide = (":page-type: Worked example\n\nOriginal title\n==============\n\n"
+                 ":doc:`Method <../analysis/method>`\n\n"
+                 ".. figure:: ../../_static/images/result.png\n"
+                 "   :alt: A result.\n\n"
+                 ":download:`Notebook <example.ipynb>`\n").encode()
+        tutorial = {"slug": "example", "title": "Published title", "summary": "A worked analysis.",
+                    "repository": "it-is-me-mario/MARIO", "ref": "source", "notebook": source + ".ipynb",
+                    "guide": source + ".rst", "guide_includes_downloads": True, "source_format": "mario"}
+        payloads = {source + ".ipynb": notebook, source + ".rst": guide,
+                    "doc/source/_static/images/result.png": b"source-image"}
+        revisions = {"site_commit": "a" * 40, "channel": "preview",
+                     "external_sources": {"it-is-me-mario/MARIO@source": "b" * 40}}
+        with TemporaryDirectory() as directory, patch.object(publisher, "repository_source",
+                side_effect=lambda repository, revision, path: payloads[path]):
+            folder = Path(directory) / "example"
+            record = publisher.prepare_tutorial(tutorial, revisions, Path(directory))
+            downloaded = nbformat.read(folder / "example.ipynb", as_version=4)
+            rendered = nbformat.read(folder / "notebook.ipynb", as_version=4)
+            self.assertEqual(downloaded.cells[0].source, markdown)
+            self.assertEqual(rendered.cells[1].source, downloaded.cells[1].source)
+            self.assertIn("https://www.marioproject.com/en/preview/user_guide/analysis/method.html#units", rendered.cells[0].source)
+            self.assertIn("![Result](assets/result.png)", rendered.cells[0].source)
+            explanation = (folder / "overview.rst.inc").read_text()
+            self.assertNotIn("Original title", explanation)
+            self.assertIn(".. figure:: assets/result.png\n   :alt: A result.", explanation)
+            self.assertIn("https://www.marioproject.com/en/preview/user_guide/analysis/method.html", explanation)
+            self.assertEqual((folder / "assets/result.png").read_bytes(), b"source-image")
+            self.assertEqual(record["assets"]["doc/source/_static/images/result.png"]["sha256"],
+                             hashlib.sha256(b"source-image").hexdigest())
+
+    def test_mario_links_preserve_external_targets_and_reject_root_escape(self):
+        source = "doc/source/user_guide/examples/example.rst"
+        for target in ["https://example.org/guide", "#local-section"]:
+            self.assertEqual(publisher.mario_web_link(source, target, "preview"), target)
+        with self.assertRaises(ValueError):
+            publisher.mario_web_link(source, "../../../../private.rst", "preview")
+
     def test_periodic_refresh_has_its_own_workflow(self):
         workflows = Path(__file__).parents[2] / ".github/workflows"
         self.assertNotIn("  schedule:", (workflows / "pages.yml").read_text())

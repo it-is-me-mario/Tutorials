@@ -3,3 +3,5 @@ _build/
 _site/
 __pycache__/
 
+Economy-wide impact assessment/source_data/
+Economy-wide impact assessment/cvxlab_model/

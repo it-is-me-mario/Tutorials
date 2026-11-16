@@ -9,12 +9,13 @@ from html import escape
 import json
 import os
 from pathlib import Path, PurePosixPath
+import posixpath
 import re
 import shutil
 import subprocess
 import sys
 from urllib.error import HTTPError
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 from urllib.request import Request, urlopen
 
 import nbformat
@@ -35,6 +36,7 @@ THEME_ASSETS = (
     "doc/source/_static/external-links.js",
     "doc/source/_static/docs-versions.js",
     "doc/source/_static/docs-versions.css",
+    "doc/source/_ext/mario_site.py",
 )
 
 
@@ -171,6 +173,82 @@ def clean_notebook(payload, provenance):
     return nbformat.writes(notebook).encode("utf-8")
 
 
+def mario_source_target(source, address):
+    """Resolve a relative documentation target inside its committed source tree."""
+    path = PurePosixPath(posixpath.normpath(str(PurePosixPath(source).parent / address)))
+    if not path.is_relative_to("doc/source"):
+        raise ValueError(f"Documentation link leaves its source root: {address!r}")
+    return path
+
+
+def mario_web_link(source, address, channel):
+    parsed = urlsplit(address)
+    if parsed.scheme or parsed.netloc or not parsed.path:
+        return address
+    target = mario_source_target(source, parsed.path).relative_to("doc/source")
+    if target.suffix in {".rst", ".ipynb"}:
+        target = target.with_suffix(".html")
+    elif not target.suffix:
+        target = target.with_suffix(".html")
+    return (f"https://www.marioproject.com/en/{channel}/" + quote(target.as_posix())
+            + ("?" + parsed.query if parsed.query else "")
+            + ("#" + parsed.fragment if parsed.fragment else ""))
+
+
+def rst_document_body(text):
+    """Separate a full RST page's metadata/title from its reusable explanation."""
+    match = re.search(r"^([^\n]+)\n[=]{3,}\s*\n", text, re.M)
+    if not match:
+        raise ValueError("Expected a titled MARIO RST guide")
+    return match.group(1).strip(), text[match.end():].lstrip()
+
+
+def prepare_mario_explanation(tutorial, revision, channel, folder, guide, notebook):
+    """Relocate presentation links and figures without changing downloadable cells."""
+    repository = tutorial["repository"]
+    assets = {}
+
+    def image_link(source, address):
+        parsed = urlsplit(address)
+        if parsed.scheme or parsed.netloc:
+            return address
+        target = mario_source_target(source, parsed.path).as_posix()
+        relative = "assets/" + PurePosixPath(target).name
+        payload = repository_source(repository, revision, target)
+        path = folder / relative
+        path.parent.mkdir(exist_ok=True)
+        if path.exists() and path.read_bytes() != payload:
+            raise ValueError(f"Conflicting tutorial image basename: {relative}")
+        path.write_bytes(payload)
+        assets[target] = {"sha256": hashlib.sha256(payload).hexdigest(), "path": relative}
+        return relative
+
+    def doc_link(match):
+        value = match.group(1)
+        named = re.fullmatch(r"(.+?)\s*<([^>]+)>", value)
+        label, address = named.groups() if named else (None, value)
+        if label is None:
+            path = mario_source_target(tutorial["guide"], urlsplit(address).path).with_suffix(".rst")
+            label, _ = rst_document_body(repository_source(repository, revision, path.as_posix()).decode())
+        return f"`{label} <{mario_web_link(tutorial['guide'], address, channel)}>`_"
+
+    _, body = rst_document_body(guide.decode())
+    body = re.sub(r":doc:`([^`]+)`", doc_link, body)
+    body = re.sub(r"(?m)^([ \t]*\.\. (?:figure|image)::[ \t]+)(\S+)[ \t]*$",
+                  lambda m: m[1] + image_link(tutorial["guide"], m[2]), body)
+    rendered = nbformat.reads(notebook.decode(), as_version=4)
+    for cell in rendered.cells:
+        if cell.cell_type != "markdown":
+            continue
+        def markdown_link(match):
+            prefix, address = match[1], match[2]
+            link = image_link(tutorial["notebook"], address) if prefix.startswith("!") else \
+                mario_web_link(tutorial["notebook"], address, channel)
+            return prefix + link + ")"
+        cell.source = re.sub(r"(!?\[[^\]]*\]\()([^\s)]+)\)", markdown_link, cell.source)
+    return body.encode(), nbformat.writes(rendered).encode(), assets
+
+
 def prepare_tutorial(tutorial, revisions, destination):
     repository = tutorial["repository"]
     revision = revisions["site_commit"] if repository == REPOSITORY else \
@@ -194,13 +272,23 @@ def prepare_tutorial(tutorial, revisions, destination):
         ":page-type: Tutorial", f":summary: {tutorial['summary']}", "",
         tutorial["title"], "=" * len(tutorial["title"]), "",
     ]
+    if tutorial.get("intro"):
+        lines.extend([tutorial["intro"], ""])
     guide_record = {}
     if tutorial.get("guide"):
         name = tutorial["guide"]
         payload = repository_source(repository, revision, name)
-        (folder / "overview.rst.inc").write_bytes(payload)
+        explanation = payload
+        if tutorial.get("source_format") == "mario":
+            explanation, rendered, assets = prepare_mario_explanation(
+                tutorial, revision, revisions.get("channel", "latest"), folder, payload,
+                (folder / notebook_name).read_bytes(),
+            )
+            (folder / "notebook.ipynb").write_bytes(rendered)
+            guide_record["assets"] = assets
+        (folder / "overview.rst.inc").write_bytes(explanation)
         lines.extend([".. include:: overview.rst.inc", ""])
-        guide_record = {"guide": {"path": name, "sha256": hashlib.sha256(payload).hexdigest()}}
+        guide_record["guide"] = {"path": name, "sha256": hashlib.sha256(payload).hexdigest()}
     lines.extend([
         f"Read the `source repository <https://github.com/{repository}>`_ and the",
         f"`version used for this page <{source_url}>`_.", "",
@@ -219,9 +307,7 @@ def prepare_tutorial(tutorial, revisions, destination):
         path = quote(tutorial["instructions"])
         instructions = f"https://github.com/{repository}/blob/{revision}/{path}"
         lines.extend(["", f"`Repository instructions <{instructions}>`_ supply the original setup notes."])
-    lines.extend(["", ".. toctree::", "   :maxdepth: 2"])
-    if tutorial.get("guide_includes_downloads"):
-        lines.append("   :hidden:")
+    lines.extend(["", ".. toctree::", "   :maxdepth: 2", "   :hidden:"])
     lines.extend(["", "   Notebook <notebook>", ""])
     (folder / "index.rst").write_text("\n".join(lines))
     return {**provenance, "files": files, **guide_record}
@@ -238,20 +324,33 @@ def prepare(catalog, revisions, destination):
     prepare_theme(catalog, destination)
     manifest = {**revisions, "tutorials": {}}
     lines = [
-        ":summary: Follow MARIO tutorials and download the materials from their source repositories.",
+        ":summary: Worked analyses with methods, source data and downloadable notebooks.",
         "", "Tutorials", "=========", "",
-        "Follow complete exercises with MARIO, source data and model inputs.",
-        "Each tutorial provides a readable notebook, downloadable materials and its source revision.", "",
-        ".. raw:: html", "", '   <div class="mario-cards mario-cards--2 mario-cards--links">',
+        ".. raw:: html", "",
+        '   <section class="tutorial-start" aria-label="Before you start"><div><span class="mario-eyebrow">New to MARIO?</span><h2>Prepare your first analysis.</h2></div>',
+        '   <p>Install MARIO and learn how input-output tables, supply-use tables and scenarios fit together.</p>',
+        f'   <a href="https://www.marioproject.com/en/{revisions.get("channel", "latest")}/get_started/index.html">Start with the essentials →</a></section>',
+        '   <div class="tutorial-collection">',
     ]
     for tutorial in catalog["tutorials"]:
         slug = tutorial["slug"]
         manifest["tutorials"][slug] = prepare_tutorial(tutorial, revisions, destination)
         lines.extend([
-            '   <section class="mario-card">',
-            f'   <h2 class="mario-card__title"><a href="{slug}/index.html">{escape(tutorial["title"])}</a></h2>',
-            f'   <div class="mario-card__body"><p>{escape(tutorial["summary"])}</p></div>',
-            '   </section>',
+            f'   <a class="tutorial-entry" href="{slug}/index.html">',
+            f'   <div class="tutorial-entry__label"><span class="mario-eyebrow">{escape(tutorial.get("category", "Worked tutorial"))}</span><span class="tutorial-entry__number">{len(manifest["tutorials"]):02d}</span></div>',
+            f'   <h2>{escape(tutorial["title"])}</h2>',
+        ])
+        if tutorial.get("partner") == "cvxlab":
+            lines.extend([
+                '   <div class="mario-tutorial-partner" aria-label="Joint MARIO and CVXLab tutorial"><span>Joint tutorial · MARIO ×</span>',
+                '   <img class="mario-partner-logo--light" src="_static/cvxlab-logo-light.png" alt="CVXLab" width="104" height="30">',
+                '   <img class="mario-partner-logo--dark" src="_static/cvxlab-logo-dark.png" alt="CVXLab" width="104" height="30"></div>',
+            ])
+        companion = "Notebook + supporting materials" if tutorial.get("materials") else "Notebook + worked guide"
+        lines.extend([
+            f'   <p>{escape(tutorial["summary"])}</p>',
+            f'   <div class="tutorial-entry__foot"><span>{companion}</span><span>Open tutorial ↗</span></div>',
+            '   </a>',
         ])
     lines.extend(['   </div>', "", ".. toctree::", "   :hidden:", ""])
     for tutorial in catalog["tutorials"]:

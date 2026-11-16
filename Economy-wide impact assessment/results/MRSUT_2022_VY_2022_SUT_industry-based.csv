@@ -1,0 +1,325 @@
+Scenario,Matrix,Factor of production_from,Region_to,Consumption category_to,Unit,Value
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Changes in inventories,EUR,0.0
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Changes in valuables,EUR,0.0
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Exports: Total (fob),EUR,0.0
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Final Demand exports,EUR,0.0
+baseline,VY,Taxes less subsidies on products purchased: Total,IT,Intermediate exports,EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Changes in inventories,EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Changes in valuables,EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Exports: Total (fob),EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Final Demand exports,EUR,0.0
+baseline,VY,Taxes on products purchased,IT,Intermediate exports,EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Changes in inventories,EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Changes in valuables,EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Exports: Total (fob),EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Final Demand exports,EUR,0.0
+baseline,VY,Subsidies on products purchased,IT,Intermediate exports,EUR,0.0
+baseline,VY,Other net taxes on production,IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,Other net taxes on production,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,Other net taxes on production,IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,Other net taxes on production,IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,Other net taxes on production,IT,Changes in inventories,EUR,0.0
+baseline,VY,Other net taxes on production,IT,Changes in valuables,EUR,0.0
+baseline,VY,Other net taxes on production,IT,Exports: Total (fob),EUR,0.0
+baseline,VY,Other net taxes on production,IT,Final Demand exports,EUR,0.0
+baseline,VY,Other net taxes on production,IT,Intermediate exports,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Changes in inventories,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Changes in valuables,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Exports: Total (fob),EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final Demand exports,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Intermediate exports,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Changes in inventories,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Changes in valuables,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Exports: Total (fob),EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final Demand exports,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Intermediate exports,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Changes in inventories,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Changes in valuables,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Exports: Total (fob),EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final Demand exports,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Intermediate exports,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Changes in inventories,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Changes in valuables,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Exports: Total (fob),EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final Demand exports,EUR,0.0
+baseline,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Intermediate exports,EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Changes in inventories,EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Changes in valuables,EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Exports: Total (fob),EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Final Demand exports,EUR,0.0
+baseline,VY,Operating surplus: Consumption of fixed capital,IT,Intermediate exports,EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Changes in inventories,EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Changes in valuables,EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Exports: Total (fob),EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Final Demand exports,EUR,0.0
+baseline,VY,Operating surplus: Rents on land,IT,Intermediate exports,EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Changes in inventories,EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Changes in valuables,EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Exports: Total (fob),EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Final Demand exports,EUR,0.0
+baseline,VY,Operating surplus: Royalties on resources,IT,Intermediate exports,EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by households,EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by government,EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Gross fixed capital formation,EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Changes in inventories,EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Changes in valuables,EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Exports: Total (fob),EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Final Demand exports,EUR,0.0
+baseline,VY,Operating surplus: Remaining net operating surplus,IT,Intermediate exports,EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Changes in inventories,EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Changes in valuables,EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Final Demand exports,EUR,0.0
+High_RES,VY,Taxes less subsidies on products purchased: Total,IT,Intermediate exports,EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Changes in inventories,EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Changes in valuables,EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Final Demand exports,EUR,0.0
+High_RES,VY,Taxes on products purchased,IT,Intermediate exports,EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Changes in inventories,EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Changes in valuables,EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Final Demand exports,EUR,0.0
+High_RES,VY,Subsidies on products purchased,IT,Intermediate exports,EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Changes in inventories,EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Changes in valuables,EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Final Demand exports,EUR,0.0
+High_RES,VY,Other net taxes on production,IT,Intermediate exports,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Changes in inventories,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Changes in valuables,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final Demand exports,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Intermediate exports,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Changes in inventories,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Changes in valuables,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final Demand exports,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Intermediate exports,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Changes in inventories,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Changes in valuables,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final Demand exports,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Intermediate exports,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Changes in inventories,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Changes in valuables,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final Demand exports,EUR,0.0
+High_RES,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Intermediate exports,EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Changes in inventories,EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Changes in valuables,EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Final Demand exports,EUR,0.0
+High_RES,VY,Operating surplus: Consumption of fixed capital,IT,Intermediate exports,EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Changes in inventories,EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Changes in valuables,EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Final Demand exports,EUR,0.0
+High_RES,VY,Operating surplus: Rents on land,IT,Intermediate exports,EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Changes in inventories,EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Changes in valuables,EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Final Demand exports,EUR,0.0
+High_RES,VY,Operating surplus: Royalties on resources,IT,Intermediate exports,EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Gross fixed capital formation,EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Changes in inventories,EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Changes in valuables,EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Exports: Total (fob),EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Final Demand exports,EUR,0.0
+High_RES,VY,Operating surplus: Remaining net operating surplus,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,Taxes less subsidies on products purchased: Total,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,Taxes on products purchased,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,Subsidies on products purchased,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,Other net taxes on production,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Total",IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Low-skilled",IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: Medium-skilled",IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,"Compensation of employees; wages, salaries, & employers' social contributions: High-skilled",IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Consumption of fixed capital,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Rents on land,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Royalties on resources,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,VY,Operating surplus: Remaining net operating surplus,IT,Intermediate exports,EUR,0.0

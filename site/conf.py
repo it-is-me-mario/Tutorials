@@ -5,6 +5,9 @@ import json
 import os
 from pathlib import Path
 import re
+import sys
+
+sys.path.insert(0, str(Path(__file__).parent / "_ext"))
 
 
 project = "MARIO Tutorials"
@@ -34,7 +37,7 @@ html_permalinks_icon = "#"
 html_sidebars = {"**": []}
 CHANNEL = os.environ.get("TUTORIALS_CHANNEL", "latest")
 MASTER = f"https://www.marioproject.com/en/{CHANNEL}/"
-EXPLORER = "https://explorer.marioproject.com/" + ("dev/" if CHANNEL == "dev" else "")
+EXPLORER = "https://explorer.marioproject.com/" + (CHANNEL + "/" if CHANNEL != "latest" else "")
 
 
 def page_context(app, pagename, templatename, context, doctree):
@@ -50,9 +53,9 @@ def page_context(app, pagename, templatename, context, doctree):
             {"label": "Inspecting and exporting", "url": MASTER + "user_guide/inspection/index.html"},
             {"label": "Transformations", "url": MASTER + "user_guide/transformations/index.html"},
         ]},
-        {"key": "explorer", "label": "Database explorer", "url": EXPLORER, "children": [
+        {"key": "explorer", "label": "Explorer", "url": EXPLORER, "children": [
             {"label": "Classifications", "url": EXPLORER + "resources/data-explorer/scope.html"},
-            {"label": "Compare databases", "url": EXPLORER + "resources/data-explorer/compare.html"},
+            {"label": "Indicators", "url": EXPLORER + "resources/data-explorer/compare.html"},
             {"label": "Analyses", "url": EXPLORER + "resources/data-explorer/analyses.html"},
         ]},
         {"key": "resources", "label": "Resources", "url": root, "active": True, "children": [
@@ -71,10 +74,27 @@ def page_context(app, pagename, templatename, context, doctree):
         "ai_notice": "", "closing": None, "topic_navigation": False,
         "changelog_url": MASTER + "changelog.html",
     }
+    hero = context["mario_page"]["hero"]
+    if pagename == "index":
+        hero.update(title="Tutorials", eyebrow="MARIO Resources",
+                    text="Worked analyses, with methods, source data and notebooks to run locally.")
+    else:
+        tutorial = next((item for item in catalog["tutorials"]
+                         if pagename.startswith(item["slug"] + "/")), None)
+        if tutorial:
+            context["title"] = tutorial["title"]
+            hero["title"] = tutorial["title"]
+            hero["partner"] = tutorial.get("partner")
+            hero["eyebrow"] = tutorial.get("category", "Worked tutorial")
+            hero["breadcrumb"] = {"label": "All tutorials", "url": root}
+            if pagename.endswith("/index"):
+                hero["actions"] = [{"label": "Open the notebook", "url": "notebook.html"}]
+            else:
+                hero["actions"] = [{"label": "Tutorial overview", "url": "index.html"}]
     site_root = os.environ.get("TUTORIALS_SITE_ROOT", html_baseurl).rstrip("/") + "/"
     revision = os.environ.get("TUTORIALS_SOURCE_COMMIT", "")
     context["mario_versions"] = {
-        "current": CHANNEL, "label": "Dev" if CHANNEL == "dev" else "Latest",
+        "current": CHANNEL, "label": {"latest": "Latest", "dev": "Dev", "preview": "Preview"}[CHANNEL],
         "document": pagename,
         "catalogue": root.removesuffix("index.html") + "_static/docs-versions.json",
         "revision": revision[:7],
@@ -95,12 +115,25 @@ def search_index(app, exception):
     entries = []
     for name in sorted(app.env.found_docs):
         title = app.env.titles.get(name)
-        entries.append({"t": title.astext() if title else name,
+        tutorial = next((item for item in catalog["tutorials"] if name.startswith(item["slug"] + "/")), None)
+        label = tutorial["title"] + (" — Notebook" if name.endswith("/notebook") else "") if tutorial else \
+            title.astext() if title else name
+        entries.append({"t": label,
                         "u": app.builder.get_target_uri(name), "s": "Tutorials", "k": "page"})
     (Path(app.outdir) / "_static/mario-nav.json").write_text(json.dumps(entries))
 
 
 def setup(app):
+    # Reuse only the shared presentation components, without MARIO's site routing.
+    import mario_site as components
+    for name, directive in (("mario-cards", components.MarioCards),
+                            ("mario-card", components.MarioCard),
+                            ("mario-steps", components.MarioSteps),
+                            ("mario-step", components.MarioStep),
+                            ("mario-details", components.MarioDetails)):
+        app.add_directive(name, directive)
+    app.add_node(components.guide_details,
+                 html=(components._visit_guide_details, components._depart_guide_details))
     app.add_js_file("mario.js", defer="defer")
     app.connect("html-page-context", page_context)
     app.connect("build-finished", search_index)

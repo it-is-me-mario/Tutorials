@@ -1,0 +1,169 @@
+Scenario,Matrix,Satellite account_from,Region_to,Activity_to,Unit,Value
+baseline,Ea,GHG AR6 GWP-100,IT,Agriculture and forestry,kg,6707206724.530891
+baseline,Ea,GHG AR6 GWP-100,IT,Livestock and fishing,kg,3088625458.3560824
+baseline,Ea,GHG AR6 GWP-100,IT,Extraction of coal,kg,51911436.456013985
+baseline,Ea,GHG AR6 GWP-100,IT,Extraction of crude oil,kg,1181185863.8999882
+baseline,Ea,GHG AR6 GWP-100,IT,Extraction of natural gas,kg,13834337119.946318
+baseline,Ea,GHG AR6 GWP-100,IT,Extraction of other hydrocarbons,kg,0.0
+baseline,Ea,GHG AR6 GWP-100,IT,Other mining and quarrying,kg,190221315.96036577
+baseline,Ea,GHG AR6 GWP-100,IT,Other manufacturing ,kg,26592744543.930515
+baseline,Ea,GHG AR6 GWP-100,IT,Manufacture of coke oven products,kg,121621960.52730155
+baseline,Ea,GHG AR6 GWP-100,IT,Petroleum Refinery,kg,20119513572.097828
+baseline,Ea,GHG AR6 GWP-100,IT,"Plastics, basic",kg,2544163568.517614
+baseline,Ea,GHG AR6 GWP-100,IT,Production of fertilizers,kg,15168596.5231504
+baseline,Ea,GHG AR6 GWP-100,IT,Chemicals nec,kg,939004564.6536
+baseline,Ea,GHG AR6 GWP-100,IT,"Manufacture of cement, lime and plaster",kg,2161594458.933103
+baseline,Ea,GHG AR6 GWP-100,IT,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,kg,3950824699.7816706
+baseline,Ea,GHG AR6 GWP-100,IT,Aluminium production,kg,115735571.83656554
+baseline,Ea,GHG AR6 GWP-100,IT,"Water supply; sewerage, waste management and remediation activities",kg,746444380.3178469
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by coal,kg,37463768293.54661
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by gas,kg,15475446700.614544
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by nuclear,kg,0.0
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by hydro,kg,795565.0949835725
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by wind,kg,3792615.7870322554
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by petroleum and other oil derivatives,kg,2792443637.779993
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by biomass and waste,kg,2696180706.230025
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by solar photovoltaic,kg,38749202.532070376
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by solar thermal,kg,201172412.6703316
+baseline,Ea,GHG AR6 GWP-100,IT,"Production of electricity by tide, wave, ocean",kg,0.0
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity by Geothermal,kg,0.0
+baseline,Ea,GHG AR6 GWP-100,IT,Production of electricity nec,kg,1346068337.624167
+baseline,Ea,GHG AR6 GWP-100,IT,Transmission and distribution of electricity,kg,3649933691.312502
+baseline,Ea,GHG AR6 GWP-100,IT,Steam and hot water supply,kg,43854392757.40778
+baseline,Ea,GHG AR6 GWP-100,IT,Construction,kg,4632068251.807964
+baseline,Ea,GHG AR6 GWP-100,IT,Wholesale and retail trade; repair of motor vehicles and motorcycles,kg,6909891987.367048
+baseline,Ea,GHG AR6 GWP-100,IT,Accommodation and food service activities,kg,4238074592.7504096
+baseline,Ea,GHG AR6 GWP-100,IT,Transport via railways,kg,2932297863.9422684
+baseline,Ea,GHG AR6 GWP-100,IT,Other land transport,kg,178084605.31956726
+baseline,Ea,GHG AR6 GWP-100,IT,Transport via pipelines,kg,1177484578.505733
+baseline,Ea,GHG AR6 GWP-100,IT,Sea and coastal water transport,kg,14022726690.390291
+baseline,Ea,GHG AR6 GWP-100,IT,Inland water transport,kg,4213171604.542179
+baseline,Ea,GHG AR6 GWP-100,IT,Air transport,kg,9492982935.115614
+baseline,Ea,GHG AR6 GWP-100,IT,Transportation and storage,kg,1655730666.3320422
+baseline,Ea,GHG AR6 GWP-100,IT,Information and communication,kg,1325582705.2270765
+baseline,Ea,GHG AR6 GWP-100,IT,Financial and insurance activities,kg,8178242373.142611
+baseline,Ea,GHG AR6 GWP-100,IT,Real estate activities,kg,1796963110.3783274
+baseline,Ea,GHG AR6 GWP-100,IT,Administrative and support service activities,kg,161506193.39366072
+baseline,Ea,GHG AR6 GWP-100,IT,"Professional, scientific and technical activities",kg,1983633025.6112802
+baseline,Ea,GHG AR6 GWP-100,IT,Public administration and defence; compulsory social security,kg,1292941571.2642837
+baseline,Ea,GHG AR6 GWP-100,IT,Education,kg,556311558.75979
+baseline,Ea,GHG AR6 GWP-100,IT,Human health and social work activities,kg,2402370057.9908333
+baseline,Ea,GHG AR6 GWP-100,IT,Waste incineration,kg,148404963.69259512
+baseline,Ea,GHG AR6 GWP-100,IT,Anaerobic waste treatment,kg,2372860.621150979
+baseline,Ea,GHG AR6 GWP-100,IT,Composting,kg,26968461.892539162
+baseline,Ea,GHG AR6 GWP-100,IT,Waste water treatment,kg,44671017.64468176
+baseline,Ea,GHG AR6 GWP-100,IT,Landfill waste treatment,kg,107753479.8390069
+baseline,Ea,GHG AR6 GWP-100,IT,Other service activities,kg,433200801.64331543
+baseline,Ea,GHG AR6 GWP-100,IT,"Arts, entertainment and recreation",kg,634195874.1935076
+High_RES,Ea,GHG AR6 GWP-100,IT,Agriculture and forestry,kg,6699501862.356824
+High_RES,Ea,GHG AR6 GWP-100,IT,Livestock and fishing,kg,3078529230.698444
+High_RES,Ea,GHG AR6 GWP-100,IT,Extraction of coal,kg,43248639.33363755
+High_RES,Ea,GHG AR6 GWP-100,IT,Extraction of crude oil,kg,820601352.113272
+High_RES,Ea,GHG AR6 GWP-100,IT,Extraction of natural gas,kg,13793993022.784147
+High_RES,Ea,GHG AR6 GWP-100,IT,Extraction of other hydrocarbons,kg,0.0
+High_RES,Ea,GHG AR6 GWP-100,IT,Other mining and quarrying,kg,189230787.93171287
+High_RES,Ea,GHG AR6 GWP-100,IT,Other manufacturing ,kg,26450283009.518456
+High_RES,Ea,GHG AR6 GWP-100,IT,Manufacture of coke oven products,kg,121257939.29940009
+High_RES,Ea,GHG AR6 GWP-100,IT,Petroleum Refinery,kg,18849111468.846607
+High_RES,Ea,GHG AR6 GWP-100,IT,"Plastics, basic",kg,2535418551.6684723
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of fertilizers,kg,14894238.881854791
+High_RES,Ea,GHG AR6 GWP-100,IT,Chemicals nec,kg,929611261.3871683
+High_RES,Ea,GHG AR6 GWP-100,IT,"Manufacture of cement, lime and plaster",kg,2140980160.5958128
+High_RES,Ea,GHG AR6 GWP-100,IT,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,kg,3929622831.9383144
+High_RES,Ea,GHG AR6 GWP-100,IT,Aluminium production,kg,115143578.19224267
+High_RES,Ea,GHG AR6 GWP-100,IT,"Water supply; sewerage, waste management and remediation activities",kg,732882473.0362009
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by coal,kg,532602922.08419037
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by gas,kg,894817496.5715922
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by nuclear,kg,0.0
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by hydro,kg,710991.2821241021
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by wind,kg,102769307.21253134
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by petroleum and other oil derivatives,kg,237317377.18438703
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by biomass and waste,kg,6860802490.0828
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by solar photovoltaic,kg,20717137703.337154
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by solar thermal,kg,0.0
+High_RES,Ea,GHG AR6 GWP-100,IT,"Production of electricity by tide, wave, ocean",kg,0.0
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity by Geothermal,kg,0.0
+High_RES,Ea,GHG AR6 GWP-100,IT,Production of electricity nec,kg,21972923.807169437
+High_RES,Ea,GHG AR6 GWP-100,IT,Transmission and distribution of electricity,kg,3636537290.1488967
+High_RES,Ea,GHG AR6 GWP-100,IT,Steam and hot water supply,kg,43693258771.38529
+High_RES,Ea,GHG AR6 GWP-100,IT,Construction,kg,4628567798.828705
+High_RES,Ea,GHG AR6 GWP-100,IT,Wholesale and retail trade; repair of motor vehicles and motorcycles,kg,7071009112.734541
+High_RES,Ea,GHG AR6 GWP-100,IT,Accommodation and food service activities,kg,4231244852.423343
+High_RES,Ea,GHG AR6 GWP-100,IT,Transport via railways,kg,2928189994.47764
+High_RES,Ea,GHG AR6 GWP-100,IT,Other land transport,kg,175541547.88956708
+High_RES,Ea,GHG AR6 GWP-100,IT,Transport via pipelines,kg,1158682177.3899903
+High_RES,Ea,GHG AR6 GWP-100,IT,Sea and coastal water transport,kg,11759624669.277235
+High_RES,Ea,GHG AR6 GWP-100,IT,Inland water transport,kg,3963831903.636018
+High_RES,Ea,GHG AR6 GWP-100,IT,Air transport,kg,9403889010.053339
+High_RES,Ea,GHG AR6 GWP-100,IT,Transportation and storage,kg,1640338554.6580522
+High_RES,Ea,GHG AR6 GWP-100,IT,Information and communication,kg,1313181584.1510823
+High_RES,Ea,GHG AR6 GWP-100,IT,Financial and insurance activities,kg,8136485878.920073
+High_RES,Ea,GHG AR6 GWP-100,IT,Real estate activities,kg,1795943327.37402
+High_RES,Ea,GHG AR6 GWP-100,IT,Administrative and support service activities,kg,159592780.28794208
+High_RES,Ea,GHG AR6 GWP-100,IT,"Professional, scientific and technical activities",kg,1976597205.1870124
+High_RES,Ea,GHG AR6 GWP-100,IT,Public administration and defence; compulsory social security,kg,1292862103.8106728
+High_RES,Ea,GHG AR6 GWP-100,IT,Education,kg,556242688.3519237
+High_RES,Ea,GHG AR6 GWP-100,IT,Human health and social work activities,kg,2402319493.122326
+High_RES,Ea,GHG AR6 GWP-100,IT,Waste incineration,kg,146555052.75049868
+High_RES,Ea,GHG AR6 GWP-100,IT,Anaerobic waste treatment,kg,2338427.6760551594
+High_RES,Ea,GHG AR6 GWP-100,IT,Composting,kg,26543710.607195545
+High_RES,Ea,GHG AR6 GWP-100,IT,Waste water treatment,kg,44167790.275795095
+High_RES,Ea,GHG AR6 GWP-100,IT,Landfill waste treatment,kg,106431127.6703804
+High_RES,Ea,GHG AR6 GWP-100,IT,Other service activities,kg,431881137.25379044
+High_RES,Ea,GHG AR6 GWP-100,IT,"Arts, entertainment and recreation",kg,633625743.894433
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Agriculture and forestry,kg,6700901228.46227
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Livestock and fishing,kg,3079653422.0219684
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Extraction of coal,kg,43259800.277437836
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Extraction of crude oil,kg,822796032.0222068
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Extraction of natural gas,kg,13802711878.194658
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Extraction of other hydrocarbons,kg,0.0
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Other mining and quarrying,kg,189369515.4894761
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Other manufacturing ,kg,26461309640.135326
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Manufacture of coke oven products,kg,121308131.31743029
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Petroleum Refinery,kg,18944300438.919456
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,"Plastics, basic",kg,2536484905.2579675
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of fertilizers,kg,14908567.465752302
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Chemicals nec,kg,929982005.0094223
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,"Manufacture of cement, lime and plaster",kg,2142548803.6939573
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,kg,3932813807.62715
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Aluminium production,kg,115229422.4540926
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,"Water supply; sewerage, waste management and remediation activities",kg,734704724.9493138
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by coal,kg,532855278.3726467
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by gas,kg,895648342.4075663
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by nuclear,kg,0.0
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by hydro,kg,779668.9254990175
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by wind,kg,112802975.5387823
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by petroleum and other oil derivatives,kg,237636523.42965233
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by biomass and waste,kg,7523118669.624682
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by solar photovoltaic,kg,22740868385.314426
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by solar thermal,kg,0.0
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,"Production of electricity by tide, wave, ocean",kg,0.0
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity by Geothermal,kg,0.0
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Production of electricity nec,kg,21988096.686318345
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Transmission and distribution of electricity,kg,3639263290.8162656
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Steam and hot water supply,kg,43709672614.15538
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Construction,kg,4630337402.505699
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Wholesale and retail trade; repair of motor vehicles and motorcycles,kg,7096774008.203762
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Accommodation and food service activities,kg,4232197207.715597
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Transport via railways,kg,2932431573.9551425
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Other land transport,kg,176057079.8939846
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Transport via pipelines,kg,1161361105.1442952
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Sea and coastal water transport,kg,11773032255.681532
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Inland water transport,kg,3967946295.713819
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Air transport,kg,9412634194.907343
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Transportation and storage,kg,1642791463.3068645
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Information and communication,kg,1314514466.6870346
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Financial and insurance activities,kg,8143336271.372214
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Real estate activities,kg,1796495476.6836596
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Administrative and support service activities,kg,159798011.18213812
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,"Professional, scientific and technical activities",kg,1978585171.8242552
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Public administration and defence; compulsory social security,kg,1292871461.084996
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Education,kg,556262706.3946273
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Human health and social work activities,kg,2402325988.945467
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Waste incineration,kg,147262358.5658345
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Anaerobic waste treatment,kg,2342252.320317635
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Composting,kg,26581547.098293874
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Waste water treatment,kg,44226997.94157414
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Landfill waste treatment,kg,106580360.08714208
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,Other service activities,kg,431958245.7234833
+High_RES_domestic,Ea,GHG AR6 GWP-100,IT,"Arts, entertainment and recreation",kg,633743645.0100372

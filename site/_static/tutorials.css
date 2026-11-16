@@ -10,6 +10,31 @@
 .mario-body .nboutput .output_area { background: var(--surface-2); }
 .mario-body .nblast { margin-bottom: 1.5rem; }
 .mario-body img { max-width: 100%; height: auto; }
+.tutorial-start { display: grid; grid-template-columns: 1fr 1.35fr auto; align-items: center; gap: 2rem; border-block: 1px solid var(--line); padding: 1.4rem 0; margin: 0 0 2.5rem; }
+.tutorial-start .mario-eyebrow { margin: 0 0 .5rem; }
+.mario-article .tutorial-start h2 { margin: 0; font-size: 1.25rem; font-weight: 500; }
+.tutorial-start p { font-size: .9375rem; color: var(--ink-soft); margin: 0; }
+.tutorial-start > a { font-size: .875rem; font-weight: 500; }
+.tutorial-collection { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
+.tutorial-entry { display: flex; flex-direction: column; position: relative; padding: 2rem; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); background: var(--surface); text-decoration: none; }
+.tutorial-entry:visited { color: var(--ink); }
+.tutorial-entry:hover { color: var(--ink); background: var(--surface-2); border-color: var(--link); text-decoration: none; }
+.tutorial-entry:first-child { grid-column: 1 / -1; background: var(--surface-2); border-top: 3px solid var(--mario-yellow); padding: 2.5rem; }
+.tutorial-entry__label { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.tutorial-entry__number { font: .75rem var(--font-mono); color: var(--ink-muted); }
+.mario-article .tutorial-entry h2 { font-size: 1.8rem; line-height: 1.2; font-weight: 500; letter-spacing: -.03em; margin: .5rem 0 1rem; max-width: 26ch; }
+.mario-article .tutorial-entry:first-child h2 { font-size: 2.35rem; max-width: 29ch; }
+.tutorial-entry p { margin: 0 0 1.3rem; max-width: 65ch; color: var(--ink-soft); font-size: .9375rem; }
+.tutorial-entry .mario-tutorial-partner { margin: -.2rem 0 1.2rem; }
+.tutorial-entry .mario-tutorial-partner img { margin: 0; }
+.tutorial-entry__foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .8125rem; }
+.tutorial-entry__foot > span:first-child { color: var(--ink-muted); }
+@media(max-width: 48em) {
+  .tutorial-start { grid-template-columns: 1fr; gap: 1rem; }
+  .tutorial-collection { grid-template-columns: 1fr; }
+  .tutorial-entry, .tutorial-entry:first-child { padding: 1.5rem; }
+  .mario-article .tutorial-entry h2, .mario-article .tutorial-entry:first-child h2 { font-size: 1.75rem; }
+}
 @media (max-width: 650px) {
   .mario-body .nbinput,
   .mario-body .nboutput { display: block; }
