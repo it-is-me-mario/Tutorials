@@ -13,7 +13,7 @@ presentation files from its own recorded source commit, so a design experiment
 does not alter the other channels. ``preview_renderer`` materializes the committed
 builder, Sphinx configuration, stylesheet and footer in the ignored build cache.
 
-``versions-manifest.json`` records the publisher and both sets of resolved source
+``versions-manifest.json`` records the publisher and each channel's resolved source
 commits. Each channel also retains its own ``source-manifest.json`` and downloads.
 ``docs-versions.json`` records available HTML pages and anchors for the common
 Latest/Dev/Preview selector. Its native links open each channel home when scripts are
@@ -62,10 +62,10 @@ steps and disclosure directives, without installing the main site's navigation.
 Keep the original documentation addresses working when adding a guide to this
 catalogue, and route the Examples index to the corresponding tutorial pages.
 
-Preview is built by the current main-branch publisher, which loads this branch's
+Preview is built by the current main-branch publisher, which loads its selected source's
 committed ``build.py`` and ``conf.py`` presentation and its independent theme pin.
 Use that publisher for the complete Latest/Dev/Preview verification and deployment.
-Check the seven tutorial overviews, rendered notebooks, figures and companion
+Check the catalogue's tutorial overviews, rendered notebooks, figures and companion
 downloads together, including the joint logos on light/dark and narrow layouts.
 
 ``build.py`` resolves each external ref once per build. All files belonging to
@@ -97,10 +97,9 @@ separately from rendering and publication checks.
 Check that links among the main documentation, Tutorials and Database Explorer
 use the current tab when updating the shared theme.
 
-Review both channel homes, a shared tutorial page and a Dev-only exercise.
-Include Preview's catalogue and every tutorial/download pair. Confirm its theme
-pin differs from the unchanged Latest/Dev pin and its header stays in Preview
-when opening MARIO or Explorer.
+Review all channel homes, a shared tutorial page and any channel-specific exercise.
+Include Preview's catalogue and every tutorial/download pair. Check its selected
+theme pin and confirm its header stays in Preview when opening MARIO or Explorer.
 Check the selector, same-page/anchor switching, fallback, download hashes and
 navigation to the corresponding MARIO and Explorer channel. Run the source
 calculations separately when changing a notebook. The website build renders
@@ -111,6 +110,15 @@ Verify reference-share denominators against the model's activity filters and
 account for secondary production explicitly. Keep preparation order aligned
 between the guide and notebook.
 
+When changing the economy-wide exercise's aggregation, update its workbook,
+notebook assertions and guide together. Keep the generation activities required
+by its scenarios as individual mapping targets. Execute all three scenarios,
+then replace the committed ``results`` directory, summary and downloadable ZIP
+from that run. Check CSV coordinates against the exported sets, preserve the
+raw flow units and verify the archive contains the same files. The source
+EXIOBASE archives stay outside Git. Derived downloads retain their source
+attribution and licence.
+
 Publication and external refreshes
 ---------------------------------
 
@@ -120,12 +128,13 @@ and verify the site. GitHub Pages must be enabled using the Actions build mode.
 The workflow reads the site's current address from GitHub Pages settings, so
 switching between the project URL and its custom domain uses the same build.
 
-Successful verification of the selected development branch also requests the
-main-branch publisher through ``workflow_run``. Verification has a separate
-workflow name to avoid GitHub's self-listener restriction. The hourly refresh
-compares both channels' source refs and external revisions. Review the source
-refs and workflow branch filters together when changing the development branch.
-Public deployment runs on main and publishes both channels in one artifact.
+The hourly refresh compares the channels' source refs and external revisions.
+Public deployment runs on main and publishes all channels in one artifact.
+After promoting feature work, channels can share main until another content
+ref is selected. Before deleting integrated branches, update every channel
+ref and any branch-specific workflow triggers that still refer to them.
+Verify the merged ancestry, then check the public manifests and a manual
+publication after deletion so refreshes continue using existing refs.
 
 MRIO disaggregation's notification workflow invokes this publication through
 ``workflow_dispatch``. Configure its ``TUTORIALS_PUBLISH_TOKEN`` repository secret

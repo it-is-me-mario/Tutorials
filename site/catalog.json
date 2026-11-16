@@ -8,13 +8,15 @@
       "slug": "economy-wide-impact-assessment",
       "title": "Economy-wide impact assessment",
       "category": "Scenarios & impacts",
-      "summary": "Prepare Italy's 2022 supply-use system, compare electricity scenarios in MARIO and export the shared inputs to CVXLab.",
+      "summary": "Prepare Italy's Small Scale supply-use system, retain twelve electricity technologies, compare scenarios in MARIO and export to CVXLab.",
       "repository": "it-is-me-mario/Tutorials",
       "notebook": "Economy-wide impact assessment/economy_wide_impact_assessment.ipynb",
       "guide": "Economy-wide impact assessment/overview.rst",
       "guide_includes_downloads": true,
       "materials": [
-        "Economy-wide impact assessment/scenario_summary.csv"
+        "Economy-wide impact assessment/aggregation.xlsx",
+        "Economy-wide impact assessment/scenario_summary.csv",
+        "Economy-wide impact assessment/results.zip"
       ],
       "partner": "cvxlab"
     },

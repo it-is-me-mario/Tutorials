@@ -1,0 +1,28 @@
+Scenario,Matrix,Satellite account_from,Region_to,Consumption category_to,Unit,Value
+baseline,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by households,kg,52074759157.759285
+baseline,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),kg,8810979757.40793
+baseline,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by government,kg,8537623790.732484
+baseline,EY,GHG AR6 GWP-100,IT,Gross fixed capital formation,kg,0.0
+baseline,EY,GHG AR6 GWP-100,IT,Changes in inventories,kg,0.0
+baseline,EY,GHG AR6 GWP-100,IT,Changes in valuables,kg,0.0
+baseline,EY,GHG AR6 GWP-100,IT,Exports: Total (fob),kg,0.0
+baseline,EY,GHG AR6 GWP-100,IT,Final Demand exports,kg,0.0
+baseline,EY,GHG AR6 GWP-100,IT,Intermediate exports,kg,0.0
+High_RES,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by households,kg,52074759157.759285
+High_RES,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),kg,8810979757.40793
+High_RES,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by government,kg,8537623790.732484
+High_RES,EY,GHG AR6 GWP-100,IT,Gross fixed capital formation,kg,0.0
+High_RES,EY,GHG AR6 GWP-100,IT,Changes in inventories,kg,0.0
+High_RES,EY,GHG AR6 GWP-100,IT,Changes in valuables,kg,0.0
+High_RES,EY,GHG AR6 GWP-100,IT,Exports: Total (fob),kg,0.0
+High_RES,EY,GHG AR6 GWP-100,IT,Final Demand exports,kg,0.0
+High_RES,EY,GHG AR6 GWP-100,IT,Intermediate exports,kg,0.0
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by households,kg,52074759157.759285
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),kg,8810979757.40793
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Final consumption expenditure by government,kg,8537623790.732484
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Gross fixed capital formation,kg,0.0
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Changes in inventories,kg,0.0
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Changes in valuables,kg,0.0
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Exports: Total (fob),kg,0.0
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Final Demand exports,kg,0.0
+High_RES_domestic,EY,GHG AR6 GWP-100,IT,Intermediate exports,kg,0.0

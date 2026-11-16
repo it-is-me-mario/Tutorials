@@ -1,7 +1,8 @@
 This **twin tutorial** accompanies the **CVXLab** Python package's
 `Economy-wide impact assessment tutorial <https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_.
 Both tutorials study electricity-supply changes through Leontief input-output
-analysis and share the same prepared Italian supply-use system.
+analysis. This Small Scale reference retains the twelve electricity-generation
+technologies used by the CVXLab exercise.
 
 * **The MARIO tutorial, this page**, obtains the source Supply and Use Tables,
   prepares the Italian reference, and calculates the electricity scenarios
@@ -80,12 +81,16 @@ Use the following companions with this guide.
 * :download:`economy_wide_impact_assessment.ipynb <economy_wide_impact_assessment.ipynb>`
   contains the complete MARIO workflow, installation commands and optional
   CVXLab export and model-construction calls.
+* :download:`aggregation.xlsx <aggregation.xlsx>` supplies the Small Scale
+  mapping with all twelve electricity-generation technologies retained.
+* :download:`results.zip <results.zip>` contains the twelve exported matrices,
+  matching sets and summary for the three executed MARIO scenarios.
 * :download:`scenario_summary.csv <scenario_summary.csv>` contains the executed
   MARIO comparison in M EUR and kt CO2-equivalent.
 * The `CVXLab tutorial materials <https://cvxlab.readthedocs.io/en/dev/_downloads/f16216b31c3f637ad45967d9f5ee116d/ioa_mario.zip>`_ provide its conceptual workbook
   and receiving model configuration for the optional CVXLab path.
 
-Download the MARIO notebook and summary into one working folder. Follow the
+Download the MARIO notebook, aggregation workbook and summary into one working folder. Follow the
 steps below or run the notebook cells in sequence. An online version is
 available as :doc:`Notebook <notebook>`.
 
@@ -193,8 +198,10 @@ Aggregation
 -----------
 
 Combine the twelve electricity commodities into one ``Electricity`` product.
-Retain the native activities to represent individual electricity technologies.
-The same commodity mapping also aggregates the import accounts.
+Apply the supplied Small Scale workbook to the remaining products and activities.
+It retains all twelve native electricity-generation technologies and combines
+transmission and distribution in one activity. The commodity mappings also
+aggregate the import accounts.
 
 .. code:: python
 
@@ -212,7 +219,19 @@ The same commodity mapping also aggregates the import accounts.
        zero_output_epsilon=None,
    )
 
-The prepared reference has **189 products, 163 activities, 9 final-demand
+Apply the Small Scale workbook after combining the electricity products.
+The notebook checks the mapping coverage and the twelve retained technologies.
+
+.. code:: python
+
+   db.aggregate(
+       io="aggregation.xlsx",
+       levels=["Activity", "Commodity"],
+       calc_all=False,
+       zero_output_epsilon=None,
+   )
+
+The prepared reference has **45 products, 56 activities, 9 final-demand
 categories, 12 factors of production and one GHG indicator**. The notebook checks
 these dimensions and verifies ``IMP_a = imp_a × Xa`` column by column. It also
 shows the generation-activity shares used in the problem statement and the
@@ -236,7 +255,9 @@ Continue in CVXLab
 Obtain the receiving ``model_settings.xlsx`` from the CVXLab materials, then
 export the prepared reference with ``db.to_cvxlab()``. The complete mapping in
 the notebook connects MARIO sets and matrices to that configuration. Its
-optional export cell uses ``continue_in_cvxlab = True``.
+optional export cell uses ``continue_in_cvxlab = True``. Use the exported
+Small Scale sets and matrices together to replace the full-classification
+reference supplied in the CVXLab materials.
 
 The current CVXLab configuration combines ``U`` and ``Yc`` in ``use_0`` and
 uses shared tables for imports and extensions. The notebook supplies those
@@ -332,13 +353,13 @@ Reference.
      - 503,721.04
      - 327,854.04
    * - High_RES
-     - 1,825,129.20
-     - 497,532.19
-     - 292,781.21
+     - 1,826,760.10
+     - 495,917.30
+     - 292,551.29
    * - High_RES_domestic
-     - 1,828,088.25
-     - 493,913.29
-     - 295,718.81
+     - 1,829,567.64
+     - 492,450.95
+     - 295,472.73
 
 The downloadable ``scenario_summary.csv`` records the executed MARIO results
 in M EUR and kt CO2-equivalent. The complete notebook shows their calculation
@@ -349,7 +370,9 @@ Export the matrices and matching sets
 -------------------------------------
 
 The MARIO path writes twelve labelled CSV matrices for all three scenarios,
-``sets.xlsx`` and ``scenario_summary.csv`` under ``results``.
+``sets.xlsx`` and ``scenario_summary.csv`` under ``results``. The published
+:download:`results.zip <results.zip>` contains those files. Their canonical
+copies are stored in the tutorial repository beside the notebook.
 
 .. _prepared-matrices:
 
