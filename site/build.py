@@ -95,9 +95,36 @@ def load_catalog(revision=None):
             raise ValueError(f"Tutorial {slug!r} has conflicting download names")
         if tutorial["repository"] != REPOSITORY and not tutorial.get("ref"):
             raise ValueError(f"External tutorial {slug!r} needs a source ref")
+    grouped = set()
+    group_slugs = set()
+    for group in catalog.get("collections", []):
+        slug = group["slug"]
+        members = [part["tutorial"] for part in group["parts"]]
+        anchors = [part["anchor"] for part in group["parts"]]
+        if (not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug)
+                or slug in group_slugs or (slug in slugs and slug not in members)
+                or len(members) < 2 or len(set(members)) != len(members)
+                or len(set(anchors)) != len(anchors)
+                or any(not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", a) for a in anchors)
+                or any(member not in slugs or member in grouped for member in members)):
+            raise ValueError(f"Invalid tutorial collection {slug!r}")
+        group_slugs.add(slug)
+        grouped.update(members)
     if not SHA.fullmatch(catalog["theme"]["revision"]):
         raise ValueError("The shared theme must use a full commit SHA")
     return catalog
+
+
+def catalog_entries(catalog):
+    """Show each learning workflow once, retaining its independently sourced parts."""
+    groups = {part["tutorial"]: group for group in catalog.get("collections", [])
+              for part in group["parts"]}
+    seen = set()
+    for tutorial in catalog["tutorials"]:
+        entry = groups.get(tutorial["slug"], tutorial)
+        if entry["slug"] not in seen:
+            seen.add(entry["slug"])
+            yield entry
 
 
 def resolve_sources(catalog, revision=None, external_cache=None):
@@ -290,14 +317,13 @@ def prepare_tutorial(tutorial, revisions, destination):
         lines.extend([".. include:: overview.rst.inc", ""])
         guide_record["guide"] = {"path": name, "sha256": hashlib.sha256(payload).hexdigest()}
     lines.extend([
-        f"Read the `source repository <https://github.com/{repository}>`_ and the",
-        f"`version used for this page <{source_url}>`_.", "",
+        f"`Source and revision <{source_url}>`_.", "",
     ])
     if not tutorial.get("guide_includes_downloads"):
         lines.extend([
             "Run the tutorial", "----------------", "",
             "Download the notebook and its supporting files into one working folder.",
-            "Follow the notebook's environment and source-data instructions before running it.",
+            "The notebook specifies the environment and source data.",
             "", f"* :download:`Notebook <{notebook_name}>`",
         ])
         for name in tutorial.get("materials", ()):
@@ -313,6 +339,52 @@ def prepare_tutorial(tutorial, revisions, destination):
     return {**provenance, "files": files, **guide_record}
 
 
+def prepare_collection(group, catalog, destination):
+    """Combine explanations on one page without copying or editing source notebooks."""
+    tutorials = {item["slug"]: item for item in catalog["tutorials"]}
+    folder = destination / group["slug"]
+    folder.mkdir(exist_ok=True)
+    lines = [":page-type: Tutorial", f":summary: {group['summary']}", "",
+             group["title"], "=" * len(group["title"]), "", group["intro"], ""]
+    parts = []
+    for part in group["parts"]:
+        slug = part["tutorial"]
+        tutorial = tutorials[slug]
+        _, body = rst_document_body((destination / slug / "index.rst").read_text())
+        body = body.split(".. toctree::", 1)[0]
+        include = destination / slug / "overview.rst.inc"
+        if include.exists():
+            body = body.replace(".. include:: overview.rst.inc", include.read_text())
+        prefix = posixpath.relpath(slug, group["slug"])
+        def relative_link(match):
+            role, value = match[1], match[2]
+            named = re.fullmatch(r"(.+?)\s*<([^>]+)>", value)
+            label, target = named.groups() if named else (value, value)
+            if not urlsplit(target).scheme and not target.startswith("/"):
+                target = posixpath.normpath(prefix + "/" + target)
+            return f":{role}:`{label} <{target}>`"
+        body = re.sub(r":(download|doc):`([^`]+)`", relative_link, body)
+        body = re.sub(r"(?m)^([ \t]*\.\. (?:figure|image)::[ \t]+)(assets/\S+)",
+                      lambda m: m[1] + posixpath.normpath(prefix + "/" + m[2]), body)
+        # The source's section headings become subsections of this part.
+        body = re.sub(r"(?m)^(-{3,})$", lambda m: "~" * len(m[1]), body)
+        parts.append((part, slug, body))
+    for part, slug, body in parts:
+        lines.extend([f".. _{part['anchor']}:", "", part["title"],
+                      "-" * len(part["title"]), "", body.rstrip(), "",
+                      f":doc:`Read this notebook <{posixpath.relpath(slug, group['slug'])}/notebook>`", ""])
+    lines.extend([".. toctree::", "   :hidden:", ""])
+    for part, slug, _ in parts:
+        lines.append(f"   {part['title']} <{posixpath.relpath(slug, group['slug'])}/notebook>")
+        if slug != group["slug"]:
+            target = posixpath.relpath(group["slug"], slug) + "/index.html#" + part["anchor"]
+            (destination / slug / "index.rst").write_text(
+                ":orphan:\n\n" + tutorials[slug]["title"] + "\n" + "=" * len(tutorials[slug]["title"]) +
+                f"\n\nThis section is part of `{group['title']} <{target}>`_.\n\n.. raw:: html\n\n"
+                f'   <meta http-equiv="refresh" content="0;url={target}">\n')
+    (folder / "index.rst").write_text("\n".join(lines) + "\n")
+
+
 def prepare(catalog, revisions, destination):
     destination.mkdir(parents=True, exist_ok=True)
     for name in ("conf.py", "_templates", "_static"):
@@ -322,22 +394,26 @@ def prepare(catalog, revisions, destination):
         else:
             shutil.copyfile(source, destination / name)
     prepare_theme(catalog, destination)
-    manifest = {**revisions, "tutorials": {}}
+    manifest = {**revisions, "tutorials": {}, "collections": catalog.get("collections", [])}
+    for tutorial in catalog["tutorials"]:
+        manifest["tutorials"][tutorial["slug"]] = prepare_tutorial(tutorial, revisions, destination)
+    for group in catalog.get("collections", []):
+        prepare_collection(group, catalog, destination)
+    entries = list(catalog_entries(catalog))
     lines = [
-        ":summary: Worked analyses with methods, source data and downloadable notebooks.",
+        ":summary: Input-output analyses with Python notebooks and source data instructions.",
         "", "Tutorials", "=========", "",
         ".. raw:: html", "",
-        '   <section class="tutorial-start" aria-label="Before you start"><div><span class="mario-eyebrow">New to MARIO?</span><h2>Prepare your first analysis.</h2></div>',
-        '   <p>Install MARIO and learn how input-output tables, supply-use tables and scenarios fit together.</p>',
-        f'   <a href="https://www.marioproject.com/en/{revisions.get("channel", "latest")}/get_started/index.html">Start with the essentials →</a></section>',
+        '   <section class="tutorial-start" aria-label="Before you start"><div><h2>Before you start</h2></div>',
+        '   <p>Install MARIO before running the notebooks. Each tutorial lists its data and any additional dependencies.</p>',
+        f'   <a href="https://www.marioproject.com/en/{revisions.get("channel", "latest")}/get_started/index.html">Installation →</a></section>',
         '   <div class="tutorial-collection">',
     ]
-    for tutorial in catalog["tutorials"]:
+    for number, tutorial in enumerate(entries, 1):
         slug = tutorial["slug"]
-        manifest["tutorials"][slug] = prepare_tutorial(tutorial, revisions, destination)
         lines.extend([
             f'   <a class="tutorial-entry" href="{slug}/index.html">',
-            f'   <div class="tutorial-entry__label"><span class="mario-eyebrow">{escape(tutorial.get("category", "Worked tutorial"))}</span><span class="tutorial-entry__number">{len(manifest["tutorials"]):02d}</span></div>',
+            f'   <div class="tutorial-entry__label"><span>{escape(tutorial.get("category", "Tutorial"))}</span><span class="tutorial-entry__number">{number:02d}</span></div>',
             f'   <h2>{escape(tutorial["title"])}</h2>',
         ])
         if tutorial.get("partner") == "cvxlab":
@@ -346,18 +422,15 @@ def prepare(catalog, revisions, destination):
                 '   <img class="mario-partner-logo--light" src="_static/cvxlab-logo-light.png" alt="CVXLab" width="104" height="30">',
                 '   <img class="mario-partner-logo--dark" src="_static/cvxlab-logo-dark.png" alt="CVXLab" width="104" height="30"></div>',
             ])
-        companion = "Notebook + supporting materials" if tutorial.get("materials") else "Notebook + worked guide"
         lines.extend([
             f'   <p>{escape(tutorial["summary"])}</p>',
-            f'   <div class="tutorial-entry__foot"><span>{companion}</span><span>Open tutorial ↗</span></div>',
+            '   <div class="tutorial-entry__foot"><span>Open tutorial →</span></div>',
             '   </a>',
         ])
     lines.extend(['   </div>', "", ".. toctree::", "   :hidden:", ""])
-    for tutorial in catalog["tutorials"]:
+    for tutorial in entries:
         lines.append(f"   {tutorial['title']} <{tutorial['slug']}/index>")
-    channel = revisions.get("channel", "latest")
-    lines.extend(["", "The tutorials cover real databases and complete exercises. For individual operations,",
-                  f"use the `MARIO documentation <https://www.marioproject.com/en/{channel}/user_guide/index.html>`_.", ""])
+    lines.append("")
     (destination / "index.rst").write_text("\n".join(lines))
     (destination / "site-catalog.json").write_text(json.dumps(catalog))
     return manifest

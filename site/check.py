@@ -33,21 +33,31 @@ def check_channel(output, *, skip=()):
                 target = target / "index.html"
             assert target.is_file(), f"Missing target {path}: {address}"
             if "_downloads" in target.parts:
-                downloads.setdefault(path.parent.name, {})[target.name] = target
+                downloads.setdefault(target.name, set()).add(target)
             count += 1
     for slug, source in manifest["tutorials"].items():
         assert (output / slug / "index.html").is_file()
         assert (output / slug / "notebook.html").is_file()
         for filename, record in source["files"].items():
-            path = downloads[slug][Path(filename).name]
-            assert hashlib.sha256(path.read_bytes()).hexdigest() == record["download_sha256"]
+            candidates = downloads.get(Path(filename).name, set())
+            path = next((p for p in candidates if hashlib.sha256(p.read_bytes()).hexdigest() == record["download_sha256"]), None)
+            assert path is not None, f"Missing or changed download: {slug}/{filename}"
             if path.suffix == ".ipynb":
                 notebook = nbformat.read(path, as_version=4)
                 assert notebook.metadata["mario_tutorial_source"]["commit"] == source["commit"]
                 for cell in notebook.cells:
                     if cell.cell_type == "code":
                         assert not cell.outputs and cell.execution_count is None
-    print(f"PASS {len(manifest['tutorials'])} tutorials, {count} local links and all downloads")
+    for group in manifest.get("collections", []):
+        page = output / group["slug"] / "index.html"
+        soup = BeautifulSoup(page.read_text(), "html.parser")
+        for part in group["parts"]:
+            assert soup.find(id=part["anchor"]), f"Missing tutorial part: {part}"
+            if part["tutorial"] != group["slug"]:
+                old = BeautifulSoup((output / part["tutorial"] / "index.html").read_text(), "html.parser")
+                refresh = old.find("meta", attrs={"http-equiv": "refresh"})
+                assert refresh and (group["slug"] + "/index.html#" + part["anchor"]) in refresh["content"]
+    print(f"PASS {len(manifest['tutorials'])} source notebooks, {count} local links and all downloads")
 
 
 def check(output):

@@ -1,18 +1,11 @@
-This **twin tutorial** accompanies the **CVXLab** Python package's
-`Economy-wide impact assessment tutorial <https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_.
-Both tutorials study electricity-supply changes through Leontief input-output
-analysis. This Small Scale reference retains the twelve electricity-generation
-technologies used by the CVXLab exercise.
+This tutorial studies changes to Italy's electricity supply and their effects
+on value added, imports and GHG emissions. It accompanies the
+`CVXLab economy-wide impact assessment tutorial <https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_.
+Both use the same Small Scale reference with twelve electricity-generation
+technologies.
 
-* **The MARIO tutorial, this page**, obtains the source Supply and Use Tables,
-  prepares the Italian reference, and calculates the electricity scenarios
-  through MARIO's accounting and scenario methods.
-* **The CVXLab tutorial** takes the prepared reference into its model data
-  structures, defines and solves the mathematical problems, and analyses their
-  results.
-
-Complete the common data-preparation steps below, then choose whether to
-continue the calculations in MARIO or export the reference to CVXLab.
+Prepare the reference below, then calculate the scenarios in MARIO or export
+it to CVXLab to formulate and solve the model there.
 
 Familiarity with input-output analysis is assumed. MARIO's Table formats guide
 introduces the accounting structures used in the exercise.
@@ -75,8 +68,6 @@ and `CVXLab installation <https://cvxlab.readthedocs.io/en/dev/installation.html
 .. _tutorial-materials:
 
 .. rubric:: Tutorial materials
-
-Use the following companions with this guide.
 
 * :download:`economy_wide_impact_assessment.ipynb <economy_wide_impact_assessment.ipynb>`
   contains the complete MARIO workflow, installation commands and optional
@@ -302,7 +293,6 @@ MARIO exports monetary flows in EUR and GHG flows in kg CO2-equivalent. The
 comparison uses M EUR and kt CO2-equivalent, obtained by dividing these flows
 by 1,000,000. Align the receiving model's presentation units with its inputs.
 
-The CVXLab page explains its model definition, file setup and solution steps.
 `Continue with the CVXLab tutorial <https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_.
 
 .. _impact-scenario-analysis:
@@ -419,10 +409,8 @@ copies are stored in the tutorial repository beside the notebook.
 ``IMP_c`` and ``VY`` are exactly zero in all three scenarios. The tutorial's
 explicit CSV export list omits them.
 
-CSV exports carry labelled coordinates, ``Value`` and ``Unit``. MARIO writes
-monetary flows in EUR and GHG flows in kg CO2-equivalent. CVXLab's tutorial
-presents M EUR and kt CO2-equivalent, obtained by dividing these flow values
-by 1,000,000. Use a consistent scale in the receiving model.
+CSV exports carry labelled coordinates, ``Value`` and ``Unit``. They retain
+the raw EUR and kg CO2-equivalent units described above.
 
 The complete export calls and coefficient checks are in the notebook.
 `Export API <https://www.marioproject.com/en/dev/api_document/mario.Database.export.html>`_.

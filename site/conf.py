@@ -11,11 +11,14 @@ sys.path.insert(0, str(Path(__file__).parent / "_ext"))
 
 
 project = "MARIO Tutorials"
-copyright = f"{datetime.now().year}, MARIO contributors"
+author = "Lorenzo Rinaldi, Mohammad Amin Tahavori, Nicolo Golinucci"
+copyright = f"{datetime.now().year}, {author}"
 extensions = ["nbsphinx", "sphinx.ext.mathjax"]
 source_suffix = {".rst": "restructuredtext"}
 root_doc = "index"
 catalog = json.loads((Path(__file__).parent / "site-catalog.json").read_text())
+collections = catalog.get("collections", [])
+collection_for = {part["tutorial"]: group for group in collections for part in group["parts"]}
 exclude_patterns = ["site-catalog.json"] + [
     f"{item['slug']}/{Path(item['notebook']).name}" for item in catalog["tutorials"]
 ]
@@ -76,21 +79,25 @@ def page_context(app, pagename, templatename, context, doctree):
     }
     hero = context["mario_page"]["hero"]
     if pagename == "index":
-        hero.update(title="Tutorials", eyebrow="MARIO Resources",
-                    text="Worked analyses, with methods, source data and notebooks to run locally.")
+        hero.update(title="Tutorials",
+                    text="Input-output analyses with Python notebooks and source data instructions.")
     else:
         tutorial = next((item for item in catalog["tutorials"]
                          if pagename.startswith(item["slug"] + "/")), None)
-        if tutorial:
-            context["title"] = tutorial["title"]
-            hero["title"] = tutorial["title"]
-            hero["partner"] = tutorial.get("partner")
-            hero["eyebrow"] = tutorial.get("category", "Worked tutorial")
+        group = next((item for item in collections if pagename == item["slug"] + "/index"), None)
+        if tutorial or group:
+            entry = group or tutorial
+            context["title"] = entry["title"]
+            hero["title"] = entry["title"]
+            hero["partner"] = entry.get("partner")
             hero["breadcrumb"] = {"label": "All tutorials", "url": root}
-            if pagename.endswith("/index"):
+            if group:
+                hero["actions"] = []
+            elif pagename.endswith("/index"):
                 hero["actions"] = [{"label": "Open the notebook", "url": "notebook.html"}]
             else:
-                hero["actions"] = [{"label": "Tutorial overview", "url": "index.html"}]
+                parent = collection_for.get(tutorial["slug"], tutorial)
+                hero["actions"] = [{"label": "Tutorial overview", "url": app.builder.get_relative_uri(pagename, parent["slug"] + "/index")}]
     site_root = os.environ.get("TUTORIALS_SITE_ROOT", html_baseurl).rstrip("/") + "/"
     revision = os.environ.get("TUTORIALS_SOURCE_COMMIT", "")
     context["mario_versions"] = {
@@ -116,6 +123,10 @@ def search_index(app, exception):
     for name in sorted(app.env.found_docs):
         title = app.env.titles.get(name)
         tutorial = next((item for item in catalog["tutorials"] if name.startswith(item["slug"] + "/")), None)
+        group = next((item for item in collections if name == item["slug"] + "/index"), None)
+        if tutorial and tutorial["slug"] in collection_for and name.endswith("/index") and not group:
+            continue
+        tutorial = group or tutorial
         label = tutorial["title"] + (" — Notebook" if name.endswith("/notebook") else "") if tutorial else \
             title.astext() if title else name
         entries.append({"t": label,
