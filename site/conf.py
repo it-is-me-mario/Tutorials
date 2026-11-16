@@ -5,6 +5,9 @@ import json
 import os
 from pathlib import Path
 import re
+import sys
+
+sys.path.insert(0, str(Path(__file__).parent / "_ext"))
 
 
 project = "MARIO Tutorials"
@@ -73,13 +76,15 @@ def page_context(app, pagename, templatename, context, doctree):
     }
     hero = context["mario_page"]["hero"]
     if pagename == "index":
-        hero.update(title="Learn through a complete analysis.",
-                    eyebrow="MARIO Tutorials",
-                    text="Start with a research question. Follow the reasoning, inspect the assumptions and run the notebook with its supporting materials.")
+        hero.update(title="Tutorials", eyebrow="MARIO Resources",
+                    text="Worked analyses, with methods, source data and notebooks to run locally.")
     else:
         tutorial = next((item for item in catalog["tutorials"]
                          if pagename.startswith(item["slug"] + "/")), None)
         if tutorial:
+            context["title"] = tutorial["title"]
+            hero["title"] = tutorial["title"]
+            hero["partner"] = tutorial.get("partner")
             hero["eyebrow"] = tutorial.get("category", "Worked tutorial")
             hero["breadcrumb"] = {"label": "All tutorials", "url": root}
             if pagename.endswith("/index"):
@@ -110,12 +115,25 @@ def search_index(app, exception):
     entries = []
     for name in sorted(app.env.found_docs):
         title = app.env.titles.get(name)
-        entries.append({"t": title.astext() if title else name,
+        tutorial = next((item for item in catalog["tutorials"] if name.startswith(item["slug"] + "/")), None)
+        label = tutorial["title"] + (" — Notebook" if name.endswith("/notebook") else "") if tutorial else \
+            title.astext() if title else name
+        entries.append({"t": label,
                         "u": app.builder.get_target_uri(name), "s": "Tutorials", "k": "page"})
     (Path(app.outdir) / "_static/mario-nav.json").write_text(json.dumps(entries))
 
 
 def setup(app):
+    # Reuse only the shared presentation components, without MARIO's site routing.
+    import mario_site as components
+    for name, directive in (("mario-cards", components.MarioCards),
+                            ("mario-card", components.MarioCard),
+                            ("mario-steps", components.MarioSteps),
+                            ("mario-step", components.MarioStep),
+                            ("mario-details", components.MarioDetails)):
+        app.add_directive(name, directive)
+    app.add_node(components.guide_details,
+                 html=(components._visit_guide_details, components._depart_guide_details))
     app.add_js_file("mario.js", defer="defer")
     app.connect("html-page-context", page_context)
     app.connect("build-finished", search_index)

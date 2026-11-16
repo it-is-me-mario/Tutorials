@@ -40,11 +40,30 @@ commit. ``conf.py`` supplies this site's navigation and search index. The footer
 override supplies links to the main MARIO site. ``_static/tutorials.css`` owns
 notebook layout adaptations.
 
-The catalogue's optional ``category`` and ``question`` fields supply the tutorial
-index's subject labels and question headings; title and summary remain the
-canonical exercise descriptions. ``build.py`` generates the cards, while
-``conf.py`` supplies overview/notebook navigation. Keep each card a single native
-link and retain all source-revision and companion links when changing its layout.
+The catalogue's ``title`` is used consistently on the index, overview and rendered
+notebook. ``category`` supplies the subject label. Do not add a second question
+heading above the title. ``partner: cvxlab`` identifies joint tutorials with the
+official light/dark logo variants from the shared theme; their provenance is
+recorded in ``cvxlab-logo-source.json``. Tutorials belongs inside Resources in
+the common header. Keep each card a single native link and retain all source
+revision and companion links when changing its layout.
+
+``source_format: mario`` imports a complete worked RST guide and its notebook
+from a pinned MARIO commit. The builder removes the source page's title and
+metadata, relocates topic/API links to the matching documentation channel and
+copies figures from that same commit. Figure hashes are recorded with the guide.
+The rendered notebook receives equivalent link/image adjustments; its downloadable
+companion preserves every original source cell. Code cells and calculations are
+unchanged. The shared theme's ``mario_site`` module supplies only the cards,
+steps and disclosure directives, without installing the main site's navigation.
+Keep the original documentation addresses working when adding a guide to this
+catalogue, and route the Examples index to the corresponding tutorial pages.
+
+Preview is built by the current main-branch publisher, which loads this branch's
+committed ``build.py`` and ``conf.py`` presentation and its independent theme pin.
+Use that publisher for the complete Latest/Dev/Preview verification and deployment.
+Check the seven tutorial overviews, rendered notebooks, figures and companion
+downloads together, including the joint logos on light/dark and narrow layouts.
 
 ``build.py`` resolves each external ref once per build. All files belonging to
 that source use that same commit. ``source-manifest.json`` records the publisher,

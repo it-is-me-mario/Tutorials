@@ -25,7 +25,8 @@
 .mario-article .tutorial-entry h2 { font-size: 1.8rem; line-height: 1.2; font-weight: 500; letter-spacing: -.03em; margin: .5rem 0 1rem; max-width: 26ch; }
 .mario-article .tutorial-entry:first-child h2 { font-size: 2.35rem; max-width: 29ch; }
 .tutorial-entry p { margin: 0 0 1.3rem; max-width: 65ch; color: var(--ink-soft); font-size: .9375rem; }
-.tutorial-entry p.tutorial-entry__title { font-size: .8125rem; color: var(--link); margin-bottom: .7rem; font-weight: 500; }
+.tutorial-entry .mario-tutorial-partner { margin: -.2rem 0 1.2rem; }
+.tutorial-entry .mario-tutorial-partner img { margin: 0; }
 .tutorial-entry__foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .8125rem; }
 .tutorial-entry__foot > span:first-child { color: var(--ink-muted); }
 @media(max-width: 48em) {
