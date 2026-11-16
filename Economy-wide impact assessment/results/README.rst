@@ -19,3 +19,7 @@ Retain the attribution and licence when redistributing these files.
 * EXIOBASE 3.8.2 data and licence https://doi.org/10.5281/zenodo.5589597
 * Stadler et al., EXIOBASE 3 https://doi.org/10.1111/jiec.12715
 * Licence https://creativecommons.org/licenses/by-sa/4.0/
+
+The ten CSV files omit ``IMP_c`` and ``VY``, which are exactly zero in all
+three scenarios. The sibling ``cvxlab_model`` folder contains the classified
+CVXLab sets, settings, reference input workbook and scenario shocks.

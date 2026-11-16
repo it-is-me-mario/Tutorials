@@ -16,7 +16,8 @@
       "materials": [
         "Economy-wide impact assessment/aggregation.xlsx",
         "Economy-wide impact assessment/scenario_summary.csv",
-        "Economy-wide impact assessment/results.zip"
+        "Economy-wide impact assessment/results.zip",
+        "Economy-wide impact assessment/cvxlab_model.zip"
       ],
       "partner": "cvxlab"
     },

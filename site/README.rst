@@ -122,6 +122,21 @@ raw flow units and verify the archive contains the same files. The source
 EXIOBASE archives stay outside Git. Derived downloads retain their source
 attribution and licence.
 
+When publishing the CVXLab input package, maintain its classified sets and
+scenario inputs with the notebook's mapping. Execute the optional
+``to_cvxlab`` path and inspect written-cell counts for every mapped table,
+missing attributes, unmatched coordinates and missing values. Check supplied
+unmapped tables by their coordinates and scenario assumptions. Reconstruct
+the quantity equations from the resulting workbooks and compare them with the
+MARIO reference and scenario outputs. Verify the receiving configuration's
+numerical prerequisites separately from data transfer and report any pending
+normalization or solve requirement. Include the original configuration's
+licence and the derived data's source notices in the downloadable package.
+
+Known zero matrices can be omitted from the exercise's explicit CSV list.
+Review that list, the committed files, archive and guide together. Preserve
+zero blocks required inside a populated receiving table's coordinate domain.
+
 Publication and external refreshes
 ---------------------------------
 

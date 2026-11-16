@@ -83,10 +83,13 @@ Use the following companions with this guide.
   CVXLab export and model-construction calls.
 * :download:`aggregation.xlsx <aggregation.xlsx>` supplies the Small Scale
   mapping with all twelve electricity-generation technologies retained.
-* :download:`results.zip <results.zip>` contains the twelve exported matrices,
+* :download:`results.zip <results.zip>` contains the ten exported matrices,
   matching sets and summary for the three executed MARIO scenarios.
 * :download:`scenario_summary.csv <scenario_summary.csv>` contains the executed
   MARIO comparison in M EUR and kt CO2-equivalent.
+* :download:`cvxlab_model.zip <cvxlab_model.zip>` contains the CVXLab
+  settings, classified sets, baseline inputs exported through ``to_cvxlab``
+  and the three scenarios' shock tables.
 * The `CVXLab tutorial materials <https://cvxlab.readthedocs.io/en/dev/_downloads/f16216b31c3f637ad45967d9f5ee116d/ioa_mario.zip>`_ provide its conceptual workbook
   and receiving model configuration for the optional CVXLab path.
 
@@ -252,18 +255,26 @@ Continue in MARIO or CVXLab
 Continue in CVXLab
 ~~~~~~~~~~~~~~~~~~
 
-Obtain the receiving ``model_settings.xlsx`` from the CVXLab materials, then
-export the prepared reference with ``db.to_cvxlab()``. The complete mapping in
-the notebook connects MARIO sets and matrices to that configuration. Its
-optional export cell uses ``continue_in_cvxlab = True``. Use the exported
-Small Scale sets and matrices together to replace the full-classification
-reference supplied in the CVXLab materials.
+Extract :download:`cvxlab_model.zip <cvxlab_model.zip>` beside the notebook,
+then set ``continue_in_cvxlab = True``. The notebook calls ``db.to_cvxlab()``
+to update the six reference input tables with its explicit name mappings.
+The classified ``sets.xlsx`` and the scenario shock tables are supplied.
+Reporting aggregations retain the Small Scale member labels.
 
 The current CVXLab configuration combines ``U`` and ``Yc`` in ``use_0`` and
-uses shared tables for imports and extensions. The notebook supplies those
-mappings and displays the export report. Complete the coordinate filters and
-scenario shocks identified by the report and the CVXLab tutorial.
+uses shared tables for imports and extensions. The combined extensions table
+includes the structural zeros required for final-demand factors. The exporter
+preserves the supplied scenario shocks. The complete configuration and inputs
+are also stored in the tutorial repository's ``cvxlab_model`` folder.
 `CVXLab export guide <https://www.marioproject.com/en/dev/user_guide/inspection/to_cvxlab.html>`_.
+
+.. important::
+
+   The original CVXLab configuration uses ``minv(diag(X_0))`` and
+   ``minv(diag(Q_0))`` to normalize reference flows. The Italian reference
+   contains zero-output members, making these matrices singular.
+   The exported inputs are populated and verified. The receiving model
+   needs zero-safe coefficient normalization before its numerical solution.
 
 The model-construction calls after the export are shown below. The exported
 workbooks are the starting point for filling the receiving configuration.
@@ -369,7 +380,7 @@ the same fixed-coefficient assumptions independently of its supplied workbooks.
 Export the matrices and matching sets
 -------------------------------------
 
-The MARIO path writes twelve labelled CSV matrices for all three scenarios,
+The MARIO path writes ten labelled CSV matrices for all three scenarios,
 ``sets.xlsx`` and ``scenario_summary.csv`` under ``results``. The published
 :download:`results.zip <results.zip>` contains those files. Their canonical
 copies are stored in the tutorial repository beside the notebook.
@@ -395,15 +406,18 @@ copies are stored in the tutorial repository beside the notebook.
    * - ``Va``, ``Ea``
      - Factors of production or GHG indicator
      - Activities
-   * - ``VY``, ``EY``
-     - Factors of production or GHG indicator
+   * - ``EY``
+     - GHG indicator
      - Final-demand categories
-   * - ``IMP_a``, ``IMP_c``, ``IMP_Y``
+   * - ``IMP_a``, ``IMP_Y``
      - Imported commodities
-     - Activities, commodities or final-demand categories
+     - Activities or final-demand categories
    * - ``Xa``, ``Xc``
      - Activities or commodities
      - Output value
+
+``IMP_c`` and ``VY`` are exactly zero in all three scenarios. The tutorial's
+explicit CSV export list omits them.
 
 CSV exports carry labelled coordinates, ``Value`` and ``Unit``. MARIO writes
 monetary flows in EUR and GHG flows in kg CO2-equivalent. CVXLab's tutorial
