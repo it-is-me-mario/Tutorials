@@ -19,7 +19,10 @@
         "Economy-wide impact assessment/results.zip",
         "Economy-wide impact assessment/cvxlab_model.zip"
       ],
-      "partner": "cvxlab"
+      "partner": "cvxlab",
+      "databases": [
+        "exiobase"
+      ]
     },
     {
       "slug": "mrio-disaggregation",
@@ -35,7 +38,10 @@
       ],
       "instructions": "README.md",
       "partner": "cvxlab",
-      "intro": "Split cement from a broader sector in a two-region toy MRIO, using an Excel inventory and CVXLab to reconcile the expanded table. The supplied teaching workbook is derived from GTAP 12; the full database is not required."
+      "intro": "Split cement from a broader sector in a two-region toy MRIO, using an Excel inventory and CVXLab to reconcile the expanded table. The supplied teaching workbook is derived from GTAP 12; the full database is not required.",
+      "databases": [
+        "gtap"
+      ]
     },
     {
       "slug": "bonsai-ghg",
@@ -47,7 +53,10 @@
       "materials": [
         "BONSAI/footprint_ghg_comparison.csv"
       ],
-      "guide": "BONSAI/overview.rst"
+      "guide": "BONSAI/overview.rst",
+      "databases": [
+        "bonsai"
+      ]
     },
     {
       "slug": "import-inspect-bonsai",
@@ -59,7 +68,10 @@
       "notebook": "doc/source/user_guide/examples/bonsai.ipynb",
       "guide": "doc/source/user_guide/examples/bonsai.rst",
       "guide_includes_downloads": true,
-      "source_format": "mario"
+      "source_format": "mario",
+      "databases": [
+        "bonsai"
+      ]
     },
     {
       "slug": "compare-ghg-footprints",
@@ -71,7 +83,12 @@
       "notebook": "doc/source/user_guide/examples/compare_ghg.ipynb",
       "guide": "doc/source/user_guide/examples/compare_ghg.rst",
       "guide_includes_downloads": true,
-      "source_format": "mario"
+      "source_format": "mario",
+      "databases": [
+        "exiobase",
+        "eora26",
+        "adb"
+      ]
     },
     {
       "slug": "nickel-supply-chain",
@@ -83,7 +100,10 @@
       "notebook": "doc/source/user_guide/advanced/supply_chain_analyses.ipynb",
       "guide": "doc/source/user_guide/advanced/supply_chain_analyses.rst",
       "guide_includes_downloads": true,
-      "source_format": "mario"
+      "source_format": "mario",
+      "databases": [
+        "exiobase"
+      ]
     },
     {
       "slug": "structural-path-analysis",
@@ -95,7 +115,10 @@
       "notebook": "doc/source/user_guide/advanced/structural_path_analysis.ipynb",
       "guide": "doc/source/user_guide/advanced/structural_path_analysis.rst",
       "guide_includes_downloads": true,
-      "source_format": "mario"
+      "source_format": "mario",
+      "databases": [
+        "exiobase"
+      ]
     }
   ],
   "collections": [
@@ -137,5 +160,26 @@
         }
       ]
     }
-  ]
+  ],
+  "databases": {
+    "exiobase": {
+      "name": "EXIOBASE",
+      "logo": "exiobase.png"
+    },
+    "gtap": {
+      "name": "GTAP 12",
+      "logo": "gtap.png"
+    },
+    "bonsai": {
+      "name": "BONSAI",
+      "logo": "bonsai.webp"
+    },
+    "eora26": {
+      "name": "Eora26"
+    },
+    "adb": {
+      "name": "ADB MRIO",
+      "logo": "adb.svg"
+    }
+  }
 }

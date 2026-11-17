@@ -174,7 +174,13 @@ def prepare_theme(catalog, destination):
              if entry["type"] == "blob" and entry["path"].startswith(THEME_PREFIX)]
     if not any(name.endswith("/theme.toml") for name in names):
         raise ValueError("The shared-theme source has no theme.toml")
-    for name in [*names, *THEME_ASSETS]:
+    logo_assets = [
+        "doc/source/_static/images/logos/" + source_path(database["logo"]).as_posix()
+        for database in catalog.get("databases", {}).values() if database.get("logo")
+    ]
+    if logo_assets:
+        logo_assets.append("doc/source/_static/images/logos/CREDITS.md")
+    for name in [*names, *THEME_ASSETS, *logo_assets]:
         payload = cached_source(repository, revision, name)
         target = destination / name.removeprefix("doc/source/")
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -421,8 +427,21 @@ def prepare(catalog, revisions, destination):
                 '   <img class="mario-partner-logo--light" src="_static/cvxlab-logo-light.png" alt="CVXLab" width="104" height="30">',
                 '   <img class="mario-partner-logo--dark" src="_static/cvxlab-logo-dark.png" alt="CVXLab" width="104" height="30"></div>',
             ])
+        lines.append(f'   <p>{escape(tutorial["summary"])}</p>')
+        members = [next(item for item in catalog["tutorials"] if item["slug"] == part["tutorial"])
+                   for part in tutorial["parts"]] if tutorial.get("parts") else [tutorial]
+        databases = dict.fromkeys(database for member in members for database in member.get("databases", []))
+        if databases:
+            lines.append('   <div class="tutorial-entry__databases"><span class="tutorial-entry__databases-label">Databases</span>')
+            for key in databases:
+                database = catalog["databases"][key]
+                lines.append('   <span class="tutorial-entry__database">')
+                if database.get("logo"):
+                    logo = quote(database["logo"])
+                    lines.append(f'   <span class="tutorial-entry__database-logo"><img src="_static/images/logos/{logo}" alt="" loading="lazy"></span>')
+                lines.append(f'   <span>{escape(database["name"])}</span></span>')
+            lines.append('   </div>')
         lines.extend([
-            f'   <p>{escape(tutorial["summary"])}</p>',
             '   <div class="tutorial-entry__foot"><span>Open tutorial →</span></div>',
             '   </a>',
         ])

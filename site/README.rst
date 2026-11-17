@@ -51,7 +51,15 @@ The shared MARIO theme is imported at the full commit recorded in the catalogue.
 Review its templates, CSS, scripts and logo assets together when updating that
 commit. ``conf.py`` supplies this site's navigation and search index. The footer
 override supplies links to the main MARIO site. ``_static/tutorials.css`` owns
-notebook layout adaptations.
+notebook layout adaptations and the uniform two-column tutorial cards, which
+stack on narrow screens.
+
+The catalogue's ``databases`` registry owns source names and optional logo
+filenames. Each tutorial lists its database keys; collection cards combine
+their members' keys without duplicates. Logos and their credits come from the
+pinned shared-theme revision. Keep names visible when no logo is available.
+Check each card's source list against its notebooks and inspect wrapping,
+logo contrast and the single link per card on desktop and narrow screens.
 
 The tutorial overview's ``Put your hands on`` action opens the source notebook's
 GitHub folder so readers can obtain its code and supporting files. Latest uses
