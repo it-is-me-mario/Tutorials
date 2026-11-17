@@ -1,5 +1,5 @@
-CVXLab inputs for the Small Scale reference
-==========================================
+CVXLab inputs for the Italian reference
+=======================================
 
 ``model_settings.xlsx`` is the configuration from the CVXLab economy-wide
 impact-assessment tutorial at revision
@@ -10,7 +10,7 @@ tables as described in that tutorial.
 ``sets.xlsx`` contains 45 products, 56 intermediate activities, 9 final-demand
 categories, 12 factors and one GHG indicator. Electricity and the twelve native
 generation technologies have type ``power``. Other members have type ``other``.
-The medium and high reporting aggregations retain the Small Scale member names.
+The medium and high reporting aggregations retain the reference member names.
 The three scenarios are Reference, High_RES and High_RES_domestic.
 
 ``input_data/input_data.xlsx`` contains six reference tables populated through

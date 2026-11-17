@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import re
 import sys
+from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).parent / "_ext"))
 
@@ -94,7 +95,14 @@ def page_context(app, pagename, templatename, context, doctree):
             if group:
                 hero["actions"] = []
             elif pagename.endswith("/index"):
-                hero["actions"] = [{"label": "Open the notebook", "url": "notebook.html"}]
+                source_ref = "main" if CHANNEL == "latest" else os.environ.get("TUTORIALS_SOURCE_COMMIT", "main")
+                if tutorial["repository"] != "it-is-me-mario/Tutorials":
+                    source_ref = tutorial["ref"]
+                source_path = quote("/".join((source_ref, *Path(tutorial["notebook"]).parent.parts)))
+                hero["actions"] = [{
+                    "label": "Put your hands on",
+                    "url": f"https://github.com/{tutorial['repository']}/tree/{source_path}",
+                }]
             else:
                 parent = collection_for.get(tutorial["slug"], tutorial)
                 hero["actions"] = [{"label": "Tutorial overview", "url": app.builder.get_relative_uri(pagename, parent["slug"] + "/index")}]
