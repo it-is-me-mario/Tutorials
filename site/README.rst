@@ -123,6 +123,10 @@ Check the selector, same-page/anchor switching, fallback, download hashes and
 navigation to the corresponding MARIO and Explorer channel. Run the source
 calculations separately when changing a notebook. The website build renders
 and cleans notebooks without executing their calculations.
+When replacing a development install with a published release, verify the PyPI
+distribution and install it into a clean environment outside the source checkout.
+Run the notebook through its optional export path and check the corresponding
+Latest documentation links before updating the published installation command.
 For paired tutorials, compare the introductory structure, problem statement,
 materials and scenario assumptions with the identified counterpart revision.
 Verify reference-share denominators against the model's activity filters and
