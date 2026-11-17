@@ -432,7 +432,7 @@ def prepare(catalog, revisions, destination):
                    for part in tutorial["parts"]] if tutorial.get("parts") else [tutorial]
         databases = dict.fromkeys(database for member in members for database in member.get("databases", []))
         if databases:
-            lines.append('   <div class="tutorial-entry__databases" aria-label="Databases used"><span class="tutorial-entry__databases-label">Databases</span>')
+            lines.append('   <div class="tutorial-entry__databases"><span class="tutorial-entry__databases-label">Databases</span>')
             for key in databases:
                 database = catalog["databases"][key]
                 lines.append('   <span class="tutorial-entry__database">')
