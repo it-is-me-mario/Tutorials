@@ -9,12 +9,17 @@ it to CVXLab to formulate and solve the model there.
 
 Familiarity with input-output analysis is assumed. MARIO's Table formats guide
 introduces the accounting structures used in the exercise.
-`Table formats <https://www.marioproject.com/en/dev/get_started/table_formats.html>`_.
+`Table formats <https://www.marioproject.com/en/latest/get_started/table_formats.html>`_.
 
-Start with a Python 3.12 Conda environment and the MARIO development revision
-specified in the notebook. The CVXLab path also uses the CVXLab development
-revision identified there. Installation guidance is available in
-`MARIO getting started <https://www.marioproject.com/en/dev/get_started/index.html>`_
+Use a Python 3.12 Conda environment and install MARIO 1.3.5.
+
+.. code:: bash
+
+   python -m pip install "mariopy==1.3.5" jupyterlab
+
+The CVXLab path uses the CVXLab revision identified in the notebook.
+Installation guidance is available in
+`MARIO getting started <https://www.marioproject.com/en/latest/get_started/index.html>`_
 and `CVXLab installation <https://cvxlab.readthedocs.io/en/dev/installation.html>`_.
 
 .. _problem-statement:
@@ -135,7 +140,7 @@ the historical series. The data use CC-BY-SA-4.0. Retain the source attribution
 when sharing derived results. The downloader API describes reuse and recovery
 of interrupted downloads.
 `EXIOBASE attribution <https://doi.org/10.1111/jiec.12715>`_,
-`download API <https://www.marioproject.com/en/dev/api_document/mario.download_exiobase3.html>`_.
+`download API <https://www.marioproject.com/en/latest/api_document/mario.download_exiobase3.html>`_.
 
 Database parsing
 ----------------
@@ -171,7 +176,7 @@ destinations are combined.
 ``IMP_a`` records activity imports, ``IMP_c`` imports entering commodity supply,
 and ``IMP_Y`` direct final-demand imports. The domestic accounts are represented
 by ``U``, ``Yc`` and the factor matrices ``Va`` and ``VY``.
-`Single-region API <https://www.marioproject.com/en/dev/api_document/mario.Database.to_single_region.html>`_.
+`Single-region API <https://www.marioproject.com/en/latest/api_document/mario.Database.to_single_region.html>`_.
 
 GHG characterization
 --------------------
@@ -261,7 +266,7 @@ uses shared tables for imports and extensions. The combined extensions table
 includes the structural zeros required for final-demand factors. The exporter
 preserves the supplied scenario shocks. The complete configuration and inputs
 are also stored in the tutorial repository's ``cvxlab_model`` folder.
-`CVXLab export guide <https://www.marioproject.com/en/dev/user_guide/inspection/to_cvxlab.html>`_.
+`CVXLab export guide <https://www.marioproject.com/en/latest/user_guide/inspection/to_cvxlab.html>`_.
 
 .. important::
 
@@ -418,4 +423,4 @@ CSV exports carry labelled coordinates, ``Value`` and ``Unit``. They retain
 the raw EUR and kg CO2-equivalent units described above.
 
 The complete export calls and coefficient checks are in the notebook.
-`Export API <https://www.marioproject.com/en/dev/api_document/mario.Database.export.html>`_.
+`Export API <https://www.marioproject.com/en/latest/api_document/mario.Database.export.html>`_.
