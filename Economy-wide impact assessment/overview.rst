@@ -1,7 +1,7 @@
 This tutorial studies changes to Italy's electricity supply and their effects
 on value added, imports and GHG emissions. It accompanies the
 `CVXLab economy-wide impact assessment tutorial <https://cvxlab.readthedocs.io/en/dev/tutorials/input_output_analysis_mario/input_output_analysis_mario.html>`_.
-Both use the same Small Scale reference with twelve electricity-generation
+Both use the same Italian reference with twelve electricity-generation
 technologies.
 
 Prepare the reference below, then calculate the scenarios in MARIO or export
@@ -72,7 +72,7 @@ and `CVXLab installation <https://cvxlab.readthedocs.io/en/dev/installation.html
 * :download:`economy_wide_impact_assessment.ipynb <economy_wide_impact_assessment.ipynb>`
   contains the complete MARIO workflow, installation commands and optional
   CVXLab export and model-construction calls.
-* :download:`aggregation.xlsx <aggregation.xlsx>` supplies the Small Scale
+* :download:`aggregation.xlsx <aggregation.xlsx>` supplies the aggregation
   mapping with all twelve electricity-generation technologies retained.
 * :download:`results.zip <results.zip>` contains the ten exported matrices,
   matching sets and summary for the three executed MARIO scenarios.
@@ -192,7 +192,7 @@ Aggregation
 -----------
 
 Combine the twelve electricity commodities into one ``Electricity`` product.
-Apply the supplied Small Scale workbook to the remaining products and activities.
+Apply the supplied aggregation workbook to the remaining products and activities.
 It retains all twelve native electricity-generation technologies and combines
 transmission and distribution in one activity. The commodity mappings also
 aggregate the import accounts.
@@ -213,7 +213,7 @@ aggregate the import accounts.
        zero_output_epsilon=None,
    )
 
-Apply the Small Scale workbook after combining the electricity products.
+Apply the aggregation workbook after combining the electricity products.
 The notebook checks the mapping coverage and the twelve retained technologies.
 
 .. code:: python
@@ -250,7 +250,7 @@ Extract :download:`cvxlab_model.zip <cvxlab_model.zip>` beside the notebook,
 then set ``continue_in_cvxlab = True``. The notebook calls ``db.to_cvxlab()``
 to update the six reference input tables with its explicit name mappings.
 The classified ``sets.xlsx`` and the scenario shock tables are supplied.
-Reporting aggregations retain the Small Scale member labels.
+Reporting aggregations retain the reference member labels.
 
 The current CVXLab configuration combines ``U`` and ``Yc`` in ``use_0`` and
 uses shared tables for imports and extensions. The combined extensions table

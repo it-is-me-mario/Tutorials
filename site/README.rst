@@ -53,6 +53,12 @@ commit. ``conf.py`` supplies this site's navigation and search index. The footer
 override supplies links to the main MARIO site. ``_static/tutorials.css`` owns
 notebook layout adaptations.
 
+The tutorial overview's ``Put your hands on`` action opens the source notebook's
+GitHub folder so readers can obtain its code and supporting files. Latest uses
+main for Tutorials-owned sources. Dev uses its selected source commit, and
+external sources follow the catalogue's ref. Verify folder paths with spaces
+and repository-root notebooks when changing this action.
+
 The catalogue's ``title`` is used consistently on the index, overview and rendered
 notebook. ``category`` supplies the subject label. Do not add a second question
 heading above the title. ``partner: cvxlab`` identifies joint tutorials with the
