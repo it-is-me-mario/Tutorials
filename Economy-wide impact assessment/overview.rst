@@ -213,7 +213,9 @@ aggregate the import accounts.
        zero_output_epsilon=None,
    )
 
-Apply the aggregation workbook after combining the electricity products.
+Apply the ``Aggregation`` column after combining the electricity products.
+The supplied workbook also provides five reporting groups per set in
+``Aggregation II`` for the CVXLab visualizations.
 The notebook checks the mapping coverage and the twelve retained technologies.
 
 .. code:: python
@@ -225,7 +227,7 @@ The notebook checks the mapping coverage and the twelve retained technologies.
        zero_output_epsilon=None,
    )
 
-The prepared reference has **45 products, 56 activities, 9 final-demand
+The prepared reference has **18 products, 29 activities, 9 final-demand
 categories, 12 factors of production and one GHG indicator**. The notebook checks
 these dimensions and verifies ``IMP_a = imp_a × Xa`` column by column. It also
 shows the generation-activity shares used in the problem statement and the
@@ -250,7 +252,9 @@ Extract :download:`cvxlab_model.zip <cvxlab_model.zip>` beside the notebook,
 then set ``continue_in_cvxlab = True``. The notebook calls ``db.to_cvxlab()``
 to update the six reference input tables with its explicit name mappings.
 The classified ``sets.xlsx`` and the scenario shock tables are supplied.
-Reporting aggregations retain the reference member labels.
+The medium reporting aggregation retains the prepared reference labels.
+The high reporting aggregation uses the five groups in ``Aggregation II``
+for products and production activities.
 
 The current CVXLab configuration combines ``U`` and ``Yc`` in ``use_0`` and
 uses shared tables for imports and extensions. The combined extensions table
@@ -263,7 +267,8 @@ are also stored in the tutorial repository's ``cvxlab_model`` folder.
 
    The original CVXLab configuration uses ``minv(diag(X_0))`` and
    ``minv(diag(Q_0))`` to normalize reference flows. The Italian reference
-   contains zero-output members, making these matrices singular.
+   contains zero-output nuclear and tide/wave activities, making
+   ``diag(X_0)`` singular.
    The exported inputs are populated and verified. The receiving model
    needs zero-safe coefficient normalization before its numerical solution.
 
@@ -354,13 +359,13 @@ Reference.
      - 503,721.04
      - 327,854.04
    * - High_RES
-     - 1,826,760.10
-     - 495,917.30
-     - 292,551.29
+     - 1,826,922.28
+     - 495,757.01
+     - 293,893.72
    * - High_RES_domestic
-     - 1,829,567.64
-     - 492,450.95
-     - 295,472.73
+     - 1,829,748.90
+     - 492,271.09
+     - 296,901.68
 
 The downloadable ``scenario_summary.csv`` records the executed MARIO results
 in M EUR and kt CO2-equivalent. The complete notebook shows their calculation

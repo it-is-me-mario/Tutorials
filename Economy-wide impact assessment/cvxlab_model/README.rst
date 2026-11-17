@@ -7,10 +7,12 @@ impact-assessment tutorial at revision
 is included. The configuration uses combined make, use, import and extension
 tables as described in that tutorial.
 
-``sets.xlsx`` contains 45 products, 56 intermediate activities, 9 final-demand
+``sets.xlsx`` contains 18 products, 29 intermediate activities, 9 final-demand
 categories, 12 factors and one GHG indicator. Electricity and the twelve native
 generation technologies have type ``power``. Other members have type ``other``.
-The medium and high reporting aggregations retain the reference member names.
+The medium reporting aggregation retains the prepared reference labels.
+The high reporting aggregation uses the five groups in ``Aggregation II``
+from ``aggregation.xlsx`` for products and production activities.
 The three scenarios are Reference, High_RES and High_RES_domestic.
 
 ``input_data/input_data.xlsx`` contains six reference tables populated through
@@ -30,7 +32,7 @@ Zero-output normalization
 
 The original configuration calculates coefficients with ``minv(diag(X_0))``
 and ``minv(diag(Q_0))``. The Italian reference contains zero-output activities
-and products. Their diagonal matrices are singular, so the original model
+for nuclear and tide/wave generation. ``diag(X_0)`` is singular, so the original model
 requires zero-safe normalization before it can solve this reference.
 The input workbook is populated and checked against the MARIO exports.
 

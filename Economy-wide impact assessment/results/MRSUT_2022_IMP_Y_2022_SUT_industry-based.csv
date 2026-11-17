@@ -1,157 +1,67 @@
 Scenario,Matrix,Commodity_from,Region_to,Consumption category_to,Unit,Value
-baseline,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by households,EUR,7561035775.635277
-baseline,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,127548617.41115136
-baseline,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by government,EUR,4150850.0375917917
-baseline,IMP_Y,Agriculture and forestry,IT,Gross fixed capital formation,EUR,307066490.1543297
-baseline,IMP_Y,Agriculture and forestry,IT,Changes in inventories,EUR,77752505.35438429
-baseline,IMP_Y,Agriculture and forestry,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Agriculture and forestry,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Agriculture and forestry,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Agriculture and forestry,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by households,EUR,1591854537.3383822
-baseline,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,10545316.68580722
-baseline,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Livestock and fishing,IT,Gross fixed capital formation,EUR,600892833.2831607
-baseline,IMP_Y,Livestock and fishing,IT,Changes in inventories,EUR,312862338.3094945
-baseline,IMP_Y,Livestock and fishing,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Livestock and fishing,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Livestock and fishing,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Livestock and fishing,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Extraction of coal,IT,Final consumption expenditure by households,EUR,114556.41906485251
-baseline,IMP_Y,Extraction of coal,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Extraction of coal,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Extraction of coal,IT,Gross fixed capital formation,EUR,1014676.7852322791
-baseline,IMP_Y,Extraction of coal,IT,Changes in inventories,EUR,13776.916526312647
-baseline,IMP_Y,Extraction of coal,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Extraction of coal,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Extraction of coal,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Extraction of coal,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Extraction of crude oil,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Extraction of crude oil,IT,Changes in inventories,EUR,2311758.469687636
-baseline,IMP_Y,Extraction of crude oil,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Extraction of crude oil,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Extraction of crude oil,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Extraction of crude oil,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Extraction of natural gas,IT,Gross fixed capital formation,EUR,24062993.516039863
-baseline,IMP_Y,Extraction of natural gas,IT,Changes in inventories,EUR,20374237.475521807
-baseline,IMP_Y,Extraction of natural gas,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Extraction of natural gas,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Extraction of natural gas,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Extraction of natural gas,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Extraction of other hydrocarbons,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by households,EUR,909000.762298992
-baseline,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Other mining and quarrying,IT,Gross fixed capital formation,EUR,0.2656969403635501
-baseline,IMP_Y,Other mining and quarrying,IT,Changes in inventories,EUR,775188.5533672436
-baseline,IMP_Y,Other mining and quarrying,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Other mining and quarrying,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Other mining and quarrying,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Other mining and quarrying,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by households,EUR,73680770773.7173
-baseline,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,11506243.281587029
-baseline,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by government,EUR,1090024.6116332253
-baseline,IMP_Y,Other manufacturing ,IT,Gross fixed capital formation,EUR,41312405560.88778
-baseline,IMP_Y,Other manufacturing ,IT,Changes in inventories,EUR,1797644837.2035015
-baseline,IMP_Y,Other manufacturing ,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Other manufacturing ,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Other manufacturing ,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Other manufacturing ,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Manufacture of coke oven products,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Manufacture of coke oven products,IT,Changes in inventories,EUR,221328.45483492417
-baseline,IMP_Y,Manufacture of coke oven products,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Manufacture of coke oven products,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Manufacture of coke oven products,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Manufacture of coke oven products,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by households,EUR,2101356063.1132936
-baseline,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Petroleum Refinery,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Petroleum Refinery,IT,Changes in inventories,EUR,10262619.935450334
-baseline,IMP_Y,Petroleum Refinery,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Petroleum Refinery,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Petroleum Refinery,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Petroleum Refinery,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by government,EUR,1182702067.3995166
-baseline,IMP_Y,"Plastics, basic",IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,"Plastics, basic",IT,Changes in inventories,EUR,20248151.824600045
-baseline,IMP_Y,"Plastics, basic",IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,"Plastics, basic",IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,"Plastics, basic",IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,"Plastics, basic",IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by households,EUR,12073563.577671098
-baseline,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by government,EUR,1495634.4275182222
-baseline,IMP_Y,Production of fertilizers,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Production of fertilizers,IT,Changes in inventories,EUR,373776.7106867748
-baseline,IMP_Y,Production of fertilizers,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Production of fertilizers,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Production of fertilizers,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Production of fertilizers,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Chemicals nec,IT,Final consumption expenditure by households,EUR,4935343667.705807
-baseline,IMP_Y,Chemicals nec,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Chemicals nec,IT,Final consumption expenditure by government,EUR,22141476.05858942
-baseline,IMP_Y,Chemicals nec,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Chemicals nec,IT,Changes in inventories,EUR,5278223.667562051
-baseline,IMP_Y,Chemicals nec,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Chemicals nec,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Chemicals nec,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Chemicals nec,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by households,EUR,1626649.7243960307
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Gross fixed capital formation,EUR,7887353.801960693
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Changes in inventories,EUR,1731595.6905522035
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,"Manufacture of cement, lime and plaster",IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Gross fixed capital formation,EUR,192812.79033070532
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Changes in inventories,EUR,96101561.84977706
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Aluminium production,IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,Aluminium production,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Aluminium production,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Aluminium production,IT,Gross fixed capital formation,EUR,222695.57397645738
-baseline,IMP_Y,Aluminium production,IT,Changes in inventories,EUR,22618417.19056362
-baseline,IMP_Y,Aluminium production,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Aluminium production,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Aluminium production,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Aluminium production,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by households,EUR,9152890312.97366
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,138093934.09695858
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by government,EUR,4150850.0375917917
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Gross fixed capital formation,EUR,907959323.4374905
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Changes in inventories,EUR,390614843.66387874
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by households,EUR,2101470619.5323586
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by government,EUR,0.0
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Gross fixed capital formation,EUR,25077670.301272143
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Changes in inventories,EUR,33183721.25202101
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Primary and refined hydrocarbons,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by households,EUR,909000.762298992
+baseline,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by government,EUR,0.0
+baseline,IMP_Y,Other mining and quarrying products,IT,Gross fixed capital formation,EUR,0.2656969403635501
+baseline,IMP_Y,Other mining and quarrying products,IT,Changes in inventories,EUR,775188.5533672436
+baseline,IMP_Y,Other mining and quarrying products,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Other mining and quarrying products,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Other mining and quarrying products,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Other mining and quarrying products,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by households,EUR,78628188005.00078
+baseline,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,11506243.281587029
+baseline,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by government,EUR,1207429202.4972577
+baseline,IMP_Y,Other manufacturing products,IT,Gross fixed capital formation,EUR,41312628256.461754
+baseline,IMP_Y,Other manufacturing products,IT,Changes in inventories,EUR,1846163406.596914
+baseline,IMP_Y,Other manufacturing products,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Other manufacturing products,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Other manufacturing products,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Other manufacturing products,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by households,EUR,1626649.7243960307
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by government,EUR,0.0
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Gross fixed capital formation,EUR,7887353.801960693
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Changes in inventories,EUR,1731595.6905522035
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,"Cement, lime and plaster products",IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Steel and steel products,IT,Final consumption expenditure by households,EUR,0.0
+baseline,IMP_Y,Steel and steel products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,IMP_Y,Steel and steel products,IT,Final consumption expenditure by government,EUR,0.0
+baseline,IMP_Y,Steel and steel products,IT,Gross fixed capital formation,EUR,192812.79033070532
+baseline,IMP_Y,Steel and steel products,IT,Changes in inventories,EUR,96101561.84977706
+baseline,IMP_Y,Steel and steel products,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Steel and steel products,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Steel and steel products,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Steel and steel products,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Waste management services,IT,Final consumption expenditure by households,EUR,106788840.17817314
+baseline,IMP_Y,Waste management services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,4992310.75174608
+baseline,IMP_Y,Waste management services,IT,Final consumption expenditure by government,EUR,1678192.014290892
+baseline,IMP_Y,Waste management services,IT,Gross fixed capital formation,EUR,0.0
+baseline,IMP_Y,Waste management services,IT,Changes in inventories,EUR,0.0
+baseline,IMP_Y,Waste management services,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Waste management services,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Waste management services,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Waste management services,IT,Intermediate exports,EUR,0.0
 baseline,IMP_Y,Electricity,IT,Final consumption expenditure by households,EUR,372571216.9527639
 baseline,IMP_Y,Electricity,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 baseline,IMP_Y,Electricity,IT,Final consumption expenditure by government,EUR,0.0
@@ -170,15 +80,24 @@ baseline,IMP_Y,Transmission and distribution of electricity,IT,Changes in valuab
 baseline,IMP_Y,Transmission and distribution of electricity,IT,Exports: Total (fob),EUR,0.0
 baseline,IMP_Y,Transmission and distribution of electricity,IT,Final Demand exports,EUR,0.0
 baseline,IMP_Y,Transmission and distribution of electricity,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Steam and hot water supply,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Final consumption expenditure by households,EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Final consumption expenditure by government,EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Gross fixed capital formation,EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Changes in inventories,EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Steam and hot water,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by households,EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by government,EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Gross fixed capital formation,EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Changes in inventories,EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Water supply and sewerage,IT,Intermediate exports,EUR,0.0
 baseline,IMP_Y,Construction,IT,Final consumption expenditure by households,EUR,48085662.44810069
 baseline,IMP_Y,Construction,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 baseline,IMP_Y,Construction,IT,Final consumption expenditure by government,EUR,1215722.6907186077
@@ -188,15 +107,15 @@ baseline,IMP_Y,Construction,IT,Changes in valuables,EUR,0.0
 baseline,IMP_Y,Construction,IT,Exports: Total (fob),EUR,0.0
 baseline,IMP_Y,Construction,IT,Final Demand exports,EUR,0.0
 baseline,IMP_Y,Construction,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by households,EUR,1303534621.8176506
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,15778457.76651343
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by government,EUR,8467218.889814511
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Gross fixed capital formation,EUR,331929313.41504323
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Changes in inventories,EUR,23779108.142797165
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by households,EUR,1303534621.8176506
+baseline,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,15778457.76651343
+baseline,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by government,EUR,8467218.889814511
+baseline,IMP_Y,Wholesale and retail trade,IT,Gross fixed capital formation,EUR,331929313.41504323
+baseline,IMP_Y,Wholesale and retail trade,IT,Changes in inventories,EUR,23779108.142797165
+baseline,IMP_Y,Wholesale and retail trade,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Wholesale and retail trade,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Wholesale and retail trade,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Wholesale and retail trade,IT,Intermediate exports,EUR,0.0
 baseline,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by households,EUR,18523126389.305317
 baseline,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,112603762.26588602
 baseline,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by government,EUR,115814757.50099212
@@ -206,357 +125,105 @@ baseline,IMP_Y,Accommodation and food service activities,IT,Changes in valuables
 baseline,IMP_Y,Accommodation and food service activities,IT,Exports: Total (fob),EUR,0.0
 baseline,IMP_Y,Accommodation and food service activities,IT,Final Demand exports,EUR,0.0
 baseline,IMP_Y,Accommodation and food service activities,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Transport via railways,IT,Final consumption expenditure by households,EUR,225686298.0989856
-baseline,IMP_Y,Transport via railways,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,551084.3594532483
-baseline,IMP_Y,Transport via railways,IT,Final consumption expenditure by government,EUR,756636.8210940775
-baseline,IMP_Y,Transport via railways,IT,Gross fixed capital formation,EUR,1522639.078036481
-baseline,IMP_Y,Transport via railways,IT,Changes in inventories,EUR,394269.3303967114
-baseline,IMP_Y,Transport via railways,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Transport via railways,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Transport via railways,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Transport via railways,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Other land transport,IT,Final consumption expenditure by households,EUR,558820085.4032437
-baseline,IMP_Y,Other land transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,1953549.1398370482
-baseline,IMP_Y,Other land transport,IT,Final consumption expenditure by government,EUR,7216417.973310489
-baseline,IMP_Y,Other land transport,IT,Gross fixed capital formation,EUR,5835748.848305609
-baseline,IMP_Y,Other land transport,IT,Changes in inventories,EUR,1511097.9509033768
-baseline,IMP_Y,Other land transport,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Other land transport,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Other land transport,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Other land transport,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by households,EUR,231034.25412594932
-baseline,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Transport via pipelines,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Transport via pipelines,IT,Changes in inventories,EUR,21152.139348196477
-baseline,IMP_Y,Transport via pipelines,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Transport via pipelines,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Transport via pipelines,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Transport via pipelines,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by households,EUR,2109572428.7054079
-baseline,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,155595.52848939065
-baseline,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by government,EUR,519691.93072865874
-baseline,IMP_Y,Sea and coastal water transport,IT,Gross fixed capital formation,EUR,380788.46220621385
-baseline,IMP_Y,Sea and coastal water transport,IT,Changes in inventories,EUR,98600.65604676411
-baseline,IMP_Y,Sea and coastal water transport,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Sea and coastal water transport,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Sea and coastal water transport,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Sea and coastal water transport,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Final consumption expenditure by households,EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Inland water transport,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Air transport,IT,Final consumption expenditure by households,EUR,5058278642.2919655
-baseline,IMP_Y,Air transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,536948.9307215926
-baseline,IMP_Y,Air transport,IT,Final consumption expenditure by government,EUR,1793419.3174994001
-baseline,IMP_Y,Air transport,IT,Gross fixed capital formation,EUR,1509589.598516481
-baseline,IMP_Y,Air transport,IT,Changes in inventories,EUR,390890.32244491205
-baseline,IMP_Y,Air transport,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Air transport,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Air transport,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Air transport,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Transportation and storage,IT,Final consumption expenditure by households,EUR,323822538.40620774
-baseline,IMP_Y,Transportation and storage,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Transportation and storage,IT,Final consumption expenditure by government,EUR,85195153.5958526
-baseline,IMP_Y,Transportation and storage,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Transportation and storage,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Transportation and storage,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Transportation and storage,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Transportation and storage,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Transportation and storage,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Information and communication,IT,Final consumption expenditure by households,EUR,1256764122.160547
+baseline,IMP_Y,Transport services,IT,Final consumption expenditure by households,EUR,8276411027.159937
+baseline,IMP_Y,Transport services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,3197177.9585012803
+baseline,IMP_Y,Transport services,IT,Final consumption expenditure by government,EUR,95481319.63848522
+baseline,IMP_Y,Transport services,IT,Gross fixed capital formation,EUR,9248765.987064786
+baseline,IMP_Y,Transport services,IT,Changes in inventories,EUR,2416010.3991399608
+baseline,IMP_Y,Transport services,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Transport services,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Transport services,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Transport services,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Information and communication,IT,Final consumption expenditure by households,EUR,1255255825.039517
 baseline,IMP_Y,Information and communication,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 baseline,IMP_Y,Information and communication,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Information and communication,IT,Gross fixed capital formation,EUR,2634548647.4691634
+baseline,IMP_Y,Information and communication,IT,Gross fixed capital formation,EUR,0.0
 baseline,IMP_Y,Information and communication,IT,Changes in inventories,EUR,0.0
 baseline,IMP_Y,Information and communication,IT,Changes in valuables,EUR,0.0
 baseline,IMP_Y,Information and communication,IT,Exports: Total (fob),EUR,0.0
 baseline,IMP_Y,Information and communication,IT,Final Demand exports,EUR,0.0
 baseline,IMP_Y,Information and communication,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by households,EUR,4650864968.472402
-baseline,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Financial and insurance activities,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Financial and insurance activities,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Financial and insurance activities,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Financial and insurance activities,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Financial and insurance activities,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Financial and insurance activities,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Real estate activities,IT,Final consumption expenditure by households,EUR,4331563543.384183
-baseline,IMP_Y,Real estate activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Real estate activities,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Real estate activities,IT,Gross fixed capital formation,EUR,271029666.77622867
-baseline,IMP_Y,Real estate activities,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Real estate activities,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Real estate activities,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Real estate activities,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Real estate activities,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by households,EUR,31124187.358651344
-baseline,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by government,EUR,0.0
-baseline,IMP_Y,Administrative and support service activities,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Administrative and support service activities,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Administrative and support service activities,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Administrative and support service activities,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Administrative and support service activities,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Administrative and support service activities,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by households,EUR,661066456.4534453
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,204725700.36209276
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by government,EUR,280365213.0838612
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Gross fixed capital formation,EUR,192276826.287639
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,"Professional, scientific and technical activities",IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by households,EUR,18051028.838796247
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by government,EUR,2274583826.315117
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Public administration and defence; compulsory social security,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Education,IT,Final consumption expenditure by households,EUR,73486257.11785744
-baseline,IMP_Y,Education,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,148377337.81924477
-baseline,IMP_Y,Education,IT,Final consumption expenditure by government,EUR,385511920.49551183
-baseline,IMP_Y,Education,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Education,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Education,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Education,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Education,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Education,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by households,EUR,71094134.14567396
-baseline,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,386275261.97959054
-baseline,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by government,EUR,567772571.5087575
-baseline,IMP_Y,Human health and social work activities,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Human health and social work activities,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Human health and social work activities,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Human health and social work activities,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Human health and social work activities,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Human health and social work activities,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Waste incineration,IT,Final consumption expenditure by households,EUR,17704009.20696918
-baseline,IMP_Y,Waste incineration,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,2188353.730810059
-baseline,IMP_Y,Waste incineration,IT,Final consumption expenditure by government,EUR,908373.7550965291
-baseline,IMP_Y,Waste incineration,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Waste incineration,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Waste incineration,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Waste incineration,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Waste incineration,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Waste incineration,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by households,EUR,2004047.567527746
-baseline,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,213490.06754853213
-baseline,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by government,EUR,58613.07820453863
-baseline,IMP_Y,Anaerobic waste treatment,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Anaerobic waste treatment,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Anaerobic waste treatment,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Anaerobic waste treatment,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Anaerobic waste treatment,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Anaerobic waste treatment,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Composting,IT,Final consumption expenditure by households,EUR,15546979.42923171
-baseline,IMP_Y,Composting,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,1007940.2861593493
-baseline,IMP_Y,Composting,IT,Final consumption expenditure by government,EUR,276727.0791483996
-baseline,IMP_Y,Composting,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Composting,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Composting,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Composting,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Composting,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Composting,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Waste water treatment,IT,Final consumption expenditure by households,EUR,63853313.4028455
-baseline,IMP_Y,Waste water treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,768871.0918075333
-baseline,IMP_Y,Waste water treatment,IT,Final consumption expenditure by government,EUR,211091.3259454438
-baseline,IMP_Y,Waste water treatment,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Waste water treatment,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Waste water treatment,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Waste water treatment,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Waste water treatment,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Waste water treatment,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by households,EUR,7680490.571598998
-baseline,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,813655.5754206057
-baseline,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by government,EUR,223386.775895981
-baseline,IMP_Y,Landfill waste treatment,IT,Gross fixed capital formation,EUR,0.0
-baseline,IMP_Y,Landfill waste treatment,IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,Landfill waste treatment,IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,Landfill waste treatment,IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,Landfill waste treatment,IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,Landfill waste treatment,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,Other service activities,IT,Final consumption expenditure by households,EUR,1072452848.3566943
-baseline,IMP_Y,Other service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,56077744.295584075
-baseline,IMP_Y,Other service activities,IT,Final consumption expenditure by government,EUR,4187812.47863687
-baseline,IMP_Y,Other service activities,IT,Gross fixed capital formation,EUR,0.0
+baseline,IMP_Y,Other services,IT,Final consumption expenditure by households,EUR,9838758872.89204
+baseline,IMP_Y,Other services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,739378300.160928
+baseline,IMP_Y,Other services,IT,Final consumption expenditure by government,EUR,3508233531.403248
+baseline,IMP_Y,Other services,IT,Gross fixed capital formation,EUR,3097855140.533031
+baseline,IMP_Y,Other services,IT,Changes in inventories,EUR,0.0
+baseline,IMP_Y,Other services,IT,Changes in valuables,EUR,0.0
+baseline,IMP_Y,Other services,IT,Exports: Total (fob),EUR,0.0
+baseline,IMP_Y,Other services,IT,Final Demand exports,EUR,0.0
+baseline,IMP_Y,Other services,IT,Intermediate exports,EUR,0.0
+baseline,IMP_Y,Other service activities,IT,Final consumption expenditure by households,EUR,1257217790.464448
+baseline,IMP_Y,Other service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,316208170.1869569
+baseline,IMP_Y,Other service activities,IT,Final consumption expenditure by government,EUR,38743625.032562576
+baseline,IMP_Y,Other service activities,IT,Gross fixed capital formation,EUR,10254954.823372196
 baseline,IMP_Y,Other service activities,IT,Changes in inventories,EUR,0.0
 baseline,IMP_Y,Other service activities,IT,Changes in valuables,EUR,0.0
 baseline,IMP_Y,Other service activities,IT,Exports: Total (fob),EUR,0.0
 baseline,IMP_Y,Other service activities,IT,Final Demand exports,EUR,0.0
 baseline,IMP_Y,Other service activities,IT,Intermediate exports,EUR,0.0
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by households,EUR,184764942.10775346
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,260130425.89137283
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by government,EUR,34555812.55392571
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Gross fixed capital formation,EUR,10254954.823372196
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Changes in inventories,EUR,0.0
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Changes in valuables,EUR,0.0
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Exports: Total (fob),EUR,0.0
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Final Demand exports,EUR,0.0
-baseline,IMP_Y,"Arts, entertainment and recreation",IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by households,EUR,7561035775.635277
-High_RES,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,127548617.41115136
-High_RES,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by government,EUR,4150850.0375917917
-High_RES,IMP_Y,Agriculture and forestry,IT,Gross fixed capital formation,EUR,307066490.1543297
-High_RES,IMP_Y,Agriculture and forestry,IT,Changes in inventories,EUR,77752505.35438429
-High_RES,IMP_Y,Agriculture and forestry,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Agriculture and forestry,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Agriculture and forestry,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Agriculture and forestry,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by households,EUR,1591854537.3383822
-High_RES,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,10545316.68580722
-High_RES,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Livestock and fishing,IT,Gross fixed capital formation,EUR,600892833.2831607
-High_RES,IMP_Y,Livestock and fishing,IT,Changes in inventories,EUR,312862338.3094945
-High_RES,IMP_Y,Livestock and fishing,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Livestock and fishing,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Livestock and fishing,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Livestock and fishing,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Extraction of coal,IT,Final consumption expenditure by households,EUR,114556.41906485251
-High_RES,IMP_Y,Extraction of coal,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Extraction of coal,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Extraction of coal,IT,Gross fixed capital formation,EUR,1014676.7852322791
-High_RES,IMP_Y,Extraction of coal,IT,Changes in inventories,EUR,13776.916526312647
-High_RES,IMP_Y,Extraction of coal,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Extraction of coal,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Extraction of coal,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Extraction of coal,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Extraction of crude oil,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Extraction of crude oil,IT,Changes in inventories,EUR,2311758.469687636
-High_RES,IMP_Y,Extraction of crude oil,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Extraction of crude oil,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Extraction of crude oil,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Extraction of crude oil,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Extraction of natural gas,IT,Gross fixed capital formation,EUR,24062993.516039863
-High_RES,IMP_Y,Extraction of natural gas,IT,Changes in inventories,EUR,20374237.475521807
-High_RES,IMP_Y,Extraction of natural gas,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Extraction of natural gas,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Extraction of natural gas,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Extraction of natural gas,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Extraction of other hydrocarbons,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by households,EUR,909000.762298992
-High_RES,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Other mining and quarrying,IT,Gross fixed capital formation,EUR,0.2656969403635501
-High_RES,IMP_Y,Other mining and quarrying,IT,Changes in inventories,EUR,775188.5533672436
-High_RES,IMP_Y,Other mining and quarrying,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Other mining and quarrying,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Other mining and quarrying,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Other mining and quarrying,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by households,EUR,73680770773.7173
-High_RES,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,11506243.281587029
-High_RES,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by government,EUR,1090024.6116332253
-High_RES,IMP_Y,Other manufacturing ,IT,Gross fixed capital formation,EUR,41312405560.88778
-High_RES,IMP_Y,Other manufacturing ,IT,Changes in inventories,EUR,1797644837.2035015
-High_RES,IMP_Y,Other manufacturing ,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Other manufacturing ,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Other manufacturing ,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Other manufacturing ,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Changes in inventories,EUR,221328.45483492417
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Manufacture of coke oven products,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by households,EUR,2101356063.1132936
-High_RES,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Petroleum Refinery,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Petroleum Refinery,IT,Changes in inventories,EUR,10262619.935450334
-High_RES,IMP_Y,Petroleum Refinery,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Petroleum Refinery,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Petroleum Refinery,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Petroleum Refinery,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by government,EUR,1182702067.3995166
-High_RES,IMP_Y,"Plastics, basic",IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,"Plastics, basic",IT,Changes in inventories,EUR,20248151.824600045
-High_RES,IMP_Y,"Plastics, basic",IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,"Plastics, basic",IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,"Plastics, basic",IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,"Plastics, basic",IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by households,EUR,12073563.577671098
-High_RES,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by government,EUR,1495634.4275182222
-High_RES,IMP_Y,Production of fertilizers,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Production of fertilizers,IT,Changes in inventories,EUR,373776.7106867748
-High_RES,IMP_Y,Production of fertilizers,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Production of fertilizers,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Production of fertilizers,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Production of fertilizers,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Chemicals nec,IT,Final consumption expenditure by households,EUR,4935343667.705807
-High_RES,IMP_Y,Chemicals nec,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Chemicals nec,IT,Final consumption expenditure by government,EUR,22141476.05858942
-High_RES,IMP_Y,Chemicals nec,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Chemicals nec,IT,Changes in inventories,EUR,5278223.667562051
-High_RES,IMP_Y,Chemicals nec,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Chemicals nec,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Chemicals nec,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Chemicals nec,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by households,EUR,1626649.7243960307
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Gross fixed capital formation,EUR,7887353.801960693
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Changes in inventories,EUR,1731595.6905522035
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,"Manufacture of cement, lime and plaster",IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Gross fixed capital formation,EUR,192812.79033070532
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Changes in inventories,EUR,96101561.84977706
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Aluminium production,IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,Aluminium production,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Aluminium production,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Aluminium production,IT,Gross fixed capital formation,EUR,222695.57397645738
-High_RES,IMP_Y,Aluminium production,IT,Changes in inventories,EUR,22618417.19056362
-High_RES,IMP_Y,Aluminium production,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Aluminium production,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Aluminium production,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Aluminium production,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by households,EUR,9152890312.97366
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,138093934.09695858
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by government,EUR,4150850.0375917917
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Gross fixed capital formation,EUR,907959323.4374905
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Changes in inventories,EUR,390614843.66387874
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by households,EUR,2101470619.5323586
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Gross fixed capital formation,EUR,25077670.301272143
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Changes in inventories,EUR,33183721.25202101
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Primary and refined hydrocarbons,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by households,EUR,909000.762298992
+High_RES,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,IMP_Y,Other mining and quarrying products,IT,Gross fixed capital formation,EUR,0.2656969403635501
+High_RES,IMP_Y,Other mining and quarrying products,IT,Changes in inventories,EUR,775188.5533672436
+High_RES,IMP_Y,Other mining and quarrying products,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Other mining and quarrying products,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Other mining and quarrying products,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Other mining and quarrying products,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by households,EUR,78628188005.00078
+High_RES,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,11506243.281587029
+High_RES,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by government,EUR,1207429202.4972577
+High_RES,IMP_Y,Other manufacturing products,IT,Gross fixed capital formation,EUR,41312628256.461754
+High_RES,IMP_Y,Other manufacturing products,IT,Changes in inventories,EUR,1846163406.596914
+High_RES,IMP_Y,Other manufacturing products,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Other manufacturing products,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Other manufacturing products,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Other manufacturing products,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by households,EUR,1626649.7243960307
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by government,EUR,0.0
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Gross fixed capital formation,EUR,7887353.801960693
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Changes in inventories,EUR,1731595.6905522035
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,"Cement, lime and plaster products",IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Steel and steel products,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,IMP_Y,Steel and steel products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,IMP_Y,Steel and steel products,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,IMP_Y,Steel and steel products,IT,Gross fixed capital formation,EUR,192812.79033070532
+High_RES,IMP_Y,Steel and steel products,IT,Changes in inventories,EUR,96101561.84977706
+High_RES,IMP_Y,Steel and steel products,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Steel and steel products,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Steel and steel products,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Steel and steel products,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Waste management services,IT,Final consumption expenditure by households,EUR,106788840.17817314
+High_RES,IMP_Y,Waste management services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,4992310.75174608
+High_RES,IMP_Y,Waste management services,IT,Final consumption expenditure by government,EUR,1678192.014290892
+High_RES,IMP_Y,Waste management services,IT,Gross fixed capital formation,EUR,0.0
+High_RES,IMP_Y,Waste management services,IT,Changes in inventories,EUR,0.0
+High_RES,IMP_Y,Waste management services,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Waste management services,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Waste management services,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Waste management services,IT,Intermediate exports,EUR,0.0
 High_RES,IMP_Y,Electricity,IT,Final consumption expenditure by households,EUR,372571216.9527639
 High_RES,IMP_Y,Electricity,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 High_RES,IMP_Y,Electricity,IT,Final consumption expenditure by government,EUR,0.0
@@ -575,15 +242,24 @@ High_RES,IMP_Y,Transmission and distribution of electricity,IT,Changes in valuab
 High_RES,IMP_Y,Transmission and distribution of electricity,IT,Exports: Total (fob),EUR,0.0
 High_RES,IMP_Y,Transmission and distribution of electricity,IT,Final Demand exports,EUR,0.0
 High_RES,IMP_Y,Transmission and distribution of electricity,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Steam and hot water supply,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Gross fixed capital formation,EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Changes in inventories,EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Steam and hot water,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by households,EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by government,EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Gross fixed capital formation,EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Changes in inventories,EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Water supply and sewerage,IT,Intermediate exports,EUR,0.0
 High_RES,IMP_Y,Construction,IT,Final consumption expenditure by households,EUR,48085662.44810069
 High_RES,IMP_Y,Construction,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 High_RES,IMP_Y,Construction,IT,Final consumption expenditure by government,EUR,1215722.6907186077
@@ -593,15 +269,15 @@ High_RES,IMP_Y,Construction,IT,Changes in valuables,EUR,0.0
 High_RES,IMP_Y,Construction,IT,Exports: Total (fob),EUR,0.0
 High_RES,IMP_Y,Construction,IT,Final Demand exports,EUR,0.0
 High_RES,IMP_Y,Construction,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by households,EUR,1303534621.8176506
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,15778457.76651343
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by government,EUR,8467218.889814511
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Gross fixed capital formation,EUR,331929313.41504323
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Changes in inventories,EUR,23779108.142797165
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by households,EUR,1303534621.8176506
+High_RES,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,15778457.76651343
+High_RES,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by government,EUR,8467218.889814511
+High_RES,IMP_Y,Wholesale and retail trade,IT,Gross fixed capital formation,EUR,331929313.41504323
+High_RES,IMP_Y,Wholesale and retail trade,IT,Changes in inventories,EUR,23779108.142797165
+High_RES,IMP_Y,Wholesale and retail trade,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Wholesale and retail trade,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Wholesale and retail trade,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Wholesale and retail trade,IT,Intermediate exports,EUR,0.0
 High_RES,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by households,EUR,18523126389.305317
 High_RES,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,112603762.26588602
 High_RES,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by government,EUR,115814757.50099212
@@ -611,357 +287,105 @@ High_RES,IMP_Y,Accommodation and food service activities,IT,Changes in valuables
 High_RES,IMP_Y,Accommodation and food service activities,IT,Exports: Total (fob),EUR,0.0
 High_RES,IMP_Y,Accommodation and food service activities,IT,Final Demand exports,EUR,0.0
 High_RES,IMP_Y,Accommodation and food service activities,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Transport via railways,IT,Final consumption expenditure by households,EUR,225686298.0989856
-High_RES,IMP_Y,Transport via railways,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,551084.3594532483
-High_RES,IMP_Y,Transport via railways,IT,Final consumption expenditure by government,EUR,756636.8210940775
-High_RES,IMP_Y,Transport via railways,IT,Gross fixed capital formation,EUR,1522639.078036481
-High_RES,IMP_Y,Transport via railways,IT,Changes in inventories,EUR,394269.3303967114
-High_RES,IMP_Y,Transport via railways,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Transport via railways,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Transport via railways,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Transport via railways,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Other land transport,IT,Final consumption expenditure by households,EUR,558820085.4032437
-High_RES,IMP_Y,Other land transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,1953549.1398370482
-High_RES,IMP_Y,Other land transport,IT,Final consumption expenditure by government,EUR,7216417.973310489
-High_RES,IMP_Y,Other land transport,IT,Gross fixed capital formation,EUR,5835748.848305609
-High_RES,IMP_Y,Other land transport,IT,Changes in inventories,EUR,1511097.9509033768
-High_RES,IMP_Y,Other land transport,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Other land transport,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Other land transport,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Other land transport,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by households,EUR,231034.25412594932
-High_RES,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Transport via pipelines,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Transport via pipelines,IT,Changes in inventories,EUR,21152.139348196477
-High_RES,IMP_Y,Transport via pipelines,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Transport via pipelines,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Transport via pipelines,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Transport via pipelines,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by households,EUR,2109572428.7054079
-High_RES,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,155595.52848939065
-High_RES,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by government,EUR,519691.93072865874
-High_RES,IMP_Y,Sea and coastal water transport,IT,Gross fixed capital formation,EUR,380788.46220621385
-High_RES,IMP_Y,Sea and coastal water transport,IT,Changes in inventories,EUR,98600.65604676411
-High_RES,IMP_Y,Sea and coastal water transport,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Sea and coastal water transport,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Sea and coastal water transport,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Sea and coastal water transport,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Final consumption expenditure by households,EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Inland water transport,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Air transport,IT,Final consumption expenditure by households,EUR,5058278642.2919655
-High_RES,IMP_Y,Air transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,536948.9307215926
-High_RES,IMP_Y,Air transport,IT,Final consumption expenditure by government,EUR,1793419.3174994001
-High_RES,IMP_Y,Air transport,IT,Gross fixed capital formation,EUR,1509589.598516481
-High_RES,IMP_Y,Air transport,IT,Changes in inventories,EUR,390890.32244491205
-High_RES,IMP_Y,Air transport,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Air transport,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Air transport,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Air transport,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Transportation and storage,IT,Final consumption expenditure by households,EUR,323822538.40620774
-High_RES,IMP_Y,Transportation and storage,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Transportation and storage,IT,Final consumption expenditure by government,EUR,85195153.5958526
-High_RES,IMP_Y,Transportation and storage,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Transportation and storage,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Transportation and storage,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Transportation and storage,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Transportation and storage,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Transportation and storage,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Information and communication,IT,Final consumption expenditure by households,EUR,1256764122.160547
+High_RES,IMP_Y,Transport services,IT,Final consumption expenditure by households,EUR,8276411027.159937
+High_RES,IMP_Y,Transport services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,3197177.9585012803
+High_RES,IMP_Y,Transport services,IT,Final consumption expenditure by government,EUR,95481319.63848522
+High_RES,IMP_Y,Transport services,IT,Gross fixed capital formation,EUR,9248765.987064786
+High_RES,IMP_Y,Transport services,IT,Changes in inventories,EUR,2416010.3991399608
+High_RES,IMP_Y,Transport services,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Transport services,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Transport services,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Transport services,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Information and communication,IT,Final consumption expenditure by households,EUR,1255255825.039517
 High_RES,IMP_Y,Information and communication,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 High_RES,IMP_Y,Information and communication,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Information and communication,IT,Gross fixed capital formation,EUR,2634548647.4691634
+High_RES,IMP_Y,Information and communication,IT,Gross fixed capital formation,EUR,0.0
 High_RES,IMP_Y,Information and communication,IT,Changes in inventories,EUR,0.0
 High_RES,IMP_Y,Information and communication,IT,Changes in valuables,EUR,0.0
 High_RES,IMP_Y,Information and communication,IT,Exports: Total (fob),EUR,0.0
 High_RES,IMP_Y,Information and communication,IT,Final Demand exports,EUR,0.0
 High_RES,IMP_Y,Information and communication,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by households,EUR,4650864968.472402
-High_RES,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Financial and insurance activities,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Financial and insurance activities,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Financial and insurance activities,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Financial and insurance activities,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Financial and insurance activities,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Financial and insurance activities,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Real estate activities,IT,Final consumption expenditure by households,EUR,4331563543.384183
-High_RES,IMP_Y,Real estate activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Real estate activities,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Real estate activities,IT,Gross fixed capital formation,EUR,271029666.77622867
-High_RES,IMP_Y,Real estate activities,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Real estate activities,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Real estate activities,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Real estate activities,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Real estate activities,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by households,EUR,31124187.358651344
-High_RES,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by government,EUR,0.0
-High_RES,IMP_Y,Administrative and support service activities,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Administrative and support service activities,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Administrative and support service activities,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Administrative and support service activities,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Administrative and support service activities,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Administrative and support service activities,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by households,EUR,661066456.4534453
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,204725700.36209276
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by government,EUR,280365213.0838612
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Gross fixed capital formation,EUR,192276826.287639
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,"Professional, scientific and technical activities",IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by households,EUR,18051028.838796247
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by government,EUR,2274583826.315117
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Public administration and defence; compulsory social security,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Education,IT,Final consumption expenditure by households,EUR,73486257.11785744
-High_RES,IMP_Y,Education,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,148377337.81924477
-High_RES,IMP_Y,Education,IT,Final consumption expenditure by government,EUR,385511920.49551183
-High_RES,IMP_Y,Education,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Education,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Education,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Education,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Education,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Education,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by households,EUR,71094134.14567396
-High_RES,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,386275261.97959054
-High_RES,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by government,EUR,567772571.5087575
-High_RES,IMP_Y,Human health and social work activities,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Human health and social work activities,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Human health and social work activities,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Human health and social work activities,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Human health and social work activities,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Human health and social work activities,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Waste incineration,IT,Final consumption expenditure by households,EUR,17704009.20696918
-High_RES,IMP_Y,Waste incineration,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,2188353.730810059
-High_RES,IMP_Y,Waste incineration,IT,Final consumption expenditure by government,EUR,908373.7550965291
-High_RES,IMP_Y,Waste incineration,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Waste incineration,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Waste incineration,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Waste incineration,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Waste incineration,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Waste incineration,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by households,EUR,2004047.567527746
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,213490.06754853213
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by government,EUR,58613.07820453863
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Anaerobic waste treatment,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Composting,IT,Final consumption expenditure by households,EUR,15546979.42923171
-High_RES,IMP_Y,Composting,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,1007940.2861593493
-High_RES,IMP_Y,Composting,IT,Final consumption expenditure by government,EUR,276727.0791483996
-High_RES,IMP_Y,Composting,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Composting,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Composting,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Composting,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Composting,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Composting,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Waste water treatment,IT,Final consumption expenditure by households,EUR,63853313.4028455
-High_RES,IMP_Y,Waste water treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,768871.0918075333
-High_RES,IMP_Y,Waste water treatment,IT,Final consumption expenditure by government,EUR,211091.3259454438
-High_RES,IMP_Y,Waste water treatment,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Waste water treatment,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Waste water treatment,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Waste water treatment,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Waste water treatment,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Waste water treatment,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by households,EUR,7680490.571598998
-High_RES,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,813655.5754206057
-High_RES,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by government,EUR,223386.775895981
-High_RES,IMP_Y,Landfill waste treatment,IT,Gross fixed capital formation,EUR,0.0
-High_RES,IMP_Y,Landfill waste treatment,IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,Landfill waste treatment,IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,Landfill waste treatment,IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,Landfill waste treatment,IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,Landfill waste treatment,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,Other service activities,IT,Final consumption expenditure by households,EUR,1072452848.3566943
-High_RES,IMP_Y,Other service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,56077744.295584075
-High_RES,IMP_Y,Other service activities,IT,Final consumption expenditure by government,EUR,4187812.47863687
-High_RES,IMP_Y,Other service activities,IT,Gross fixed capital formation,EUR,0.0
+High_RES,IMP_Y,Other services,IT,Final consumption expenditure by households,EUR,9838758872.89204
+High_RES,IMP_Y,Other services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,739378300.160928
+High_RES,IMP_Y,Other services,IT,Final consumption expenditure by government,EUR,3508233531.403248
+High_RES,IMP_Y,Other services,IT,Gross fixed capital formation,EUR,3097855140.533031
+High_RES,IMP_Y,Other services,IT,Changes in inventories,EUR,0.0
+High_RES,IMP_Y,Other services,IT,Changes in valuables,EUR,0.0
+High_RES,IMP_Y,Other services,IT,Exports: Total (fob),EUR,0.0
+High_RES,IMP_Y,Other services,IT,Final Demand exports,EUR,0.0
+High_RES,IMP_Y,Other services,IT,Intermediate exports,EUR,0.0
+High_RES,IMP_Y,Other service activities,IT,Final consumption expenditure by households,EUR,1257217790.464448
+High_RES,IMP_Y,Other service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,316208170.1869569
+High_RES,IMP_Y,Other service activities,IT,Final consumption expenditure by government,EUR,38743625.032562576
+High_RES,IMP_Y,Other service activities,IT,Gross fixed capital formation,EUR,10254954.823372196
 High_RES,IMP_Y,Other service activities,IT,Changes in inventories,EUR,0.0
 High_RES,IMP_Y,Other service activities,IT,Changes in valuables,EUR,0.0
 High_RES,IMP_Y,Other service activities,IT,Exports: Total (fob),EUR,0.0
 High_RES,IMP_Y,Other service activities,IT,Final Demand exports,EUR,0.0
 High_RES,IMP_Y,Other service activities,IT,Intermediate exports,EUR,0.0
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by households,EUR,184764942.10775346
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,260130425.89137283
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by government,EUR,34555812.55392571
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Gross fixed capital formation,EUR,10254954.823372196
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Changes in inventories,EUR,0.0
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Changes in valuables,EUR,0.0
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Exports: Total (fob),EUR,0.0
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Final Demand exports,EUR,0.0
-High_RES,IMP_Y,"Arts, entertainment and recreation",IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by households,EUR,7561035775.635277
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,127548617.41115136
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Final consumption expenditure by government,EUR,4150850.0375917917
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Gross fixed capital formation,EUR,307066490.1543297
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Changes in inventories,EUR,77752505.35438429
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Agriculture and forestry,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by households,EUR,1591854537.3383822
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,10545316.68580722
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Gross fixed capital formation,EUR,600892833.2831607
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Changes in inventories,EUR,312862338.3094945
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Livestock and fishing,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Final consumption expenditure by households,EUR,114556.41906485251
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Gross fixed capital formation,EUR,1014676.7852322791
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Changes in inventories,EUR,13776.916526312647
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of coal,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Changes in inventories,EUR,2311758.469687636
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of crude oil,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Gross fixed capital formation,EUR,24062993.516039863
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Changes in inventories,EUR,20374237.475521807
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of natural gas,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Extraction of other hydrocarbons,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by households,EUR,909000.762298992
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Gross fixed capital formation,EUR,0.2656969403635501
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Changes in inventories,EUR,775188.5533672436
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Other mining and quarrying,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by households,EUR,73680770773.7173
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,11506243.281587029
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Final consumption expenditure by government,EUR,1090024.6116332253
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Gross fixed capital formation,EUR,41312405560.88778
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Changes in inventories,EUR,1797644837.2035015
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Other manufacturing ,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Changes in inventories,EUR,221328.45483492417
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of coke oven products,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by households,EUR,2101356063.1132936
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Changes in inventories,EUR,10262619.935450334
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Petroleum Refinery,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Final consumption expenditure by government,EUR,1182702067.3995166
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Changes in inventories,EUR,20248151.824600045
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Plastics, basic",IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by households,EUR,12073563.577671098
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Final consumption expenditure by government,EUR,1495634.4275182222
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Changes in inventories,EUR,373776.7106867748
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Production of fertilizers,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Final consumption expenditure by households,EUR,4935343667.705807
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Final consumption expenditure by government,EUR,22141476.05858942
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Changes in inventories,EUR,5278223.667562051
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Chemicals nec,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by households,EUR,1626649.7243960307
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Gross fixed capital formation,EUR,7887353.801960693
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Changes in inventories,EUR,1731595.6905522035
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Manufacture of cement, lime and plaster",IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Gross fixed capital formation,EUR,192812.79033070532
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Changes in inventories,EUR,96101561.84977706
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Manufacture of basic iron and steel and of ferro-alloys and first products thereof,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Aluminium production,IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,Aluminium production,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Aluminium production,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Aluminium production,IT,Gross fixed capital formation,EUR,222695.57397645738
-High_RES_domestic,IMP_Y,Aluminium production,IT,Changes in inventories,EUR,22618417.19056362
-High_RES_domestic,IMP_Y,Aluminium production,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Aluminium production,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Aluminium production,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Aluminium production,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Water supply; sewerage, waste management and remediation activities",IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by households,EUR,9152890312.97366
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,138093934.09695858
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final consumption expenditure by government,EUR,4150850.0375917917
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Gross fixed capital formation,EUR,907959323.4374905
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Changes in inventories,EUR,390614843.66387874
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,"Agriculture, Forestry and Fishing products",IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by households,EUR,2101470619.5323586
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Gross fixed capital formation,EUR,25077670.301272143
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Changes in inventories,EUR,33183721.25202101
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Primary and refined hydrocarbons,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by households,EUR,909000.762298992
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Gross fixed capital formation,EUR,0.2656969403635501
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Changes in inventories,EUR,775188.5533672436
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Other mining and quarrying products,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by households,EUR,78628188005.00078
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,11506243.281587029
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Final consumption expenditure by government,EUR,1207429202.4972577
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Gross fixed capital formation,EUR,41312628256.461754
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Changes in inventories,EUR,1846163406.596914
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Other manufacturing products,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by households,EUR,1626649.7243960307
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Gross fixed capital formation,EUR,7887353.801960693
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Changes in inventories,EUR,1731595.6905522035
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,"Cement, lime and plaster products",IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Gross fixed capital formation,EUR,192812.79033070532
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Changes in inventories,EUR,96101561.84977706
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Steel and steel products,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Waste management services,IT,Final consumption expenditure by households,EUR,106788840.17817314
+High_RES_domestic,IMP_Y,Waste management services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,4992310.75174608
+High_RES_domestic,IMP_Y,Waste management services,IT,Final consumption expenditure by government,EUR,1678192.014290892
+High_RES_domestic,IMP_Y,Waste management services,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,IMP_Y,Waste management services,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,IMP_Y,Waste management services,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Waste management services,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Waste management services,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Waste management services,IT,Intermediate exports,EUR,0.0
 High_RES_domestic,IMP_Y,Electricity,IT,Final consumption expenditure by households,EUR,0.0
 High_RES_domestic,IMP_Y,Electricity,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 High_RES_domestic,IMP_Y,Electricity,IT,Final consumption expenditure by government,EUR,0.0
@@ -980,15 +404,24 @@ High_RES_domestic,IMP_Y,Transmission and distribution of electricity,IT,Changes 
 High_RES_domestic,IMP_Y,Transmission and distribution of electricity,IT,Exports: Total (fob),EUR,0.0
 High_RES_domestic,IMP_Y,Transmission and distribution of electricity,IT,Final Demand exports,EUR,0.0
 High_RES_domestic,IMP_Y,Transmission and distribution of electricity,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Steam and hot water supply,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Steam and hot water,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by households,EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Final consumption expenditure by government,EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Water supply and sewerage,IT,Intermediate exports,EUR,0.0
 High_RES_domestic,IMP_Y,Construction,IT,Final consumption expenditure by households,EUR,48085662.44810069
 High_RES_domestic,IMP_Y,Construction,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 High_RES_domestic,IMP_Y,Construction,IT,Final consumption expenditure by government,EUR,1215722.6907186077
@@ -998,15 +431,15 @@ High_RES_domestic,IMP_Y,Construction,IT,Changes in valuables,EUR,0.0
 High_RES_domestic,IMP_Y,Construction,IT,Exports: Total (fob),EUR,0.0
 High_RES_domestic,IMP_Y,Construction,IT,Final Demand exports,EUR,0.0
 High_RES_domestic,IMP_Y,Construction,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by households,EUR,1303534621.8176506
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,15778457.76651343
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final consumption expenditure by government,EUR,8467218.889814511
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Gross fixed capital formation,EUR,331929313.41504323
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Changes in inventories,EUR,23779108.142797165
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Wholesale and retail trade; repair of motor vehicles and motorcycles,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by households,EUR,1303534621.8176506
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,15778457.76651343
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Final consumption expenditure by government,EUR,8467218.889814511
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Gross fixed capital formation,EUR,331929313.41504323
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Changes in inventories,EUR,23779108.142797165
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Wholesale and retail trade,IT,Intermediate exports,EUR,0.0
 High_RES_domestic,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by households,EUR,18523126389.305317
 High_RES_domestic,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,112603762.26588602
 High_RES_domestic,IMP_Y,Accommodation and food service activities,IT,Final consumption expenditure by government,EUR,115814757.50099212
@@ -1016,201 +449,39 @@ High_RES_domestic,IMP_Y,Accommodation and food service activities,IT,Changes in 
 High_RES_domestic,IMP_Y,Accommodation and food service activities,IT,Exports: Total (fob),EUR,0.0
 High_RES_domestic,IMP_Y,Accommodation and food service activities,IT,Final Demand exports,EUR,0.0
 High_RES_domestic,IMP_Y,Accommodation and food service activities,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Transport via railways,IT,Final consumption expenditure by households,EUR,225686298.0989856
-High_RES_domestic,IMP_Y,Transport via railways,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,551084.3594532483
-High_RES_domestic,IMP_Y,Transport via railways,IT,Final consumption expenditure by government,EUR,756636.8210940775
-High_RES_domestic,IMP_Y,Transport via railways,IT,Gross fixed capital formation,EUR,1522639.078036481
-High_RES_domestic,IMP_Y,Transport via railways,IT,Changes in inventories,EUR,394269.3303967114
-High_RES_domestic,IMP_Y,Transport via railways,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Transport via railways,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Transport via railways,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Transport via railways,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Other land transport,IT,Final consumption expenditure by households,EUR,558820085.4032437
-High_RES_domestic,IMP_Y,Other land transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,1953549.1398370482
-High_RES_domestic,IMP_Y,Other land transport,IT,Final consumption expenditure by government,EUR,7216417.973310489
-High_RES_domestic,IMP_Y,Other land transport,IT,Gross fixed capital formation,EUR,5835748.848305609
-High_RES_domestic,IMP_Y,Other land transport,IT,Changes in inventories,EUR,1511097.9509033768
-High_RES_domestic,IMP_Y,Other land transport,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Other land transport,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Other land transport,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Other land transport,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by households,EUR,231034.25412594932
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Changes in inventories,EUR,21152.139348196477
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Transport via pipelines,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by households,EUR,2109572428.7054079
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,155595.52848939065
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Final consumption expenditure by government,EUR,519691.93072865874
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Gross fixed capital formation,EUR,380788.46220621385
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Changes in inventories,EUR,98600.65604676411
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Sea and coastal water transport,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Final consumption expenditure by households,EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Inland water transport,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Air transport,IT,Final consumption expenditure by households,EUR,5058278642.2919655
-High_RES_domestic,IMP_Y,Air transport,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,536948.9307215926
-High_RES_domestic,IMP_Y,Air transport,IT,Final consumption expenditure by government,EUR,1793419.3174994001
-High_RES_domestic,IMP_Y,Air transport,IT,Gross fixed capital formation,EUR,1509589.598516481
-High_RES_domestic,IMP_Y,Air transport,IT,Changes in inventories,EUR,390890.32244491205
-High_RES_domestic,IMP_Y,Air transport,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Air transport,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Air transport,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Air transport,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Final consumption expenditure by households,EUR,323822538.40620774
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Final consumption expenditure by government,EUR,85195153.5958526
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Transportation and storage,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Information and communication,IT,Final consumption expenditure by households,EUR,1256764122.160547
+High_RES_domestic,IMP_Y,Transport services,IT,Final consumption expenditure by households,EUR,8276411027.159937
+High_RES_domestic,IMP_Y,Transport services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,3197177.9585012803
+High_RES_domestic,IMP_Y,Transport services,IT,Final consumption expenditure by government,EUR,95481319.63848522
+High_RES_domestic,IMP_Y,Transport services,IT,Gross fixed capital formation,EUR,9248765.987064786
+High_RES_domestic,IMP_Y,Transport services,IT,Changes in inventories,EUR,2416010.3991399608
+High_RES_domestic,IMP_Y,Transport services,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Transport services,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Transport services,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Transport services,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Information and communication,IT,Final consumption expenditure by households,EUR,1255255825.039517
 High_RES_domestic,IMP_Y,Information and communication,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
 High_RES_domestic,IMP_Y,Information and communication,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Information and communication,IT,Gross fixed capital formation,EUR,2634548647.4691634
+High_RES_domestic,IMP_Y,Information and communication,IT,Gross fixed capital formation,EUR,0.0
 High_RES_domestic,IMP_Y,Information and communication,IT,Changes in inventories,EUR,0.0
 High_RES_domestic,IMP_Y,Information and communication,IT,Changes in valuables,EUR,0.0
 High_RES_domestic,IMP_Y,Information and communication,IT,Exports: Total (fob),EUR,0.0
 High_RES_domestic,IMP_Y,Information and communication,IT,Final Demand exports,EUR,0.0
 High_RES_domestic,IMP_Y,Information and communication,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by households,EUR,4650864968.472402
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Financial and insurance activities,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Real estate activities,IT,Final consumption expenditure by households,EUR,4331563543.384183
-High_RES_domestic,IMP_Y,Real estate activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Real estate activities,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Real estate activities,IT,Gross fixed capital formation,EUR,271029666.77622867
-High_RES_domestic,IMP_Y,Real estate activities,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Real estate activities,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Real estate activities,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Real estate activities,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Real estate activities,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by households,EUR,31124187.358651344
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Final consumption expenditure by government,EUR,0.0
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Administrative and support service activities,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by households,EUR,661066456.4534453
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,204725700.36209276
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Final consumption expenditure by government,EUR,280365213.0838612
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Gross fixed capital formation,EUR,192276826.287639
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Professional, scientific and technical activities",IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by households,EUR,18051028.838796247
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,0.0
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Final consumption expenditure by government,EUR,2274583826.315117
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Public administration and defence; compulsory social security,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Education,IT,Final consumption expenditure by households,EUR,73486257.11785744
-High_RES_domestic,IMP_Y,Education,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,148377337.81924477
-High_RES_domestic,IMP_Y,Education,IT,Final consumption expenditure by government,EUR,385511920.49551183
-High_RES_domestic,IMP_Y,Education,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Education,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Education,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Education,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Education,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Education,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by households,EUR,71094134.14567396
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,386275261.97959054
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Final consumption expenditure by government,EUR,567772571.5087575
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Human health and social work activities,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Waste incineration,IT,Final consumption expenditure by households,EUR,17704009.20696918
-High_RES_domestic,IMP_Y,Waste incineration,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,2188353.730810059
-High_RES_domestic,IMP_Y,Waste incineration,IT,Final consumption expenditure by government,EUR,908373.7550965291
-High_RES_domestic,IMP_Y,Waste incineration,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Waste incineration,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Waste incineration,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Waste incineration,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Waste incineration,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Waste incineration,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by households,EUR,2004047.567527746
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,213490.06754853213
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Final consumption expenditure by government,EUR,58613.07820453863
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Anaerobic waste treatment,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Composting,IT,Final consumption expenditure by households,EUR,15546979.42923171
-High_RES_domestic,IMP_Y,Composting,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,1007940.2861593493
-High_RES_domestic,IMP_Y,Composting,IT,Final consumption expenditure by government,EUR,276727.0791483996
-High_RES_domestic,IMP_Y,Composting,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Composting,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Composting,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Composting,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Composting,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Composting,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Final consumption expenditure by households,EUR,63853313.4028455
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,768871.0918075333
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Final consumption expenditure by government,EUR,211091.3259454438
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Waste water treatment,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by households,EUR,7680490.571598998
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,813655.5754206057
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Final consumption expenditure by government,EUR,223386.775895981
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Gross fixed capital formation,EUR,0.0
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,Landfill waste treatment,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,Other service activities,IT,Final consumption expenditure by households,EUR,1072452848.3566943
-High_RES_domestic,IMP_Y,Other service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,56077744.295584075
-High_RES_domestic,IMP_Y,Other service activities,IT,Final consumption expenditure by government,EUR,4187812.47863687
-High_RES_domestic,IMP_Y,Other service activities,IT,Gross fixed capital formation,EUR,0.0
+High_RES_domestic,IMP_Y,Other services,IT,Final consumption expenditure by households,EUR,9838758872.89204
+High_RES_domestic,IMP_Y,Other services,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,739378300.160928
+High_RES_domestic,IMP_Y,Other services,IT,Final consumption expenditure by government,EUR,3508233531.403248
+High_RES_domestic,IMP_Y,Other services,IT,Gross fixed capital formation,EUR,3097855140.533031
+High_RES_domestic,IMP_Y,Other services,IT,Changes in inventories,EUR,0.0
+High_RES_domestic,IMP_Y,Other services,IT,Changes in valuables,EUR,0.0
+High_RES_domestic,IMP_Y,Other services,IT,Exports: Total (fob),EUR,0.0
+High_RES_domestic,IMP_Y,Other services,IT,Final Demand exports,EUR,0.0
+High_RES_domestic,IMP_Y,Other services,IT,Intermediate exports,EUR,0.0
+High_RES_domestic,IMP_Y,Other service activities,IT,Final consumption expenditure by households,EUR,1257217790.464448
+High_RES_domestic,IMP_Y,Other service activities,IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,316208170.1869569
+High_RES_domestic,IMP_Y,Other service activities,IT,Final consumption expenditure by government,EUR,38743625.032562576
+High_RES_domestic,IMP_Y,Other service activities,IT,Gross fixed capital formation,EUR,10254954.823372196
 High_RES_domestic,IMP_Y,Other service activities,IT,Changes in inventories,EUR,0.0
 High_RES_domestic,IMP_Y,Other service activities,IT,Changes in valuables,EUR,0.0
 High_RES_domestic,IMP_Y,Other service activities,IT,Exports: Total (fob),EUR,0.0
 High_RES_domestic,IMP_Y,Other service activities,IT,Final Demand exports,EUR,0.0
 High_RES_domestic,IMP_Y,Other service activities,IT,Intermediate exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by households,EUR,184764942.10775346
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by non-profit organisations serving households (NPISH),EUR,260130425.89137283
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Final consumption expenditure by government,EUR,34555812.55392571
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Gross fixed capital formation,EUR,10254954.823372196
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Changes in inventories,EUR,0.0
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Changes in valuables,EUR,0.0
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Exports: Total (fob),EUR,0.0
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Final Demand exports,EUR,0.0
-High_RES_domestic,IMP_Y,"Arts, entertainment and recreation",IT,Intermediate exports,EUR,0.0
