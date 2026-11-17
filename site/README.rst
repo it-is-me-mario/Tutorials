@@ -82,7 +82,8 @@ copies figures from that same commit. Figure hashes are recorded with the guide.
 The rendered notebook receives equivalent link/image adjustments; its downloadable
 companion preserves every original source cell. Code cells and calculations are
 unchanged. The shared theme's ``mario_site`` module supplies only the cards,
-steps and disclosure directives, without installing the main site's navigation.
+steps and disclosure directives, while the shared theme template supplies the global header. Tutorials retains
+its own Latest and Dev routes and links to the main site's Model Gallery.
 Keep the original documentation addresses working when adding a guide to this
 catalogue, and route the Examples index to the corresponding tutorial pages.
 
