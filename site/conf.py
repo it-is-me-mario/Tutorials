@@ -40,7 +40,7 @@ html_copy_source = False
 html_permalinks_icon = "#"
 html_sidebars = {"**": []}
 CHANNEL = os.environ.get("TUTORIALS_CHANNEL", "latest")
-MASTER = f"https://www.marioproject.com/en/{CHANNEL}/"
+MASTER = "https://www.marioproject.com/en/latest/"
 EXPLORER = "https://explorer.marioproject.com/" + (CHANNEL + "/" if CHANNEL != "latest" else "")
 
 
