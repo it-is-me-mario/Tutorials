@@ -213,7 +213,7 @@ def mario_source_target(source, address):
     return path
 
 
-def mario_web_link(source, address, channel):
+def mario_web_link(source, address):
     parsed = urlsplit(address)
     if parsed.scheme or parsed.netloc or not parsed.path:
         return address
@@ -222,7 +222,7 @@ def mario_web_link(source, address, channel):
         target = target.with_suffix(".html")
     elif not target.suffix:
         target = target.with_suffix(".html")
-    return (f"https://www.marioproject.com/en/{channel}/" + quote(target.as_posix())
+    return ("https://www.marioproject.com/en/latest/" + quote(target.as_posix())
             + ("?" + parsed.query if parsed.query else "")
             + ("#" + parsed.fragment if parsed.fragment else ""))
 
@@ -235,7 +235,7 @@ def rst_document_body(text):
     return match.group(1).strip(), text[match.end():].lstrip()
 
 
-def prepare_mario_explanation(tutorial, revision, channel, folder, guide, notebook):
+def prepare_mario_explanation(tutorial, revision, folder, guide, notebook):
     """Relocate presentation links and figures without changing downloadable cells."""
     repository = tutorial["repository"]
     assets = {}
@@ -262,7 +262,7 @@ def prepare_mario_explanation(tutorial, revision, channel, folder, guide, notebo
         if label is None:
             path = mario_source_target(tutorial["guide"], urlsplit(address).path).with_suffix(".rst")
             label, _ = rst_document_body(repository_source(repository, revision, path.as_posix()).decode())
-        return f"`{label} <{mario_web_link(tutorial['guide'], address, channel)}>`_"
+        return f"`{label} <{mario_web_link(tutorial['guide'], address)}>`_"
 
     _, body = rst_document_body(guide.decode())
     body = re.sub(r":doc:`([^`]+)`", doc_link, body)
@@ -275,7 +275,7 @@ def prepare_mario_explanation(tutorial, revision, channel, folder, guide, notebo
         def markdown_link(match):
             prefix, address = match[1], match[2]
             link = image_link(tutorial["notebook"], address) if prefix.startswith("!") else \
-                mario_web_link(tutorial["notebook"], address, channel)
+                mario_web_link(tutorial["notebook"], address)
             return prefix + link + ")"
         cell.source = re.sub(r"(!?\[[^\]]*\]\()([^\s)]+)\)", markdown_link, cell.source)
     return body.encode(), nbformat.writes(rendered).encode(), assets
@@ -313,7 +313,7 @@ def prepare_tutorial(tutorial, revisions, destination):
         explanation = payload
         if tutorial.get("source_format") == "mario":
             explanation, rendered, assets = prepare_mario_explanation(
-                tutorial, revision, revisions.get("channel", "latest"), folder, payload,
+                tutorial, revision, folder, payload,
                 (folder / notebook_name).read_bytes(),
             )
             (folder / "notebook.ipynb").write_bytes(rendered)
@@ -411,7 +411,7 @@ def prepare(catalog, revisions, destination):
         ".. raw:: html", "",
         '   <section class="tutorial-start" aria-label="Before you start"><div><h2>Before you start</h2></div>',
         '   <p>Install MARIO before running the notebooks. Each tutorial lists its data and any additional dependencies.</p>',
-        f'   <a href="https://www.marioproject.com/en/{revisions.get("channel", "latest")}/get_started/index.html">Installation →</a></section>',
+        '   <a href="https://www.marioproject.com/en/latest/get_started/index.html">Installation →</a></section>',
         '   <div class="tutorial-collection">',
     ]
     for number, tutorial in enumerate(entries, 1):
