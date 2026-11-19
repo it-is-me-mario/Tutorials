@@ -249,7 +249,7 @@ The following steps calibrate this reference before the calculation-path choice.
 .. _calibrate-electricity-reference:
 
 Update the reference electricity mix to 2022
--------------------------------------------
+--------------------------------------------
 
 Before constructing scenarios, inspect the original generation shares and direct
 intensities in the notebook. EXIOBASE 3.8.2 assigns very little Italian production
