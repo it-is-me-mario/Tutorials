@@ -74,7 +74,7 @@ class PublisherTests(unittest.TestCase):
                     "guide": source + ".rst", "guide_includes_downloads": True, "source_format": "mario"}
         payloads = {source + ".ipynb": notebook, source + ".rst": guide,
                     "doc/source/_static/images/result.png": b"source-image"}
-        revisions = {"site_commit": "a" * 40, "channel": "preview",
+        revisions = {"site_commit": "a" * 40, "channel": "dev",
                      "external_sources": {"it-is-me-mario/MARIO@source": "b" * 40}}
         with TemporaryDirectory() as directory, patch.object(publisher, "repository_source",
                 side_effect=lambda repository, revision, path: payloads[path]):
@@ -84,12 +84,12 @@ class PublisherTests(unittest.TestCase):
             rendered = nbformat.read(folder / "notebook.ipynb", as_version=4)
             self.assertEqual(downloaded.cells[0].source, markdown)
             self.assertEqual(rendered.cells[1].source, downloaded.cells[1].source)
-            self.assertIn("https://www.marioproject.com/en/preview/user_guide/analysis/method.html#units", rendered.cells[0].source)
+            self.assertIn("https://www.marioproject.com/en/latest/user_guide/analysis/method.html#units", rendered.cells[0].source)
             self.assertIn("![Result](assets/result.png)", rendered.cells[0].source)
             explanation = (folder / "overview.rst.inc").read_text()
             self.assertNotIn("Original title", explanation)
             self.assertIn(".. figure:: assets/result.png\n   :alt: A result.", explanation)
-            self.assertIn("https://www.marioproject.com/en/preview/user_guide/analysis/method.html", explanation)
+            self.assertIn("https://www.marioproject.com/en/latest/user_guide/analysis/method.html", explanation)
             self.assertEqual((folder / "assets/result.png").read_bytes(), b"source-image")
             self.assertEqual(record["assets"]["doc/source/_static/images/result.png"]["sha256"],
                              hashlib.sha256(b"source-image").hexdigest())
@@ -97,9 +97,9 @@ class PublisherTests(unittest.TestCase):
     def test_mario_links_preserve_external_targets_and_reject_root_escape(self):
         source = "doc/source/user_guide/examples/example.rst"
         for target in ["https://example.org/guide", "#local-section"]:
-            self.assertEqual(publisher.mario_web_link(source, target, "preview"), target)
+            self.assertEqual(publisher.mario_web_link(source, target), target)
         with self.assertRaises(ValueError):
-            publisher.mario_web_link(source, "../../../../private.rst", "preview")
+            publisher.mario_web_link(source, "../../../../private.rst")
 
     def test_periodic_refresh_has_its_own_workflow(self):
         workflows = Path(__file__).parents[2] / ".github/workflows"
