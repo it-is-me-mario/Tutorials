@@ -5,3 +5,7 @@ __pycache__/
 
 Economy-wide impact assessment/source_data/
 Economy-wide impact assessment/cvxlab_model/database.db*
+
+Economy-wide impact assessment/emission_shocks_template.xlsx
+
+Economy-wide impact assessment/results/MRSUT_2022_Xa_2022_SUT_industry-based.csv

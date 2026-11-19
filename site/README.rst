@@ -158,6 +158,22 @@ numerical prerequisites separately from data transfer and report any pending
 normalization or solve requirement. Include the original configuration's
 licence and the derived data's source notices in the downloadable package.
 
+When calibrating reference data from another release, match observation years,
+classifications, units and GHG characterization before applying coefficients.
+Execute the complete preparation-to-scenario-to-export chain and compare imported
+coefficients with the donor source without publishing their numerical values.
+Verify that import blocks survive reference promotion and that economic
+coefficients retain their post-mix values. Regenerate reference-share tables,
+scenario summaries, receiving-model shocks and both downloadable archives together.
+
+Check publication omissions in every representation: CSVs, ZIP members, notebook
+outputs and receiving workbooks. The exercise publishes corrected environmental
+flows but omits activity-output values and direct-intensity tables. The published
+CVXLab workbook retains blank activity-output coordinates; execute the optional
+local export with a complete output vector and verify that it fills all reference
+tables. Check the intentionally blank distribution copy separately from that
+complete local receiving model.
+
 Known zero matrices can be omitted from the exercise's explicit CSV list.
 Review that list, the committed files, archive and guide together. Preserve
 zero blocks required inside a populated receiving table's coordinate domain.
