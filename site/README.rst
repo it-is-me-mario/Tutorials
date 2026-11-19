@@ -152,7 +152,10 @@ When publishing the CVXLab input package, maintain its classified sets and
 scenario inputs with the notebook's mapping. Execute the optional
 ``to_cvxlab`` path and inspect written-cell counts for every mapped table,
 missing attributes, unmatched coordinates and missing values. Check supplied
-unmapped tables by their coordinates and scenario assumptions. Reconstruct
+unmapped tables by their coordinates and scenario assumptions. Compare retained
+settings and set attributes by cell contents: XLSX serialization can change
+package bytes without changing their meaning. If the exporter reports concurrent
+file changes, inspect the current inputs and retry without bypassing its guard. Reconstruct
 the quantity equations from the resulting workbooks and compare them with the
 MARIO reference and scenario outputs. Verify the receiving configuration's
 numerical prerequisites separately from data transfer and report any pending
@@ -163,8 +166,9 @@ When calibrating reference data from another release, match observation years,
 classifications, units and GHG characterization before applying coefficients.
 Execute the complete preparation-to-scenario-to-export chain and compare imported
 coefficients with the donor source without publishing their numerical values.
-Verify that import blocks survive reference promotion and that economic
-coefficients retain their post-mix values. Regenerate reference-share tables,
+Verify that import blocks survive coefficient resets and reference updates,
+and that economic coefficients retain their post-mix values. Regenerate
+reference-share tables,
 scenario summaries, receiving-model shocks and both downloadable archives together.
 
 Check publication omissions in every representation: CSVs, ZIP members, notebook

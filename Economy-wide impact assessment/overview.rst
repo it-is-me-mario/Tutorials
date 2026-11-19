@@ -306,14 +306,30 @@ kg CO2-equivalent/EUR.
    )
    del donor
 
-The notebook builds one ``ea`` shock row per technology and uses ``type="Update"``
-to replace the coefficients with ``shock_calc``. ``get_shock_excel`` provides the
-blank native template; the filled shock table is passed in memory. For MARIO 1.3.5,
-the notebook preserves the separate import blocks when materializing the correction,
-then promotes the corrected scenario to the new baseline. The post-mix economic
-coefficients and direct final-demand emissions retain their values.
-These are direct coefficients: upstream emissions still follow the SUT input recipes.
-`Shock API <https://www.marioproject.com/en/latest/api_document/mario.Database.shock_calc.html>`_.
+.. _apply-power-emission-intensities:
+
+Apply the intensities in Python
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Copy ``ea`` and replace only the twelve generation-activity coefficients with
+the donor values. Reset the baseline to coefficients before storing the updated
+matrix: this clears previously materialized flows, so MARIO rebuilds ``Ea``
+from the new intensities and activity output when it is queried or exported.
+
+.. code:: python
+
+   power_columns = [("IT", "Activity", activity) for activity in power_activities]
+   ea = db.query("ea").copy()
+   ea.loc[ghg_label, power_columns] = donor_intensities.reindex(power_activities).to_numpy()
+   db.reset_to_coefficients("baseline")
+   db.update_scenarios("baseline", ea=ea)
+
+Economic coefficients, separate imports and direct final-demand emissions retain
+their post-mix reference values. The update is performed entirely in Python and
+does not need an Excel shock workbook. Upstream emissions still follow the SUT
+input recipes. Both calculation paths start from this corrected baseline.
+`Scenario-update API <https://www.marioproject.com/en/latest/api_document/mario.Database.update_scenarios.html>`_,
+`coefficient reset API <https://www.marioproject.com/en/latest/api_document/mario.Database.reset_to_coefficients.html>`_.
 
 The coefficients are obtained at execution time and are not shown in the page,
 notebook outputs or distributed coefficient tables. Keep the source archives local.
@@ -335,6 +351,10 @@ Continue in MARIO or CVXLab
 
 Continue in CVXLab
 ~~~~~~~~~~~~~~~~~~
+
+The common reference already includes the two corrections. The
+:ref:`Python update above <apply-power-emission-intensities>` shows how the
+3.11.2 intensities are assigned to the 3.8.2 SUT before this export.
 
 Extract :download:`cvxlab_model.zip <cvxlab_model.zip>` beside the notebook,
 then set ``continue_in_cvxlab = True``. The notebook calls ``db.to_cvxlab()``
