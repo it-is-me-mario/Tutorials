@@ -134,50 +134,31 @@ Verify reference-share denominators against the model's activity filters and
 account for secondary production explicitly. Keep preparation order aligned
 between the guide and notebook.
 
-When changing the economy-wide exercise's aggregation, update its workbook,
-notebook assertions and guide together. Keep the generation activities required
-by its scenarios as individual mapping targets. Execute all three scenarios,
-then replace the committed ``results`` directory, summary and downloadable ZIP
-from that run. Check CSV coordinates against the exported sets, preserve the
-raw flow units and verify the archive contains the same files. The source
-EXIOBASE archives stay outside Git. Derived downloads retain their source
-attribution and licence.
+The economy-wide tutorial prepares the ISTAT national reference and ends at
+``to_cvxlab``. Keep download, parsing, translation, aggregation, inspection and
+CVXLab export in the guide and notebook in the same order. Do not reintroduce
+scenario calculations, a MARIO continuation, flat-export instructions or the
+superseded electricity corrections when refreshing its materials.
 
-Preserve any additional reporting columns in a supplied aggregation workbook.
-Verify that each prepared member maps to exactly one reporting group before
-populating the CVXLab set attributes. Compare those attributes with the supplied
-classification alongside the reference matrix coordinates.
+Use the native MARIO translation and aggregation workbooks without presentation
+restyling. Verify one-to-one translations across all classifications, preserved
+numerical values and compatible import-row labels after aggregation. Update the
+catalogue's database identity and logo with the source change. Pin a verified
+MARIO source snapshot while the required parser is unreleased; replace that
+installation only after the published package has passed the same workflow.
 
-When publishing the CVXLab input package, maintain its classified sets and
-scenario inputs with the notebook's mapping. Execute the optional
-``to_cvxlab`` path and inspect written-cell counts for every mapped table,
-missing attributes, unmatched coordinates and missing values. Check supplied
-unmapped tables by their coordinates and scenario assumptions. Compare retained
-settings and set attributes by cell contents: XLSX serialization can change
-package bytes without changing their meaning. If the exporter reports concurrent
-file changes, inspect the current inputs and retry without bypassing its guard. Reconstruct
-the quantity equations from the resulting workbooks and compare them with the
-MARIO reference and scenario outputs. Verify the receiving configuration's
-numerical prerequisites separately from data transfer and report any pending
-normalization or solve requirement. Include the original configuration's
-licence and the derived data's source notices in the downloadable package.
-
-When calibrating reference data from another release, match observation years,
-classifications, units and GHG characterization before applying coefficients.
-Execute the complete preparation-to-scenario-to-export chain and compare imported
-coefficients with the donor source without publishing their numerical values.
-Verify that import blocks survive coefficient resets and reference updates,
-and that economic coefficients retain their post-mix values. Regenerate
-reference-share tables,
-scenario summaries, receiving-model shocks and both downloadable archives together.
-
-Check publication omissions in every representation: CSVs, ZIP members, notebook
-outputs and receiving workbooks. The exercise publishes corrected environmental
-flows but omits activity-output values and direct-intensity tables. The published
-CVXLab workbook retains blank activity-output coordinates; execute the optional
-local export with a complete output vector and verify that it fills all reference
-tables. Check the intentionally blank distribution copy separately from that
-complete local receiving model.
+The committed receiving directory and its downloadable ZIP are one package.
+Compare their files byte for byte. Preserve the supplied settings' equations,
+variables, filters and table keys; a newly constructed input-only container is
+not evidence that the supplied model accepts the data. Execute the notebook
+through ``to_cvxlab`` and compare every reference input by coordinates, then
+load the actual workbooks into CVXLab SQLite. Check the configuration's declared
+blank-fill for unmapped delta templates and report undeclared nonzero source
+blocks explicitly. Distinguish input loading from solving an analysis model.
+Keep source attribution and the receiving configuration's licence in the ZIP.
+The official source cache remains outside Git. A preserved local cache is needed
+to reproduce an exact satellite vintage; the public notebook downloads current
+observations for its selected year.
 
 Known zero matrices can be omitted from the exercise's explicit CSV list.
 Review that list, the committed files, archive and guide together. Preserve

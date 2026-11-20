@@ -1,56 +1,48 @@
-CVXLab inputs for the Italian reference
-=======================================
+ISTAT reference for the MARIO–CVXLab exercise
+============================================
 
-``model_settings.xlsx`` is the configuration from the CVXLab economy-wide
-impact-assessment tutorial at revision
-``466b50c2c5ad8b4b2a7f02f71da5f473decbc81d``. Its original Apache-2.0 licence
-is included. The configuration uses combined make, use, import and extension
-tables as described in that tutorial.
+This directory contains the supplied CVXLab model configuration, classified
+English sets and the prepared 2022 ISTAT reference inputs. Execute the MARIO
+notebook to regenerate the inputs using ``to_cvxlab``. The notebook stops at
+this export and does not build, modify or solve the CVXLab analysis model.
 
-``sets.xlsx`` contains 18 products, 29 intermediate activities, 9 final-demand
-categories, 12 factors and one GHG indicator. Electricity and the twelve native
-generation technologies have type ``power``. Other members have type ``other``.
-The medium reporting aggregation retains the prepared reference labels.
-The high reporting aggregation uses the five groups in ``Aggregation II``
-from ``aggregation.xlsx`` for products and production activities.
-The three scenarios are Reference, High_RES and High_RES_domestic.
+Supplied model_settings.xlsx SHA-256:
+6fd98098db6bb27dafef7414c09fbeaa037b4071990b43441546bc4cd8ad05aa
 
-``input_data/input_data.xlsx`` contains reference flows populated through
-MARIO's ``to_cvxlab`` API, using the corrected reference.
-``total_activity_0`` keeps its coordinates but its values are intentionally blank
-in this published package. Run the notebook's local ``to_cvxlab`` export to fill
-all six reference tables, including the activity outputs required by CVXLab.
-Its three delta tables contain the corresponding
-market-share, use and import shocks for the scenario assumptions in the notebook.
-The API refreshes reference values and preserves those scenario tables.
-Its report lists the delta tables as unmapped because the configuration supplies
-them separately.
+Reference tables: make_0, use_0, imports_0, extensions_0, total_activity_0 and
+total_demand_0. The file also contains blank delta_make, delta_use and
+delta_imports templates for Reference. The model's declared blank_fill=0
+supplies their zero values when loading into CVXLab SQLite.
 
-Reference monetary values are EUR and GHG values are kg CO2-equivalent.
-Market-share and intermediate-input coefficient shocks are dimensionless.
-Final-demand and final-import shocks are EUR. The combined extensions table
-retains the zero entries for final-demand factors required by CVXLab's domain.
+The settings are used as supplied by Matteo V. Rocco for the IRPET exercise.
+Its equations, variables and filters are unchanged. VY is nonzero in the
+source SUT but is not declared as a reference input by this configuration.
+The MARIO object retains that block. No activity-output or satellite flow
+values are deliberately blanked in the six reference input tables.
 
-Zero-output normalization
--------------------------
+Products and activities: 15 each. Final demand: 7 categories. Extensions: 8
+income/accounting rows and 27 satellite accounts. Monetary values remain in
+million EUR; satellite units are t, t CO2-eq, t SO2-eq, t NMVOC-eq, persons,
+hours and TJ according to the row described in the notebook.
 
-The original configuration calculates coefficients with ``minv(diag(X_0))``
-and ``minv(diag(Q_0))``. The Italian reference contains zero-output activities
-for nuclear and tide/wave generation. ``diag(X_0)`` is singular, so the original model
-requires zero-safe normalization before it can solve this reference.
-The reference flows and scenario shocks are checked against MARIO.
-Run the local export to populate ``total_activity_0`` before using the model.
+The source is ISTAT's 2020–2022 edition, observation year 2022, with AEA,
+employment and PEFA observations from Eurostat for 2022. English translations
+and aggregation are modifications for this exercise, not official source
+revisions. All reference input values and loading of blank deltas as zero
+were verified through CVXLab SQLite; analysis scenarios were not solved.
 
-Sources and licences
---------------------
+Source attribution and reuse
+----------------------------
 
-* Original configuration https://github.com/cvxlab/cvxlab/tree/466b50c2c5ad8b4b2a7f02f71da5f473decbc81d/docs/source/tutorials/input_output_analysis_mario
-* EXIOBASE 3.8.2 https://doi.org/10.5281/zenodo.5589597
-* EXIOBASE attribution https://doi.org/10.1111/jiec.12715
+* ISTAT: https://www.istat.it/tavole-di-dati/il-sistema-di-tavole-input-output-anni-2020-2022/
+* ISTAT CC BY 4.0 notice: https://www.istat.it/note-legali/
+* Eurostat AEA: https://doi.org/10.2908/env_ac_ainah_r2
+* Eurostat employment: https://doi.org/10.2908/nama_10_a64_e
+* Eurostat PEFA: https://doi.org/10.2908/env_ac_pefa04
+* Eurostat access date: 20 November 2026.
+* Eurostat reuse: https://ec.europa.eu/eurostat/help/copyright-notice
+* Original receiving-model exercise: https://github.com/cvxlab/cvxlab/tree/466b50c2c5ad8b4b2a7f02f71da5f473decbc81d/docs/source/tutorials/input_output_analysis_mario
 
-Economic source data and classifications from EXIOBASE 3.8.2 retain CC-BY-SA-4.0.
-The direct electricity-emission correction uses the public 3.11.2 ixi IOT
-for 2022, with the same AR6 GWP100 combustion profile as the SUT.
-Its source conditions are available at
-https://zenodo.org/records/23039074/files/LICENSE.txt?download=1.
-Retain these source notices and the accompanying configuration licence.
+The accompanying Apache 2.0 LICENSE for the receiving configuration is retained.
+Keep data-source acknowledgements and the description of modifications with
+the derived input package.
