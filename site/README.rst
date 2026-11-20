@@ -175,8 +175,9 @@ and input rows. Rebuild obsolete generated input domains before validating the
 load. Preserve every factor-of-production row and compare economic flows.
 
 The committed receiving directory and its downloadable ZIP are one package.
-Compare their files byte for byte. Preserve the supplied settings' equations,
-variables, filters and table keys; a newly constructed input-only container is
+Compare their files byte for byte. Check workbook modes after copying materials
+from cloud storage; retain the repository's regular-file modes. Preserve the
+supplied settings' equations, variables, filters and table keys; a newly constructed input-only container is
 not evidence that the supplied model accepts the data. Execute the notebook
 through ``to_cvxlab`` and compare every reference input by coordinates, then
 load the actual workbooks into CVXLab SQLite. Check the configuration's declared
