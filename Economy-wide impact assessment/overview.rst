@@ -178,7 +178,7 @@ classifications; aggregation has not converted the SUT into a symmetric IOT.
 The notebook includes a table of dimensions for the main blocks.
 
 Domestic inputs, imports and value added
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Compare domestic intermediate purchases, imported intermediate purchases and
 value-added/accounting items by activity, in million EUR:
@@ -201,7 +201,7 @@ categories are in ``IMP_Y`` and are not included in this activity table.
 rounding differences are retained.
 
 Select an activity's supply
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Retrieve the products supplied by transport activities. ``query()`` returns
 the complete matrix; ``xs()`` selects an item from its pandas MultiIndex:
@@ -214,7 +214,7 @@ For an activity's purchases instead, select its column in ``U`` with
 ``db.query("U").xs("Transport activities", level="Item", axis=1)``.
 
 Read satellite accounts with their units
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The 27 satellite rows comprise 24 AEA indicators, employed persons, hours
 worked and net domestic energy use. Inspect ``db.units["Satellite account"]``
