@@ -1,5 +1,5 @@
 Prepare Italy's 2022 supply-use data for use in a CVXLab model.
-Download the official ISTAT workbooks, attach compatible satellite accounts,
+Download the official ISTAT workbooks, attach employment and energy accounts,
 translate the labels into English, aggregate and inspect the database, then
 export the matrices and sets to CVXLab.
 
@@ -16,11 +16,11 @@ for matrix structure and axes.
 .. admonition:: Problem statement
 
    Prepare a national supply-use database with domestic uses, separate product
-   imports and compatible emissions, employment and energy accounts for a
+   imports and compatible employment and energy accounts for a
    CVXLab model.
 
    Start from 63 ISTAT activities and products and obtain 15 of each, retaining
-   7 final-demand categories, 8 income/accounting rows and 27 satellite accounts.
+   7 final-demand categories, 8 income/accounting rows and 2 satellite accounts.
    Inspect the database and export its baseline matrices using the CVXLab model's
    table names, coordinates and filters.
 
@@ -76,7 +76,7 @@ The source archive and selected satellite snapshots are cached under
 Database parsing
 ----------------
 
-Read SUPPLY, USE and IMPORT and select the three optional satellite
+Read SUPPLY, USE and IMPORT and select the employment and energy
 groups. ``download=True`` reuses the monetary release and fetches missing
 Eurostat snapshots for Italy in the same reference year.
 
@@ -84,12 +84,14 @@ ISTAT is already single-region: do not call ``to_single_region()``.
 ``IMP_a`` and ``IMP_Y`` retain imports by product and purchasing activity or final
 demand. ``U`` and ``Yc`` contain domestic uses; no origin-country detail is available.
 
-The selected accounts are `AEA emissions <https://ec.europa.eu/eurostat/databrowser/view/env_ac_ainah_r2/default/table?lang=en>`_,
-`employment <https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table?lang=en>`_
+The selected sources are `employment <https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table?lang=en>`_
 and `PEFA net domestic energy use <https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefa04/default/table?lang=en>`_.
-Hours worked come from the ISTAT USE workbook. Production accounts populate
-``Ea``; direct household emissions and energy populate ``EY``. ``Ec`` is zero.
-Native NACE codes align the satellite observations before labels are translated.
+The employment group also reads hours worked from ISTAT. ``keep_extensions()``
+retains only total employment and net domestic energy use, updating satellite
+matrices and units while preserving all factors of production.
+
+Activity accounts populate ``Ea``; household energy use populates ``EY``.
+Native NACE codes align the observations before labels are translated.
 Missing required observations cause an error rather than being filled with zero.
 
 .. code-block:: python
@@ -102,10 +104,15 @@ Missing required observations cause an error rather than being filled with zero.
        price="current",
        valuation="basic",
        import_representation="separate",
-       extensions=["emissions", "employment", "energy"],
+       extensions=["employment", "energy"],
        download=True,
        edition="2020-2022",
    )
+
+   db.keep_extensions([
+       "Employment | Total",
+       "Energy | Net domestic energy use",
+   ])
 
 The variable ``db`` is a ``mario.Database`` object: it contains the SUT,
 classifications, units, metadata and scenarios. The parsed matrix values
@@ -224,21 +231,18 @@ For an activity's purchases instead, select its column in ``U`` with
 Read satellite accounts with their units
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The 27 satellite rows comprise 24 AEA indicators, employed persons, hours
-worked and net domestic energy use. Inspect ``db.units["Satellite account"]``
-before comparing values: emissions, employment and energy use different units.
-For example, rank activities by direct production GHG emissions in t CO2-eq:
+The database retains two satellite accounts: total employment in persons
+and net domestic energy use in TJ. Inspect ``db.units["Satellite account"]``
+before comparing their values. For example, rank activities by employment:
 
 .. code-block:: python
 
-   ghg = "Greenhouse gases (CO2 equivalent) [AEA: GHG]"
-   db.query("Ea").loc[ghg].sort_values(ascending=False).head()
+   employment = "Total employment (domestic concept)"
+   db.query("Ea").loc[employment].sort_values(ascending=False).head()
 
-This selects a direct-flow row, not an emission intensity or a footprint
-multiplier. ``GHG`` is already characterised: do not sum it with overlapping
-gas components or equivalent versions. Direct household emissions are in
-``EY``, which the notebook inspects separately. These national accounts do
-not include emissions embodied in imports.
+The notebook also inspects household energy use in ``EY``, separately from
+activity energy use in ``Ea``. Employment and energy have different units
+and should be read as separate indicators.
 
 See the `inspection guide <https://www.marioproject.com/en/latest/user_guide/inspection/basic_inspections.html>`_
 for more ways to retrieve classifications, matrices and units.
@@ -353,8 +357,8 @@ Source attribution
 ------------------
 
 The monetary workbooks are from ISTAT's 2020–2022 edition, with observation
-year 2022. Satellite data are from the linked Eurostat datasets, accessed
-20 November 2026; hours worked are from the ISTAT USE workbook. Labels were
+year 2022. Employment and energy data are from the linked Eurostat datasets, accessed
+20 November 2026. Labels were
 translated and productive classifications aggregated in this example.
 
 Retain the

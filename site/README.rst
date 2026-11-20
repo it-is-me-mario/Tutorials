@@ -33,6 +33,9 @@ Preview URLs also resolve to the canonical destination. Aliases are excluded
 from search and the version selector's document inventory. Verify old root,
 Dev and Preview links, anchors, native fallbacks and the new source-folder
 action after moving files; aliases must not collide with current routes.
+If a heading changes, ``anchor_aliases`` can map a former index/notebook
+fragment to its current heading. Check the actual rendered destination:
+nbsphinx can discard raw HTML anchors from Markdown cells.
 
 ``collections`` combines related source entries into one tutorial page and one
 catalogue card. Each part has a heading and stable anchor. Its notebook retains
@@ -166,6 +169,10 @@ Test optional aggregation-template generation on the unaggregated database:
 source rows must match its classifications and destination cells must be blank.
 Keep the generated template separate from the filled tutorial mapping. Execute
 new inspection examples and verify that they leave the exported reference intact.
+When reducing satellites, select them with ``keep_extensions`` and prune the
+receiving set workbook consistently: ``to_cvxlab`` retains existing set members
+and input rows. Rebuild obsolete generated input domains before validating the
+load. Preserve every factor-of-production row and compare economic flows.
 
 The committed receiving directory and its downloadable ZIP are one package.
 Compare their files byte for byte. Preserve the supplied settings' equations,

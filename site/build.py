@@ -145,6 +145,13 @@ def tutorial_redirects(catalog):
             for page in ("index", "notebook")}
 
 
+def tutorial_redirect_anchors(catalog):
+    return {f"{alias}/{page}": anchors
+            for tutorial in catalog["tutorials"]
+            for alias in tutorial.get("aliases", [])
+            for page, anchors in tutorial.get("anchor_aliases", {}).items()}
+
+
 def resolve_sources(catalog, revision=None, external_cache=None):
     revision = revision or subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
@@ -419,7 +426,8 @@ def prepare(catalog, revisions, destination):
             shutil.copyfile(source, destination / name)
     prepare_theme(catalog, destination)
     manifest = {**revisions, "tutorials": {}, "collections": catalog.get("collections", []),
-                "redirects": tutorial_redirects(catalog)}
+                "redirects": tutorial_redirects(catalog),
+                "redirect_anchors": tutorial_redirect_anchors(catalog)}
     for tutorial in catalog["tutorials"]:
         manifest["tutorials"][tutorial["slug"]] = prepare_tutorial(tutorial, revisions, destination)
     for group in catalog.get("collections", []):
@@ -504,7 +512,7 @@ def resolve_channels(latest_ref=None):
 
 
 
-def write_moved_page(path, target):
+def write_moved_page(path, target, anchors=None):
     """Write a native fallback and preserve query strings and anchors in browsers."""
     path.parent.mkdir(parents=True, exist_ok=True)
     address = escape(target, quote=True)
@@ -515,15 +523,18 @@ def write_moved_page(path, target):
         '<title>MARIO · Page moved</title><link rel="canonical" href="' + address + '">'
         '<meta http-equiv="refresh" content="0;url=' + address + '">'
         '<script>const target = new URL(' + json.dumps(target) + ');'
-        'target.search = location.search; target.hash = location.hash;'
+        'const anchors = ' + json.dumps(anchors or {}) + ';'
+        'const fragment = location.hash.slice(1); target.search = location.search;'
+        'target.hash = Object.hasOwn(anchors, fragment) ? anchors[fragment] : location.hash;'
         'location.replace(target.href);</script></head><body><h1>Page moved</h1>'
         '<p>This page has moved. <a href="' + address + '">Continue to MARIO</a>.</p>'
         '</body></html>')
 
 
-def write_tutorial_redirects(output, redirects, base_url):
+def write_tutorial_redirects(output, redirects, base_url, anchors=None):
     for old, target in redirects.items():
-        write_moved_page(output / (old + ".html"), base_url + target + ".html")
+        write_moved_page(output / (old + ".html"), base_url + target + ".html",
+                         (anchors or {}).get(old))
 
 
 def write_preview_redirects(output, catalogue):
@@ -533,12 +544,13 @@ def write_preview_redirects(output, catalogue):
     for channel in ("dev", "latest"):
         version = catalogue["versions"][channel]
         for document in version["documents"]:
-            destinations[document] = version["url"] + document + ".html"
+            destinations[document] = (version["url"] + document + ".html", {})
         for old, target in version.get("redirects", {}).items():
-            destinations[old] = version["url"] + target + ".html"
-    for document, target in destinations.items():
+            destinations[old] = (version["url"] + target + ".html",
+                                 version.get("redirect_anchors", {}).get(old))
+    for document, (target, anchors) in destinations.items():
         path = output / "preview" / (document + ".html")
-        write_moved_page(path, target)
+        write_moved_page(path, target, anchors)
 
 
 def build_channel(catalog, revisions, output, base_url, root_url):
@@ -554,7 +566,7 @@ def build_channel(catalog, revisions, output, base_url, root_url):
     }
     subprocess.run([sys.executable, "-m", "sphinx", "-b", "html", "-W", "--keep-going",
                     str(work), str(output)], check=True, cwd=ROOT, env=env)
-    write_tutorial_redirects(output, manifest["redirects"], base_url)
+    write_tutorial_redirects(output, manifest["redirects"], base_url, manifest["redirect_anchors"])
     (output / "source-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
 
@@ -601,7 +613,8 @@ def main():
                 element["id"] for element in soup.select("[id]")
             ]
         versions["versions"][channel] = {"url": url, "commit": revisions["site_commit"],
-                                          "documents": documents, "redirects": manifest["redirects"]}
+                                          "documents": documents, "redirects": manifest["redirects"],
+                                          "redirect_anchors": manifest["redirect_anchors"]}
     payload = json.dumps(versions, separators=(",", ":")) + "\n"
     for channel in plan["versions"]:
         destination = output if channel == "latest" else output / channel

@@ -31,4 +31,8 @@ class ChannelChecks(unittest.TestCase):
                 }}}}
                 (output / "source-manifest.json").write_text(json.dumps(manifest))
             (root / "versions-manifest.json").write_text('{}')
+            (root / "docs-versions.json").write_text(json.dumps({"versions": {
+                channel: {"documents": {"index": [], "example/index": [], "example/notebook": []}}
+                for channel in ["latest", "dev"]
+            }}))
             checker.check(root)
