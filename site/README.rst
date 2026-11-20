@@ -32,6 +32,9 @@ its original route, source revision and download hash; former overview routes
 redirect to the corresponding section. Keep the parts' methods and input years
 explicit when they differ. Check the combined explanations, relocated image and
 download links, redirects and search entries together.
+Repeated source/revision links must remain independent RST links when a
+collection combines different repositories; their shared label must not
+register conflicting named targets. Check both destinations in strict builds.
 
 Use descriptive titles and concrete summaries. Avoid repeating the summary in
 an introductory slogan or restating setup instructions after every section.

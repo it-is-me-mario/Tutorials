@@ -8,8 +8,11 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 from urllib.error import HTTPError
+from io import StringIO
 
 import nbformat
+from docutils import nodes
+from docutils.core import publish_doctree
 
 
 SPEC = importlib.util.spec_from_file_location("publisher", Path(__file__).parents[1] / "build.py")
@@ -18,6 +21,28 @@ SPEC.loader.exec_module(publisher)
 
 
 class PublisherTests(unittest.TestCase):
+    def test_provenance_links_from_different_sources_coexist_on_a_collection_page(self):
+        book = nbformat.writes(nbformat.v4.new_notebook()).encode()
+        revisions = {"site_commit": "a" * 40,
+                     "external_sources": {"owner/first@main": "b" * 40,
+                                          "owner/second@main": "c" * 40}}
+        with TemporaryDirectory() as directory, patch.object(publisher, "repository_source", return_value=book):
+            root = Path(directory)
+            links = []
+            for source in ("first", "second"):
+                tutorial = {"slug": source, "title": source, "summary": "Example.",
+                            "repository": f"owner/{source}", "ref": "main", "notebook": "run.ipynb"}
+                publisher.prepare_tutorial(tutorial, revisions, root)
+                links.extend(line for line in (root / source / "index.rst").read_text().splitlines()
+                             if line.startswith("`Source and revision"))
+            warnings = StringIO()
+            document = publish_doctree("\n\n".join(links), settings_overrides={"warning_stream": warnings})
+            self.assertEqual(warnings.getvalue(), "")
+            self.assertEqual({node["refuri"] for node in document.findall(nodes.reference)}, {
+                "https://github.com/owner/first/tree/" + "b" * 40,
+                "https://github.com/owner/second/tree/" + "c" * 40,
+            })
+
     def test_collection_combines_guides_and_keeps_original_notebooks_and_routes(self):
         tutorials = [{"slug": slug, "title": title, "summary": "Case study.",
                       "repository": "owner/source", "ref": "main", "notebook": slug + ".ipynb",
