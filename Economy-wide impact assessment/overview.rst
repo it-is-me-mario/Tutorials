@@ -15,13 +15,13 @@ for matrix structure and axes.
 
 .. admonition:: Problem statement
 
-   How can we prepare a national supply-use reference with domestic uses,
-   separate product imports and compatible emissions, employment and energy
-   accounts for a CVXLab model?
+   Prepare a national supply-use reference with domestic uses, separate product
+   imports and compatible emissions, employment and energy accounts for a
+   CVXLab model.
 
    Start from 63 ISTAT activities and products and obtain 15 of each, retaining
    7 final-demand categories, 8 income/accounting rows and 27 satellite accounts.
-   Inspect the resulting reference and transfer it using the supplied model's
+   Inspect the resulting reference and transfer it using the CVXLab model's
    table names, coordinates and filters.
 
 .. _environment-and-inputs:
@@ -32,18 +32,17 @@ for matrix structure and axes.
 
 * :download:`Notebook <economy_wide_impact_assessment.ipynb>`: the complete
   download-to-export workflow, ending at ``to_cvxlab``.
-* :download:`translations.xlsx <translations.xlsx>`: one-to-one English labels.
 * :download:`aggregation.xlsx <aggregation.xlsx>`: native MARIO mapping to
-  15 activities and products.
-* :download:`cvxlab_model.zip <cvxlab_model.zip>`: Matteo's supplied settings,
-  English classified sets and prepared CVXLab reference inputs.
+  15 activities and products, with English labels for all classifications.
+* :download:`cvxlab_model.zip <cvxlab_model.zip>`: CVXLab model settings,
+  classified sets and reference input tables.
 
-Extract the archive beside the notebook to obtain ``cvxlab_model/``. Keep both
-mapping workbooks in the same working folder. The readable companion is
+Extract the archive beside the notebook to obtain ``cvxlab_model/``. Keep
+``aggregation.xlsx`` in the same working folder. The readable companion is
 available as :doc:`Notebook <notebook>`.
 
 This workflow uses parser additions intended for MARIO 1.3.6, not included in
-1.3.5. Use the verified development snapshot in a dedicated Python 3.12
+1.3.5. Install the development snapshot in a dedicated Python 3.12
 environment and restart the notebook kernel after installation:
 
 .. code-block:: bash
@@ -112,37 +111,34 @@ See the source snapshot's
 `ISTAT parser guide <https://github.com/it-is-me-mario/MARIO/blob/e786e43fd01186bf1707cf098e2ceea1afb29e49/doc/source/notebooks/parsers/istat/walkthrough_istat.rst>`_
 for optional satellite selection, units and cache behaviour.
 
-Translate the classifications
------------------------------
-
-Apply ``translations.xlsx`` as a one-to-one mapping across all five
-classifications. It changes labels, not values. Activities, commodities, final
-demand, factors and satellites are then named in English. AEA labels spell out
-the indicator and retain its source code. The monetary unit is renamed
-``million EUR``; no numerical rescaling is applied.
-
-The notebook applies this mapping with ``aggregate()`` before the sector
-aggregation. Both mappings are standard MARIO workbooks; they add no
-presentation formatting.
-
+.. _translate-the-classifications:
 .. _reference-system:
 
 Aggregation
 -----------
 
-Apply the supplied native MARIO workbook to activities and commodities.
-Its two sheets contain the source label and ``Aggregation`` columns without
-custom formatting. Translation has already put their source labels in English.
-Imports follow the commodity aggregation. No satellite indicators are merged.
+``aggregation.xlsx`` maps the original ISTAT labels directly to the English
+classifications used by the model. Its Activity and Commodity sheets aggregate
+63 branches and products into 15 groups. Consumption category, Factor of
+production and Satellite account provide one-to-one English labels.
+
+Apply all five sheets in one call. Imports follow the commodity aggregation;
+final-demand categories, factors and satellite indicators remain separate.
+The monetary unit is renamed ``million EUR`` without numerical rescaling.
 
 .. code-block:: python
 
    db.aggregate(
        io="aggregation.xlsx",
-       levels=["Activity", "Commodity"],
+       levels=["Activity", "Commodity", "Consumption category",
+               "Factor of production", "Satellite account"],
        calc_all=False,
        zero_output_epsilon=None,
    )
+
+   for level in ["Activity", "Commodity", "Factor of production"]:
+       db.units[level].loc[:, "unit"] = "million EUR"
+   db.meta.model_configuration["import_unit"] = "million EUR"
 
 Explore the reference
 ---------------------
@@ -167,26 +163,25 @@ labels and ``EY`` when checking the household accounts.
 Export to CVXLab
 ----------------
 
-Use the supplied ``cvxlab_model/model_settings.xlsx`` as the target contract.
-The export keeps its equations and variable definitions. Activities and final
-demand share the ``accounts`` set; factors and satellites share ``extensions``.
+``cvxlab_model/model_settings.xlsx`` defines the CVXLab sets, input tables,
+variables and equations. The ``mapping`` argument links MARIO classifications
+and matrices to these sets and tables. Activities and final demand share the
+``accounts`` set; factors and satellites share ``extensions``.
 
-The method populates six reference tables: ``make_0``, ``use_0``, ``imports_0``,
-``extensions_0``, ``total_activity_0`` and ``total_demand_0``. ``use_0`` combines ``U``
-and ``Yc``; ``imports_0`` combines ``IMP_a`` and ``IMP_Y``; ``extensions_0`` combines
-``Va``, ``Ea`` and ``EY``.
+The export populates six reference tables: ``make_0``, ``use_0``, ``imports_0``,
+``extensions_0``, ``total_activity_0`` and ``total_demand_0``. ``use_0`` combines
+``U`` and ``Yc``; ``imports_0`` combines ``IMP_a`` and ``IMP_Y``; ``extensions_0``
+combines ``Va``, ``Ea`` and ``EY``.
 
-The supplied configuration does not declare an exogenous ``VY`` input. That
-nonzero final-demand accounting block remains in the MARIO object and is not
-inserted into an undeclared CVXLab table. The ``Reference`` scenario has blank
-``delta_make``, ``delta_use`` and ``delta_imports`` templates; CVXLab applies the
-configuration's ``blank_fill=0`` when loading them. They remain listed as unmapped
-tables in the export report because they are CVXLab scenario inputs.
+This configuration has no exogenous ``VY`` input. That final-demand accounting
+block remains in the MARIO database. The ``Reference`` scenario also contains
+blank ``delta_make``, ``delta_use`` and ``delta_imports`` templates. CVXLab loads
+them as zero according to ``blank_fill=0``; they appear as unmapped tables in
+the export report because they are scenario inputs rather than MARIO matrices.
 
-The complete ``cvxlab_model/`` directory is the handoff. The generated input cells
-and their loading into CVXLab SQLite have been verified. Defining and solving
-analysis scenarios belongs to the receiving CVXLab exercise and is outside
-this notebook.
+``to_cvxlab`` writes the classified sets to ``sets.xlsx`` and the input tables to
+``input_data/input_data.xlsx`` inside ``cvxlab_model/``. Use that directory as
+the model input for the CVXLab exercise.
 
 .. code-block:: python
 
