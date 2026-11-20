@@ -26,6 +26,17 @@ creates temporary render and download copies under ``_build``; these copies are
 excluded from Git. The source repository's history and original URLs remain the
 permanent record.
 
+When renaming a tutorial route, retain its former slugs in the entry's
+``aliases`` list. The publisher redirects their overview and notebook pages
+within each channel, preserving browser query strings and fragments. Retired
+Preview URLs also resolve to the canonical destination. Aliases are excluded
+from search and the version selector's document inventory. Verify old root,
+Dev and Preview links, anchors, native fallbacks and the new source-folder
+action after moving files; aliases must not collide with current routes.
+If a heading changes, ``anchor_aliases`` can map a former index/notebook
+fragment to its current heading. Check the actual rendered destination:
+nbsphinx can discard raw HTML anchors from Markdown cells.
+
 ``collections`` combines related source entries into one tutorial page and one
 catalogue card. Each part has a heading and stable anchor. Its notebook retains
 its original route, source revision and download hash; former overview routes
@@ -158,16 +169,26 @@ Test optional aggregation-template generation on the unaggregated database:
 source rows must match its classifications and destination cells must be blank.
 Keep the generated template separate from the filled tutorial mapping. Execute
 new inspection examples and verify that they leave the exported reference intact.
+When reducing satellites, select them with ``keep_extensions`` and prune the
+receiving set workbook consistently: ``to_cvxlab`` retains existing set members
+and input rows. Rebuild obsolete generated input domains before validating the
+load. Preserve every factor-of-production row and compare economic flows.
 
 The committed receiving directory and its downloadable ZIP are one package.
-Compare their files byte for byte. Preserve the supplied settings' equations,
-variables, filters and table keys; a newly constructed input-only container is
+Compare their files byte for byte. Check workbook modes after copying materials
+from cloud storage; retain the repository's regular-file modes. Preserve the
+supplied settings' equations, variables, filters and table keys; a newly constructed input-only container is
 not evidence that the supplied model accepts the data. Execute the notebook
 through ``to_cvxlab`` and compare every reference input by coordinates, then
 load the actual workbooks into CVXLab SQLite. Check the configuration's declared
 blank-fill for unmapped delta templates and report undeclared nonzero source
 blocks explicitly. Distinguish input loading from solving an analysis model.
 Keep source attribution and the receiving configuration's licence in the ZIP.
+Check the export mapping table against the actual settings' input-variable
+definitions and coordinate filters. Use Database, table, scenario and matrix
+as defined in MARIO; distinguish the exported MARIO baseline from any CVXLab
+scenario label. Unmapped delta templates and CVXLab's blank-fill setting must
+be described separately from the values written by MARIO.
 The official source cache remains outside Git. A preserved local cache is needed
 to reproduce an exact satellite vintage; the public notebook downloads current
 observations for its selected year.

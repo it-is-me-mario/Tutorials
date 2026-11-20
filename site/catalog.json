@@ -5,22 +5,30 @@
   },
   "tutorials": [
     {
-      "slug": "economy-wide-impact-assessment",
+      "slug": "preparing-supply-use-data-for-cvxlab",
       "title": "Preparing supply-use data for CVXLab",
       "category": "Database preparation",
-      "summary": "Download Italy’s 2022 SUT, attach emissions, employment and energy accounts, aggregate and inspect the database, then export the reference to CVXLab.",
+      "summary": "Download Italy’s 2022 SUT, attach employment and energy accounts, aggregate and inspect the database, then export its matrices and sets to CVXLab.",
       "repository": "it-is-me-mario/Tutorials",
-      "notebook": "Economy-wide impact assessment/economy_wide_impact_assessment.ipynb",
-      "guide": "Economy-wide impact assessment/overview.rst",
+      "notebook": "preparing-supply-use-data-for-cvxlab/preparing_supply_use_data_for_cvxlab.ipynb",
+      "guide": "preparing-supply-use-data-for-cvxlab/overview.rst",
       "guide_includes_downloads": true,
       "materials": [
-        "Economy-wide impact assessment/aggregation.xlsx",
-        "Economy-wide impact assessment/cvxlab_model.zip"
+        "preparing-supply-use-data-for-cvxlab/aggregation.xlsx",
+        "preparing-supply-use-data-for-cvxlab/cvxlab_model.zip"
       ],
       "partner": "cvxlab",
       "databases": [
         "istat"
-      ]
+      ],
+      "aliases": [
+        "economy-wide-impact-assessment"
+      ],
+      "anchor_aliases": {
+        "notebook": {
+          "Explore-the-reference": "Explore-the-database"
+        }
+      }
     },
     {
       "slug": "mrio-disaggregation",

@@ -109,6 +109,17 @@ def load_catalog(revision=None):
             raise ValueError(f"Invalid tutorial collection {slug!r}")
         group_slugs.add(slug)
         grouped.update(members)
+    occupied = slugs | group_slugs | {"dev", "preview"}
+    for tutorial in catalog["tutorials"]:
+        aliases = tutorial.get("aliases", [])
+        if not isinstance(aliases, list):
+            raise ValueError("Tutorial aliases must be a list of former slugs")
+        for alias in aliases:
+            if (not isinstance(alias, str)
+                    or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", alias)
+                    or alias in occupied):
+                raise ValueError(f"Invalid or conflicting tutorial alias {alias!r}")
+            occupied.add(alias)
     if not SHA.fullmatch(catalog["theme"]["revision"]):
         raise ValueError("The shared theme must use a full commit SHA")
     return catalog
@@ -124,6 +135,21 @@ def catalog_entries(catalog):
         if entry["slug"] not in seen:
             seen.add(entry["slug"])
             yield entry
+
+
+def tutorial_redirects(catalog):
+    """Map former overview and companion URLs to their canonical documents."""
+    return {f"{alias}/{page}": f"{tutorial['slug']}/{page}"
+            for tutorial in catalog["tutorials"]
+            for alias in tutorial.get("aliases", [])
+            for page in ("index", "notebook")}
+
+
+def tutorial_redirect_anchors(catalog):
+    return {f"{alias}/{page}": anchors
+            for tutorial in catalog["tutorials"]
+            for alias in tutorial.get("aliases", [])
+            for page, anchors in tutorial.get("anchor_aliases", {}).items()}
 
 
 def resolve_sources(catalog, revision=None, external_cache=None):
@@ -399,7 +425,9 @@ def prepare(catalog, revisions, destination):
         else:
             shutil.copyfile(source, destination / name)
     prepare_theme(catalog, destination)
-    manifest = {**revisions, "tutorials": {}, "collections": catalog.get("collections", [])}
+    manifest = {**revisions, "tutorials": {}, "collections": catalog.get("collections", []),
+                "redirects": tutorial_redirects(catalog),
+                "redirect_anchors": tutorial_redirect_anchors(catalog)}
     for tutorial in catalog["tutorials"]:
         manifest["tutorials"][tutorial["slug"]] = prepare_tutorial(tutorial, revisions, destination)
     for group in catalog.get("collections", []):
@@ -484,6 +512,31 @@ def resolve_channels(latest_ref=None):
 
 
 
+def write_moved_page(path, target, anchors=None):
+    """Write a native fallback and preserve query strings and anchors in browsers."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    address = escape(target, quote=True)
+    path.write_text(
+        '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<meta name="robots" content="noindex">'
+        '<title>MARIO · Page moved</title><link rel="canonical" href="' + address + '">'
+        '<meta http-equiv="refresh" content="0;url=' + address + '">'
+        '<script>const target = new URL(' + json.dumps(target) + ');'
+        'const anchors = ' + json.dumps(anchors or {}) + ';'
+        'const fragment = location.hash.slice(1); target.search = location.search;'
+        'target.hash = Object.hasOwn(anchors, fragment) ? anchors[fragment] : location.hash;'
+        'location.replace(target.href);</script></head><body><h1>Page moved</h1>'
+        '<p>This page has moved. <a href="' + address + '">Continue to MARIO</a>.</p>'
+        '</body></html>')
+
+
+def write_tutorial_redirects(output, redirects, base_url, anchors=None):
+    for old, target in redirects.items():
+        write_moved_page(output / (old + ".html"), base_url + target + ".html",
+                         (anchors or {}).get(old))
+
+
 def write_preview_redirects(output, catalogue):
     """Retire Preview while preserving its page URLs, query strings and anchors."""
     destinations = {}
@@ -491,22 +544,13 @@ def write_preview_redirects(output, catalogue):
     for channel in ("dev", "latest"):
         version = catalogue["versions"][channel]
         for document in version["documents"]:
-            destinations[document] = version["url"] + document + ".html"
-    for document, target in destinations.items():
+            destinations[document] = (version["url"] + document + ".html", {})
+        for old, target in version.get("redirects", {}).items():
+            destinations[old] = (version["url"] + target + ".html",
+                                 version.get("redirect_anchors", {}).get(old))
+    for document, (target, anchors) in destinations.items():
         path = output / "preview" / (document + ".html")
-        path.parent.mkdir(parents=True, exist_ok=True)
-        address = escape(target, quote=True)
-        path.write_text(
-            '<!doctype html><html lang="en"><head><meta charset="utf-8">'
-            '<meta name="viewport" content="width=device-width,initial-scale=1">'
-            '<meta name="robots" content="noindex">'
-            '<title>MARIO · Page moved</title><link rel="canonical" href="' + address + '">'
-            '<meta http-equiv="refresh" content="0;url=' + address + '">'
-            '<script>const target = new URL(' + json.dumps(target) + ');'
-            'target.search = location.search; target.hash = location.hash;'
-            'location.replace(target.href);</script></head><body>'
-            '<p>This page has moved. <a href="' + address + '">Continue to MARIO</a>.</p>'
-            '</body></html>')
+        write_moved_page(path, target, anchors)
 
 
 def build_channel(catalog, revisions, output, base_url, root_url):
@@ -522,6 +566,7 @@ def build_channel(catalog, revisions, output, base_url, root_url):
     }
     subprocess.run([sys.executable, "-m", "sphinx", "-b", "html", "-W", "--keep-going",
                     str(work), str(output)], check=True, cwd=ROOT, env=env)
+    write_tutorial_redirects(output, manifest["redirects"], base_url, manifest["redirect_anchors"])
     (output / "source-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
 
@@ -555,16 +600,21 @@ def main():
         url = root_url if channel == "latest" else root_url + channel + "/"
         catalog = load_catalog(revisions["site_commit"])
         catalog["theme"] = revisions["theme"]
-        build_channel(catalog, revisions, destination, url, root_url)
+        manifest = build_channel(catalog, revisions, destination, url, root_url)
         documents = {}
         for page in sorted(destination.rglob("*.html")):
             if channel == "latest" and page.relative_to(destination).parts[0] in {"dev", "preview"}:
                 continue
+            document = page.relative_to(destination).with_suffix("").as_posix()
+            if document in manifest["redirects"]:
+                continue
             soup = BeautifulSoup(page.read_text(), "html.parser")
-            documents[page.relative_to(destination).with_suffix("").as_posix()] = [
+            documents[document] = [
                 element["id"] for element in soup.select("[id]")
             ]
-        versions["versions"][channel] = {"url": url, "commit": revisions["site_commit"], "documents": documents}
+        versions["versions"][channel] = {"url": url, "commit": revisions["site_commit"],
+                                          "documents": documents, "redirects": manifest["redirects"],
+                                          "redirect_anchors": manifest["redirect_anchors"]}
     payload = json.dumps(versions, separators=(",", ":")) + "\n"
     for channel in plan["versions"]:
         destination = output if channel == "latest" else output / channel
