@@ -154,6 +154,10 @@ values and compatible import-row labels after aggregation. Update the
 catalogue's database identity and logo with the source change. Pin a verified
 MARIO source snapshot while the required parser is unreleased; replace that
 installation only after the published package has passed the same workflow.
+Test optional aggregation-template generation on the unaggregated database:
+source rows must match its classifications and destination cells must be blank.
+Keep the generated template separate from the filled tutorial mapping. Execute
+new inspection examples and verify that they leave the exported reference intact.
 
 The committed receiving directory and its downloadable ZIP are one package.
 Compare their files byte for byte. Preserve the supplied settings' equations,

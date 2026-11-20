@@ -122,6 +122,28 @@ classifications used by the model. Its Activity and Commodity sheets aggregate
 63 branches and products into 15 groups. Consumption category, Factor of
 production and Satellite account provide one-to-one English labels.
 
+The downloadable ``aggregation.xlsx`` is already filled in for this example.
+To define a different mapping, generate a template from the parsed database
+**before applying aggregation**:
+
+.. code-block:: python
+
+   db.get_aggregation_excel(
+       path="my_aggregation.xlsx",
+       levels=["Activity", "Commodity", "Consumption category",
+               "Factor of production", "Satellite account"],
+   )
+
+Fill the ``Aggregation`` column in each sheet with the destination labels,
+then pass ``io="my_aggregation.xlsx"`` to ``aggregate()``. Repeated destination
+labels combine source items; one-to-one labels rename them. The template
+does not choose the groups or translate labels automatically. A different
+classification also needs compatible CVXLab set attributes. See the
+`get_aggregation_excel API <https://www.marioproject.com/en/latest/api_document/mario.Database.get_aggregation_excel.html>`_.
+
+The template-generation step is optional. To reproduce the example, use the
+completed ``aggregation.xlsx`` from Tutorial materials.
+
 Apply all five sheets in one call. Imports follow the commodity aggregation;
 final-demand categories, factors and satellite indicators remain separate.
 The monetary unit is renamed ``million EUR`` without numerical rescaling.
@@ -143,20 +165,75 @@ The monetary unit is renamed ``million EUR`` without numerical rescaling.
 Explore the reference
 ---------------------
 
-Inspect the classifications, units and representative blocks before
-export. The combined SUT is 30 × 30, with a 30 × 1 production vector; it remains
-a supply-use system rather than a symmetric IOT.
+Use ``get_index()`` to inspect the classifications and ``query()`` to retrieve
+the matrices as pandas objects. ``db.get_index("Activity")`` returns the 15
+activity labels; ``db.get_index("Consumption category")`` lists the seven
+final-demand categories.
 
-The 27 satellite rows comprise 24 AEA indicators, employed persons, hours worked
-and net domestic energy use in TJ. ``Greenhouse gases (CO2 equivalent) [AEA: GHG]``
-is already characterised in t CO2-eq: do not sum it with overlapping gas
-components or equivalent versions. These direct national accounts do not add
-the emissions embodied in imported goods. Published monetary rounding
-differences are retained.
+``db.query("S").shape`` is ``(15, 15)``: activities are rows and commodities
+are columns. ``U`` has the reverse axes; ``Yc`` has commodities on rows and
+final-demand categories on columns. The combined ``Z`` is ``(30, 30)`` and
+``X`` is ``(30, 1)``. These combined views retain both productive
+classifications; aggregation has not converted the SUT into a symmetric IOT.
+The notebook includes a table of dimensions for the main blocks.
 
-Use ``get_index("all")``, ``units["Satellite account"]`` and ``query()`` in the
-notebook to inspect ``S``, ``IMP_a`` and ``Ea``. Review English final-demand
-labels and ``EY`` when checking the household accounts.
+Domestic inputs, imports and value added
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Compare domestic intermediate purchases, imported intermediate purchases and
+value-added/accounting items by activity, in million EUR:
+
+.. code-block:: python
+
+   import pandas as pd
+
+   activity_inputs = pd.DataFrame({
+       "Domestic intermediate inputs": db.query("U").sum(axis=0),
+       "Imported intermediate inputs": db.query("IMP_a").sum(axis=0),
+       "Value added/accounting items": db.query("Va").sum(axis=0),
+   })
+   activity_inputs.index = activity_inputs.index.get_level_values("Item")
+   activity_inputs
+
+``IMP_a`` is separate from ``Va``. Imports purchased directly by final-demand
+categories are in ``IMP_Y`` and are not included in this activity table.
+``Va`` retains all eight source income/accounting rows. Published monetary
+rounding differences are retained.
+
+Select an activity's supply
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Retrieve the products supplied by transport activities. ``query()`` returns
+the complete matrix; ``xs()`` selects an item from its pandas MultiIndex:
+
+.. code-block:: python
+
+   db.query("S").xs("Transport activities", level="Item")
+
+For an activity's purchases instead, select its column in ``U`` with
+``db.query("U").xs("Transport activities", level="Item", axis=1)``.
+
+Read satellite accounts with their units
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The 27 satellite rows comprise 24 AEA indicators, employed persons, hours
+worked and net domestic energy use. Inspect ``db.units["Satellite account"]``
+before comparing values: emissions, employment and energy use different units.
+For example, rank activities by direct production GHG emissions in t CO2-eq:
+
+.. code-block:: python
+
+   ghg = "Greenhouse gases (CO2 equivalent) [AEA: GHG]"
+   db.query("Ea").loc[ghg].sort_values(ascending=False).head()
+
+This selects a direct-flow row, not an emission intensity or a footprint
+multiplier. ``GHG`` is already characterised: do not sum it with overlapping
+gas components or equivalent versions. Direct household emissions are in
+``EY``, which the notebook inspects separately. These national accounts do
+not include emissions embodied in imports.
+
+See the `inspection guide <https://www.marioproject.com/en/latest/user_guide/inspection/basic_inspections.html>`_
+for more ways to retrieve classifications, matrices and units.
 
 .. _impact-continue-in-cvxlab:
 
