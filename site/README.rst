@@ -26,6 +26,14 @@ creates temporary render and download copies under ``_build``; these copies are
 excluded from Git. The source repository's history and original URLs remain the
 permanent record.
 
+When renaming a tutorial route, retain its former slugs in the entry's
+``aliases`` list. The publisher redirects their overview and notebook pages
+within each channel, preserving browser query strings and fragments. Retired
+Preview URLs also resolve to the canonical destination. Aliases are excluded
+from search and the version selector's document inventory. Verify old root,
+Dev and Preview links, anchors, native fallbacks and the new source-folder
+action after moving files; aliases must not collide with current routes.
+
 ``collections`` combines related source entries into one tutorial page and one
 catalogue card. Each part has a heading and stable anchor. Its notebook retains
 its original route, source revision and download hash; former overview routes
@@ -168,6 +176,11 @@ load the actual workbooks into CVXLab SQLite. Check the configuration's declared
 blank-fill for unmapped delta templates and report undeclared nonzero source
 blocks explicitly. Distinguish input loading from solving an analysis model.
 Keep source attribution and the receiving configuration's licence in the ZIP.
+Check the export mapping table against the actual settings' input-variable
+definitions and coordinate filters. Use Database, table, scenario and matrix
+as defined in MARIO; distinguish the exported MARIO baseline from any CVXLab
+scenario label. Unmapped delta templates and CVXLab's blank-fill setting must
+be described separately from the values written by MARIO.
 The official source cache remains outside Git. A preserved local cache is needed
 to reproduce an exact satellite vintage; the public notebook downloads current
 observations for its selected year.

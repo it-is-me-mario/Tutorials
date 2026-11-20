@@ -2,17 +2,19 @@ ISTAT supply-use data for CVXLab
 ================================
 
 This directory contains the CVXLab model configuration, classified English
-sets and 2022 ISTAT reference inputs. Execute the MARIO notebook to regenerate
+sets and 2022 ISTAT input data. Execute the MARIO notebook to regenerate
 the sets and input tables using ``to_cvxlab``. The exported files are ready
 for loading into the CVXLab model.
 
 model_settings.xlsx SHA-256:
 6fd98098db6bb27dafef7414c09fbeaa037b4071990b43441546bc4cd8ad05aa
 
-Reference tables: make_0, use_0, imports_0, extensions_0, total_activity_0 and
+Input tables: make_0, use_0, imports_0, extensions_0, total_activity_0 and
 total_demand_0. The file also contains blank delta_make, delta_use and
-delta_imports templates for Reference. The model's declared blank_fill=0
-supplies their zero values when loading into CVXLab SQLite.
+delta_imports templates. These are CVXLab scenario inputs, not mapped MARIO
+matrices; the model's blank_fill=0 supplies their zeros at loading time.
+Reference is the zero-change scenario label in sets.xlsx. The exported
+values come from the MARIO database's baseline scenario.
 
 ``model_settings.xlsx`` defines the input tables, set coordinates, variable
 filters and equations. The configuration has no exogenous VY input; this

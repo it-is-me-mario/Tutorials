@@ -15,13 +15,13 @@ for matrix structure and axes.
 
 .. admonition:: Problem statement
 
-   Prepare a national supply-use reference with domestic uses, separate product
+   Prepare a national supply-use database with domestic uses, separate product
    imports and compatible emissions, employment and energy accounts for a
    CVXLab model.
 
    Start from 63 ISTAT activities and products and obtain 15 of each, retaining
    7 final-demand categories, 8 income/accounting rows and 27 satellite accounts.
-   Inspect the resulting reference and transfer it using the CVXLab model's
+   Inspect the database and export its baseline matrices using the CVXLab model's
    table names, coordinates and filters.
 
 .. _environment-and-inputs:
@@ -30,12 +30,12 @@ for matrix structure and axes.
 
 .. rubric:: Tutorial materials
 
-* :download:`Notebook <economy_wide_impact_assessment.ipynb>`: the complete
+* :download:`Notebook <preparing_supply_use_data_for_cvxlab.ipynb>`: the complete
   download-to-export workflow, ending at ``to_cvxlab``.
 * :download:`aggregation.xlsx <aggregation.xlsx>`: native MARIO mapping to
   15 activities and products, with English labels for all classifications.
 * :download:`cvxlab_model.zip <cvxlab_model.zip>`: CVXLab model settings,
-  classified sets and reference input tables.
+  classified sets and input tables.
 
 Extract the archive beside the notebook to obtain ``cvxlab_model/``. Keep
 ``aggregation.xlsx`` in the same working folder. The readable companion is
@@ -107,6 +107,12 @@ Missing required observations cause an error rather than being filled with zero.
        edition="2020-2022",
    )
 
+The variable ``db`` is a ``mario.Database`` object: it contains the SUT,
+classifications, units, metadata and scenarios. The parsed matrix values
+belong to its ``baseline`` scenario, which is used throughout this example.
+See `Objects in MARIO <https://www.marioproject.com/en/latest/get_started/table_formats.html#objects-in-mario>`_
+for the distinction between a database, a table, a scenario and a matrix.
+
 See the source snapshot's
 `ISTAT parser guide <https://github.com/it-is-me-mario/MARIO/blob/e786e43fd01186bf1707cf098e2ceea1afb29e49/doc/source/notebooks/parsers/istat/walkthrough_istat.rst>`_
 for optional satellite selection, units and cache behaviour.
@@ -162,8 +168,10 @@ The monetary unit is renamed ``million EUR`` without numerical rescaling.
        db.units[level].loc[:, "unit"] = "million EUR"
    db.meta.model_configuration["import_unit"] = "million EUR"
 
-Explore the reference
----------------------
+.. _explore-the-reference:
+
+Explore the database
+--------------------
 
 Use ``get_index()`` to inspect the classifications and ``query()`` to retrieve
 the matrices as pandas objects. ``db.get_index("Activity")`` returns the 15
@@ -240,25 +248,83 @@ for more ways to retrieve classifications, matrices and units.
 Export to CVXLab
 ----------------
 
-``cvxlab_model/model_settings.xlsx`` defines the CVXLab sets, input tables,
-variables and equations. The ``mapping`` argument links MARIO classifications
-and matrices to these sets and tables. Activities and final demand share the
-``accounts`` set; factors and satellites share ``extensions``.
+``cvxlab_model/model_settings.xlsx`` defines the CVXLab sets, database tables,
+variables and equations. ``to_cvxlab()`` exports the matrices of the MARIO
+database's ``baseline`` scenario. The ``mapping`` argument connects their axes
+to CVXLab sets and assigns each matrix to a CVXLab input table. The variables
+in those tables are defined by the model settings:
 
-The export populates six reference tables: ``make_0``, ``use_0``, ``imports_0``,
-``extensions_0``, ``total_activity_0`` and ``total_demand_0``. ``use_0`` combines
-``U`` and ``Yc``; ``imports_0`` combines ``IMP_a`` and ``IMP_Y``; ``extensions_0``
-combines ``Va``, ``Ea`` and ``EY``.
+.. list-table:: MARIO matrices and CVXLab inputs
+   :header-rows: 1
+   :widths: 24 30 46
 
-This configuration has no exogenous ``VY`` input. That final-demand accounting
-block remains in the MARIO database. The ``Reference`` scenario also contains
-blank ``delta_make``, ``delta_use`` and ``delta_imports`` templates. CVXLab loads
-them as zero according to ``blank_fill=0``; they appear as unmapped tables in
-the export report because they are scenario inputs rather than MARIO matrices.
+   * - MARIO matrix
+     - CVXLab input variable
+     - CVXLab database table
+   * - ``S``
+     - ``S_0``
+     - ``make_0``
+   * - ``U``
+     - ``U_0``
+     - ``use_0``
+   * - ``Yc``
+     - ``Y_0``
+     - ``use_0``
+   * - ``IMP_a``
+     - ``IMP_a_0``
+     - ``imports_0``
+   * - ``IMP_Y``
+     - ``IMP_y_0``
+     - ``imports_0``
+   * - ``Va``
+     - ``V_a_0``
+     - ``extensions_0``
+   * - ``Ea``
+     - ``E_a_0``
+     - ``extensions_0``
+   * - ``EY``
+     - ``E_y_0``
+     - ``extensions_0``
+   * - ``Xa``
+     - ``X_a_0``
+     - ``total_activity_0``
+   * - ``Xc``
+     - ``X_c_0``
+     - ``total_demand_0``
 
-``to_cvxlab`` writes the classified sets to ``sets.xlsx`` and the input tables to
-``input_data/input_data.xlsx`` inside ``cvxlab_model/``. Load these files into CVXLab using
-the accompanying model configuration.
+The ``_0`` suffix identifies input variables in this model configuration.
+These six input tables contain the baseline values exported from MARIO.
+Several variables share a table: ``U_0`` and ``Y_0`` select intermediate and
+final-demand columns from ``use_0``; the import variables use the same split
+in ``imports_0``. Within ``extensions_0``, ``V_a_0`` selects value-added rows,
+while ``E_a_0`` and ``E_y_0`` select satellite rows for production and final
+demand. These selections use the category attributes in ``sets.xlsx``.
+
+Activities and final demand share the ``accounts`` set; factors and satellites
+share ``extensions``. This configuration has no exogenous input for ``VY``;
+that final-demand accounting matrix remains in the MARIO database.
+
+CVXLab scenario inputs
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``model_settings.xlsx`` also declares ``delta_make``, ``delta_use`` and
+``delta_imports`` as scenario-dependent input tables. ``to_cvxlab()`` creates
+their templates, but leaves their values blank because they have no MARIO
+matrix mapping. They therefore appear in ``report["unmapped_tables"]``.
+When CVXLab loads them, the configuration's ``blank_fill=0`` supplies zeros.
+MARIO does not infer that the changes are zero.
+
+In ``sets.xlsx``, ``Reference`` is the name of the CVXLab scenario for the
+zero-change case. ``baseline`` is the MARIO scenario being exported. The
+six ``_0`` input tables do not have a CVXLab scenario dimension; the
+``delta_*`` tables do.
+
+Write CVXLab inputs
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``to_cvxlab()`` writes the classified sets to ``sets.xlsx`` and the input tables
+to ``input_data/input_data.xlsx`` inside ``cvxlab_model/``. Load these files
+into CVXLab using the accompanying model configuration.
 
 .. code-block:: python
 

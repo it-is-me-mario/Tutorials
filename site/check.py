@@ -35,6 +35,14 @@ def check_channel(output, *, skip=()):
             if "_downloads" in target.parts:
                 downloads.setdefault(target.name, set()).add(target)
             count += 1
+    for old, target in manifest.get("redirects", {}).items():
+        assert (output / (target + ".html")).is_file(), f"Missing redirect target: {target}"
+        soup = BeautifulSoup((output / (old + ".html")).read_text(), "html.parser")
+        canonical = soup.find("link", rel="canonical")["href"]
+        assert urlsplit(canonical).path.endswith("/" + target + ".html")
+        assert soup.find("meta", attrs={"http-equiv": "refresh"})["content"] == "0;url=" + canonical
+        assert soup.find("meta", attrs={"name": "robots"})["content"] == "noindex"
+        assert soup.find("a")["href"] == canonical
     for slug, source in manifest["tutorials"].items():
         assert (output / slug / "index.html").is_file()
         assert (output / slug / "notebook.html").is_file()

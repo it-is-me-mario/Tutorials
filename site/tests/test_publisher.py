@@ -11,6 +11,7 @@ from urllib.error import HTTPError
 from io import StringIO
 
 import nbformat
+from bs4 import BeautifulSoup
 from docutils import nodes
 from docutils.core import publish_doctree
 
@@ -21,6 +22,44 @@ SPEC.loader.exec_module(publisher)
 
 
 class PublisherTests(unittest.TestCase):
+    def test_former_routes_keep_overview_and_notebook_in_each_channel(self):
+        catalog = {"tutorials": [{"slug": "new-tutorial", "aliases": ["old-tutorial"]}]}
+        redirects = publisher.tutorial_redirects(catalog)
+        versions = {"versions": {}}
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            for channel in ("latest", "dev"):
+                destination = root if channel == "latest" else root / channel
+                url = "https://tutorials.example/" + ("dev/" if channel == "dev" else "")
+                publisher.write_tutorial_redirects(destination, redirects, url)
+                for page in ("index", "notebook"):
+                    soup = BeautifulSoup((destination / "old-tutorial" / (page + ".html")).read_text(), "html.parser")
+                    target = url + "new-tutorial/" + page + ".html"
+                    self.assertEqual(soup.find("a")["href"], target)
+                    self.assertEqual(soup.find("link", rel="canonical")["href"], target)
+                    self.assertEqual(soup.find("meta", attrs={"http-equiv": "refresh"})["content"], "0;url=" + target)
+                    self.assertEqual(soup.find("meta", attrs={"name": "robots"})["content"], "noindex")
+                versions["versions"][channel] = {"url": url, "documents": {target: [] for target in redirects.values()},
+                                                    "redirects": redirects}
+            publisher.write_preview_redirects(root, versions)
+            for page in ("index", "notebook"):
+                soup = BeautifulSoup((root / "preview/old-tutorial" / (page + ".html")).read_text(), "html.parser")
+                self.assertEqual(soup.find("a")["href"], "https://tutorials.example/new-tutorial/" + page + ".html")
+
+    def test_aliases_cannot_overwrite_current_routes_or_channel_roots(self):
+        catalog = {"theme": {"revision": "a" * 40}, "tutorials": [{
+            "slug": "new-tutorial", "repository": publisher.REPOSITORY,
+            "notebook": "new-tutorial/run.ipynb", "aliases": ["old-tutorial"],
+        }]}
+        with patch.object(publisher, "repository_source", side_effect=lambda *args: json.dumps(catalog).encode()):
+            self.assertEqual(publisher.load_catalog("a" * 40)["tutorials"][0]["aliases"], ["old-tutorial"])
+            for aliases in (["new-tutorial"], ["dev"], ["preview"], ["../escape"],
+                            ["old-tutorial", "old-tutorial"], "old-tutorial"):
+                with self.subTest(aliases=aliases):
+                    catalog["tutorials"][0]["aliases"] = aliases
+                    with self.assertRaises(ValueError):
+                        publisher.load_catalog("a" * 40)
+
     def test_provenance_links_from_different_sources_coexist_on_a_collection_page(self):
         book = nbformat.writes(nbformat.v4.new_notebook()).encode()
         revisions = {"site_commit": "a" * 40,
