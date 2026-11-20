@@ -322,7 +322,7 @@ def prepare_tutorial(tutorial, revisions, destination):
         lines.extend([".. include:: overview.rst.inc", ""])
         guide_record["guide"] = {"path": name, "sha256": hashlib.sha256(payload).hexdigest()}
     lines.extend([
-        f"`Source and revision <{source_url}>`_.", "",
+        f"`Source and revision <{source_url}>`__.", "",
     ])
     if not tutorial.get("guide_includes_downloads"):
         lines.extend([

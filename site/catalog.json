@@ -7,21 +7,20 @@
     {
       "slug": "economy-wide-impact-assessment",
       "title": "Economy-wide impact assessment",
-      "category": "Scenarios & impacts",
-      "summary": "Change Italy’s electricity supply, calculate the effects on value added, imports and GHG emissions, and export the model to CVXLab.",
+      "category": "Database preparation",
+      "summary": "Download Italy’s 2022 SUT, attach emissions, employment and energy accounts, aggregate and inspect the database, then export the reference to CVXLab.",
       "repository": "it-is-me-mario/Tutorials",
       "notebook": "Economy-wide impact assessment/economy_wide_impact_assessment.ipynb",
       "guide": "Economy-wide impact assessment/overview.rst",
       "guide_includes_downloads": true,
       "materials": [
+        "Economy-wide impact assessment/translations.xlsx",
         "Economy-wide impact assessment/aggregation.xlsx",
-        "Economy-wide impact assessment/scenario_summary.csv",
-        "Economy-wide impact assessment/results.zip",
         "Economy-wide impact assessment/cvxlab_model.zip"
       ],
       "partner": "cvxlab",
       "databases": [
-        "exiobase"
+        "istat"
       ]
     },
     {
@@ -180,6 +179,10 @@
     "adb": {
       "name": "ADB MRIO",
       "logo": "adb.svg"
+    },
+    "istat": {
+      "name": "ISTAT",
+      "logo": "istat.svg"
     }
   }
 }
