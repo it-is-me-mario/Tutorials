@@ -36,6 +36,10 @@ Repeated source/revision links must remain independent RST links when a
 collection combines different repositories; their shared label must not
 register conflicting named targets. Check both destinations in strict builds.
 
+Describe the public workflow independently of private collaboration: explain
+the receiving model, its settings and mapping rather than naming who supplied
+the files. Keep legitimate source and licence attribution.
+
 Use descriptive titles and concrete summaries. Avoid repeating the summary in
 an introductory slogan or restating setup instructions after every section.
 Keep units, data requirements, attribution and interpretation limits visible.
@@ -137,15 +141,16 @@ Verify reference-share denominators against the model's activity filters and
 account for secondary production explicitly. Keep preparation order aligned
 between the guide and notebook.
 
-The economy-wide tutorial prepares the ISTAT national reference and ends at
-``to_cvxlab``. Keep download, parsing, translation, aggregation, inspection and
-CVXLab export in the guide and notebook in the same order. Do not reintroduce
+The ISTAT preparation tutorial ends at ``to_cvxlab``. Keep download, parsing,
+aggregation with English labels, inspection and CVXLab export in the guide and
+notebook in the same order. Do not reintroduce
 scenario calculations, a MARIO continuation, flat-export instructions or the
 superseded electricity corrections when refreshing its materials.
 
-Use the native MARIO translation and aggregation workbooks without presentation
-restyling. Verify one-to-one translations across all classifications, preserved
-numerical values and compatible import-row labels after aggregation. Update the
+Use one native MARIO aggregation workbook without presentation restyling.
+Map source labels directly to the destination groups, keeping one-to-one English
+labels for classifications that are not aggregated. Verify preserved numerical
+values and compatible import-row labels after aggregation. Update the
 catalogue's database identity and logo with the source change. Pin a verified
 MARIO source snapshot while the required parser is unreleased; replace that
 installation only after the published package has passed the same workflow.

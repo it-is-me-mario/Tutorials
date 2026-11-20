@@ -6,7 +6,7 @@
   "tutorials": [
     {
       "slug": "economy-wide-impact-assessment",
-      "title": "Economy-wide impact assessment",
+      "title": "Parsing, aggregation and export to CVXLab",
       "category": "Database preparation",
       "summary": "Download Italy’s 2022 SUT, attach emissions, employment and energy accounts, aggregate and inspect the database, then export the reference to CVXLab.",
       "repository": "it-is-me-mario/Tutorials",
@@ -14,7 +14,6 @@
       "guide": "Economy-wide impact assessment/overview.rst",
       "guide_includes_downloads": true,
       "materials": [
-        "Economy-wide impact assessment/translations.xlsx",
         "Economy-wide impact assessment/aggregation.xlsx",
         "Economy-wide impact assessment/cvxlab_model.zip"
       ],

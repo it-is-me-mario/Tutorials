@@ -1,12 +1,12 @@
 ISTAT reference for the MARIO–CVXLab exercise
 ============================================
 
-This directory contains the supplied CVXLab model configuration, classified
-English sets and the prepared 2022 ISTAT reference inputs. Execute the MARIO
-notebook to regenerate the inputs using ``to_cvxlab``. The notebook stops at
-this export and does not build, modify or solve the CVXLab analysis model.
+This directory contains the CVXLab model configuration, classified English
+sets and 2022 ISTAT reference inputs. Execute the MARIO notebook to regenerate
+the sets and input tables using ``to_cvxlab``. The exported files are ready
+for loading into the CVXLab model.
 
-Supplied model_settings.xlsx SHA-256:
+model_settings.xlsx SHA-256:
 6fd98098db6bb27dafef7414c09fbeaa037b4071990b43441546bc4cd8ad05aa
 
 Reference tables: make_0, use_0, imports_0, extensions_0, total_activity_0 and
@@ -14,11 +14,9 @@ total_demand_0. The file also contains blank delta_make, delta_use and
 delta_imports templates for Reference. The model's declared blank_fill=0
 supplies their zero values when loading into CVXLab SQLite.
 
-The settings are used as supplied by Matteo V. Rocco for the IRPET exercise.
-Its equations, variables and filters are unchanged. VY is nonzero in the
-source SUT but is not declared as a reference input by this configuration.
-The MARIO object retains that block. No activity-output or satellite flow
-values are deliberately blanked in the six reference input tables.
+``model_settings.xlsx`` defines the input tables, set coordinates, variable
+filters and equations. The configuration has no exogenous VY input; this
+final-demand accounting block remains in the MARIO database.
 
 Products and activities: 15 each. Final demand: 7 categories. Extensions: 8
 income/accounting rows and 27 satellite accounts. Monetary values remain in
@@ -28,8 +26,7 @@ hours and TJ according to the row described in the notebook.
 The source is ISTAT's 2020–2022 edition, observation year 2022, with AEA,
 employment and PEFA observations from Eurostat for 2022. English translations
 and aggregation are modifications for this exercise, not official source
-revisions. All reference input values and loading of blank deltas as zero
-were verified through CVXLab SQLite; analysis scenarios were not solved.
+revisions.
 
 Source attribution and reuse
 ----------------------------
