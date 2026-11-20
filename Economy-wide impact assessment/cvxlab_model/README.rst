@@ -1,5 +1,5 @@
-ISTAT reference for the MARIO–CVXLab exercise
-============================================
+ISTAT supply-use data for CVXLab
+================================
 
 This directory contains the CVXLab model configuration, classified English
 sets and 2022 ISTAT reference inputs. Execute the MARIO notebook to regenerate
@@ -25,7 +25,7 @@ hours and TJ according to the row described in the notebook.
 
 The source is ISTAT's 2020–2022 edition, observation year 2022, with AEA,
 employment and PEFA observations from Eurostat for 2022. English translations
-and aggregation are modifications for this exercise, not official source
+and aggregation are modifications for this example, not official source
 revisions.
 
 Source attribution and reuse
@@ -38,7 +38,7 @@ Source attribution and reuse
 * Eurostat PEFA: https://doi.org/10.2908/env_ac_pefa04
 * Eurostat access date: 20 November 2026.
 * Eurostat reuse: https://ec.europa.eu/eurostat/help/copyright-notice
-* Original receiving-model exercise: https://github.com/cvxlab/cvxlab/tree/466b50c2c5ad8b4b2a7f02f71da5f473decbc81d/docs/source/tutorials/input_output_analysis_mario
+* Model configuration source: https://github.com/cvxlab/cvxlab/tree/466b50c2c5ad8b4b2a7f02f71da5f473decbc81d/docs/source/tutorials/input_output_analysis_mario
 
 The accompanying Apache 2.0 LICENSE for the receiving configuration is retained.
 Keep data-source acknowledgements and the description of modifications with

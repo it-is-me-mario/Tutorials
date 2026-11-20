@@ -1,9 +1,9 @@
-Prepare Italy's 2022 national supply-use table for the MARIO–CVXLab exercise.
+Prepare Italy's 2022 supply-use data for use in a CVXLab model.
 Download the official ISTAT workbooks, attach compatible satellite accounts,
 translate the labels into English, aggregate and inspect the database, then
-export the reference to CVXLab. This tutorial ends at that handoff.
+export the matrices and sets to CVXLab.
 
-The exercise uses the published national classifications. Electricity, gas,
+This example uses the published national classifications. Electricity, gas,
 steam and air conditioning remain one activity; no electricity-technology
 disaggregation or power-sector scenarios are introduced.
 
@@ -180,8 +180,8 @@ them as zero according to ``blank_fill=0``; they appear as unmapped tables in
 the export report because they are scenario inputs rather than MARIO matrices.
 
 ``to_cvxlab`` writes the classified sets to ``sets.xlsx`` and the input tables to
-``input_data/input_data.xlsx`` inside ``cvxlab_model/``. Use that directory as
-the model input for the CVXLab exercise.
+``input_data/input_data.xlsx`` inside ``cvxlab_model/``. Load these files into CVXLab using
+the accompanying model configuration.
 
 .. code-block:: python
 
@@ -212,7 +212,7 @@ Source attribution
 The monetary workbooks are from ISTAT's 2020–2022 edition, with observation
 year 2022. Satellite data are from the linked Eurostat datasets, accessed
 20 November 2026; hours worked are from the ISTAT USE workbook. Labels were
-translated and productive classifications aggregated for this exercise.
+translated and productive classifications aggregated in this example.
 
 Retain the
 `ISTAT attribution and reuse notice <https://www.istat.it/note-legali/>`_,
