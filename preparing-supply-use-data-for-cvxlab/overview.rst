@@ -41,15 +41,15 @@ Extract the archive beside the notebook to obtain ``cvxlab_model/``. Keep
 ``aggregation.xlsx`` in the same working folder. The readable companion is
 available as :doc:`Notebook <notebook>`.
 
-This workflow uses parser additions intended for MARIO 1.3.6, not included in
-1.3.5. Install the development snapshot in a dedicated Python 3.12
-environment and restart the notebook kernel after installation:
+Use MARIO 1.3.6 in a dedicated Python 3.12 environment. This release includes
+the ISTAT import and satellite options used below. Restart the notebook
+kernel after installation:
 
 .. code-block:: bash
 
    conda create -n mario_cvxlab_tutorial python=3.12 pip
    conda activate mario_cvxlab_tutorial
-   python -m pip install "mariopy @ git+https://github.com/it-is-me-mario/MARIO.git@e786e43fd01186bf1707cf098e2ceea1afb29e49" "cvxlab==1.0.1b1" jupyterlab
+   python -m pip install "mariopy==1.3.6" "cvxlab==1.0.1b1" jupyterlab
    python -m jupyter lab
 
 .. _prepare-the-reference-system:
@@ -120,8 +120,8 @@ belong to its ``baseline`` scenario, which is used throughout this example.
 See `Objects in MARIO <https://www.marioproject.com/en/latest/get_started/table_formats.html#objects-in-mario>`_
 for the distinction between a database, a table, a scenario and a matrix.
 
-See the source snapshot's
-`ISTAT parser guide <https://github.com/it-is-me-mario/MARIO/blob/e786e43fd01186bf1707cf098e2ceea1afb29e49/doc/source/notebooks/parsers/istat/walkthrough_istat.rst>`_
+See the
+`ISTAT parser guide <https://www.marioproject.com/en/latest/notebooks/parsers/istat/walkthrough_istat.html>`_
 for optional satellite selection, units and cache behaviour.
 
 .. _translate-the-classifications:
@@ -335,6 +335,7 @@ into CVXLab using the accompanying model configuration.
    report = db.to_cvxlab(
        model_settings="cvxlab_model/model_settings.xlsx",
        path="cvxlab_model",
+       sync_sets=["extensions"],
        mapping={
            "sets": {
                "Commodity_from": "products", "Commodity_to": "products",
@@ -352,6 +353,13 @@ into CVXLab using the accompanying model configuration.
        },
    )
    report["written_cells"]
+
+``sync_sets=["extensions"]`` keeps the receiving extension set aligned with
+the mapped value-added and selected satellite accounts. When regenerating
+files from an earlier selection, MARIO removes obsolete indicators and their
+dependent input rows while preserving the retained set attributes and all
+mapped value-added accounts. Inspect ``report["removed_set_members"]`` and
+``report["removed_input_rows"]`` to review any removals.
 
 Source attribution
 ------------------
