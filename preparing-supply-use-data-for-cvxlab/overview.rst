@@ -60,10 +60,10 @@ value-added/accounting rows.
      - Download
    * - Emissions
      - 24 AEA emission indicators and total employment
-     - :download:`emissions.zip <emissions.zip>`
+     - :download:`ZIP <emissions.zip>`
    * - Emissions and energy
      - 24 AEA emission indicators, total employment and net domestic energy use
-     - :download:`emissions-and-energy.zip <emissions-and-energy.zip>`
+     - :download:`ZIP <emissions-and-energy.zip>`
 
 AEA includes gas masses and characterised totals with different units.
 Totals overlap their components: do not sum the GHG total with its gases
