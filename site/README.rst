@@ -169,10 +169,15 @@ Test optional aggregation-template generation on the unaggregated database:
 source rows must match its classifications and destination cells must be blank.
 Keep the generated template separate from the filled tutorial mapping. Execute
 new inspection examples and verify that they leave the exported reference intact.
-When reducing satellites, select them with ``keep_extensions`` and prune the
-receiving set workbook consistently: ``to_cvxlab`` retains existing set members
-and input rows. Rebuild obsolete generated input domains before validating the
-load. Preserve every factor-of-production row and compare economic flows.
+When changing satellites, select them with ``keep_extensions`` and synchronize
+the shared receiving domain with ``to_cvxlab(sync_sets=["extensions"])``.
+The default export retains existing members. Preserve every factor-of-production
+row and compare economic flows. Package additional selections in separate
+folders with their own notebook, native aggregation workbook and receiver.
+Register each downloadable variant archive in the catalogue. Check that its
+files match the folder, units remain explicit, and overlapping emissions totals
+are not presented as additive components. Execute each selection through actual
+CVXLab loading and compare its unchanged economic coordinates with the base case.
 
 The committed receiving directory and its downloadable ZIP are one package.
 Compare their files byte for byte. Check workbook modes after copying materials

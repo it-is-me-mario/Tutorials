@@ -41,6 +41,37 @@ Extract the archive beside the notebook to obtain ``cvxlab_model/``. Keep
 ``aggregation.xlsx`` in the same working folder. The readable companion is
 available as :doc:`Notebook <notebook>`.
 
+.. _additional-satellite-variants:
+
+.. rubric:: Additional satellite variants
+
+Two separate folders extend the example with emissions. Each download contains
+its own notebook, aggregation mapping, classified CVXLab sets and generated
+input data. Run the notebook from the extracted folder. Both variants keep
+the same 15 activities/products, 7 final-demand categories and all 8
+value-added/accounting rows.
+
+.. list-table:: Alternative satellite selections
+   :header-rows: 1
+   :widths: 25 50 25
+
+   * - Variant
+     - Satellite accounts
+     - Download
+   * - Emissions
+     - 24 AEA emission indicators and total employment
+     - :download:`emissions.zip <emissions.zip>`
+   * - Emissions and energy
+     - 24 AEA emission indicators, total employment and net domestic energy use
+     - :download:`emissions-and-energy.zip <emissions-and-energy.zip>`
+
+AEA includes gas masses and characterised totals with different units.
+Totals overlap their components: do not sum the GHG total with its gases
+or with other environmental indicators. Each variant retains the native
+units in MARIO and lists them in its CVXLab package's README.
+
+.. rubric:: Installation
+
 Use MARIO 1.3.6 in a dedicated Python 3.12 environment. This release includes
 the ISTAT import and satellite options used below. Restart the notebook
 kernel after installation:

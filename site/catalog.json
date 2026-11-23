@@ -15,7 +15,9 @@
       "guide_includes_downloads": true,
       "materials": [
         "preparing-supply-use-data-for-cvxlab/aggregation.xlsx",
-        "preparing-supply-use-data-for-cvxlab/cvxlab_model.zip"
+        "preparing-supply-use-data-for-cvxlab/cvxlab_model.zip",
+        "preparing-supply-use-data-for-cvxlab/emissions.zip",
+        "preparing-supply-use-data-for-cvxlab/emissions-and-energy.zip"
       ],
       "partner": "cvxlab",
       "databases": [
