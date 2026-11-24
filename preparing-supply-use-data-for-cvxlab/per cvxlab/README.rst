@@ -6,6 +6,10 @@ and regenerated inputs for Italy's 2022 supply-use database. Run
 ``preparing_supply_use_data_for_cvxlab.ipynb`` from the parent folder.
 The notebook ends at ``to_cvxlab`` and uses this ``per cvxlab`` directory.
 
+``sets.xlsx`` is the definitive classified set workbook. Keep it beside
+``model_settings.xlsx``: ``to_cvxlab`` reads its set attributes and updates
+that same workbook when regenerating the inputs.
+
 The sets contain 15 products, 15 activities, 7 final-demand categories,
 all 8 value-added/accounting rows and 3 satellites:
 
