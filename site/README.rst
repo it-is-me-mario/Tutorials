@@ -179,6 +179,16 @@ files match the folder, units remain explicit, and overlapping emissions totals
 are not presented as additive components. Execute each selection through actual
 CVXLab loading and compare its unchanged economic coordinates with the base case.
 
+When final receiving sets are supplied, seed the receiver with their complete
+workbook before exporting. Compare every sheet's member order, nullable filters,
+reporting groups and scenario labels with that source after export and actual
+CVXLab loading. Match the aggregation workbook's satellite rows to the explicit
+``keep_extensions`` selection; a workbook from a broader selection is not a
+compatible substitute. Use the same portable notebook in the workshop and
+published materials, and check the paths in code cells as well as prose. Keep
+the source cache outside Git and distinguish declared blank-fill inputs from
+missing mapped data in the export report.
+
 The committed receiving directory and its downloadable ZIP are one package.
 Compare their files byte for byte. Check workbook modes after copying materials
 from cloud storage; retain the repository's regular-file modes. Preserve the
