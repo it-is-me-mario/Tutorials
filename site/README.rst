@@ -180,7 +180,10 @@ are not presented as additive components. Execute each selection through actual
 CVXLab loading and compare its unchanged economic coordinates with the base case.
 
 When final receiving sets are supplied, seed the receiver with their complete
-workbook before exporting. Compare every sheet's member order, nullable filters,
+workbook before exporting. Once adopted, keep ``sets.xlsx`` as the single
+classified receiver workbook, used and updated by the export. Remove obsolete
+seed copies and their delivery instructions; check the notebook, README and
+archive together. Compare every sheet's member order, nullable filters,
 reporting groups and scenario labels with that source after export and actual
 CVXLab loading. Match the aggregation workbook's satellite rows to the explicit
 ``keep_extensions`` selection; a workbook from a broader selection is not a

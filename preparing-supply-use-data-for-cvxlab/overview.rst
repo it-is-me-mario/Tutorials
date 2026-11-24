@@ -368,8 +368,10 @@ Write CVXLab inputs
 ``to_cvxlab()`` writes the classified sets to ``sets.xlsx`` and the input tables
 to ``input_data/input_data.xlsx`` inside ``per cvxlab/``. Load these files
 into CVXLab using the accompanying model configuration.
-The supplied ``sets.xlsx`` contains the final member order, categories,
-reporting groups and scenario names; the export preserves them. Blank
+``sets.xlsx`` is the classified set workbook read and updated by
+``to_cvxlab()``. Keep it beside ``model_settings.xlsx`` when rerunning the
+notebook. The export preserves its member order, categories, reporting groups
+and scenario names. Blank
 ``type`` attributes intentionally leave members outside the ``power`` filter.
 They may be flagged in ``report["missing_attributes"]`` and do not represent
 missing matrix values.
